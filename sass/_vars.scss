@@ -1,0 +1,39 @@
+/* raleway-regular */
+@font-face {
+  font-display: swap; 
+  font-family: 'Raleway';
+  font-style: normal;
+  src: url('fonts/Raleway-VF.woff2') format('woff2'); 
+}
+
+/* raleway-italic */
+@font-face {
+  font-display: swap; 
+  font-family: 'Raleway';
+  font-style: italic;
+  src: url('fonts/Raleway-Italic-VF.woff2') format('woff2'); 
+}
+
+
+// Font weights
+$light: 100;
+$regular: 400;
+$bold: 700; 
+
+// Base Font
+$base-font-family: raleway, arial, sans-serif;
+$base-font-size: 16px;
+$base-font-weight: $regular;
+$base-line-height: 1.5;
+
+$header-font-family: raleway, arial, sans-serif;
+
+// Colours 
+
+$colour-text: #042825;
+
+$colour-link: #00D581;
+$colour-link-hover: lighten($colour-link, 3%);
+
+$colour-button: #00D581;
+$colour-button-hover: lighten($colour-button, 3%);

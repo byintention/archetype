@@ -15,24 +15,122 @@ function fixExtraCaptionPadding($attrs)
 }
 	
 // Theme support elements
-
 function archetype_theme_setup() {
+	// Add logo to customiser with ability to choose whether name and description shown
 	$defaults = array(
 		'height'               => 100,
 		'width'                => 400,
 		'flex-height'          => true,
 		'flex-width'           => true,
-		'header-text'          => array( 'site-title', 'site-description' ),
+		'header-text'          => array( 'site-title', 'site-description' )
 	);
 	add_theme_support( 'custom-logo', $defaults );
+	// Newer way of adding meta title
 	add_theme_support( 'title-tag' );
+	// Support Featured Images
+	add_theme_support( 'post-thumbnails' ); 
 }
 add_action( 'after_setup_theme', 'archetype_theme_setup' );
 
 
+// Add customiser live update for blog name and description, just shows nothing without this
+/**
+ * Add postMessage support for site title and description for the Theme Customizer.
+ *
+ * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+ */
+function susty_wp_customize_register( $wp_customize ) {
+	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
+	if ( isset( $wp_customize->selective_refresh ) ) {
+		$wp_customize->selective_refresh->add_partial(
+			'blogname',
+			array(
+				'selector'        => '.site-title a',
+				'render_callback' => 'susty_wp_customize_partial_blogname',
+			)
+		);
+		$wp_customize->selective_refresh->add_partial(
+			'blogdescription',
+			array(
+				'selector'        => '.site-description',
+				'render_callback' => 'susty_wp_customize_partial_blogdescription',
+			)
+		);
+	}
+}
+add_action( 'customize_register', 'susty_wp_customize_register' );
+
+/**
+ * Render the site title for the selective refresh partial.
+ *
+ * @return void
+ */
+function susty_wp_customize_partial_blogname() {
+	bloginfo( 'name' );
+}
+
+/**
+ * Render the site tagline for the selective refresh partial.
+ *
+ * @return void
+ */
+function susty_wp_customize_partial_blogdescription() {
+	bloginfo( 'description' );
+}
+
+// Customiser theme colours
+// https://stackoverflow.com/questions/36786520/how-to-add-color-option-in-wordpress-customize
+function mytheme_customize_register( $wp_customize ) {
+	//All our sections, settings, and controls will be added here
+	$wp_customize->add_setting( 'body_textcolour' , array(
+		'default'     => "#000000",
+		'transport'   => 'refresh',
+	) );
+	$wp_customize->add_setting( 'heading_textcolour' , array(
+		'default'     => "#000000",
+		'transport'   => 'refresh',
+	) );
+	$wp_customize->add_setting( 'link_colour' , array(
+		'default'     => "#000000",
+		'transport'   => 'refresh',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'body_textcolour', array(
+		'label'      => __( 'Text Color', 'mytheme' ),
+		'section'    => 'colors',
+	) ) );
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'heading_textcolour', array(
+		'label'      => __( 'Heading Color', 'mytheme' ),
+		'section'    => 'colors',
+	) ) );
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_colour', array(
+		'label'      => __( 'Link Color', 'mytheme' ),
+		'section'    => 'colors',
+	) ) );
+}
+add_action( 'customize_register', 'mytheme_customize_register' );
+
+function mytheme_customize_css()
+{
+	?>
+	<style type="text/css">
+		body, #headerLogo a { color: <?php echo get_theme_mod('body_textcolour', "#000000"); ?>; }
+		h1,h2,h3,h4,h5,h6 { color: <?php echo get_theme_mod('heading_textcolour', "#000000"); ?>; }
+		a, a:visited { color: <?php echo get_theme_mod('link_colour', "#000000"); ?>; } 
+		button, .btn, input[type="button"], input[type="submit"] { background-color: <?php echo get_theme_mod('link_colour', "#000000"); ?>; }
+		button.menu-trigger { background-color:transparent; }
+	</style>
+	<?php
+}
+add_action( 'wp_head', 'mytheme_customize_css');
+
+
 
 // Remove admin bar
-show_admin_bar(false);
+//show_admin_bar(false);
 
 
 
@@ -150,8 +248,7 @@ function sidebar_widgets_init() {
 add_action( 'widgets_init', 'sidebar_widgets_init' );
 
 
-// Support Featured Images
-add_theme_support( 'post-thumbnails' ); 
+
 
 
 // Load Scripts Properly

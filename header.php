@@ -13,18 +13,17 @@
 			<div class="container">
 				<div id="headerMenuMobile"><button class="menu-trigger navclosed"><span>Menu</span></button></div>
 				<div id="headerLogo">
-					<?php  
-					if ( get_custom_logo() ){
-						the_custom_logo();
-					} 
-					
-					if( !get_custom_logo() ){ 
-						echo 'no logo';
-						echo '<div class="siteName">';
-						 get_bloginfo('name');
-						echo '</div>';
-						echo esc_html( get_bloginfo( 'description' ) ); 
+					<?php if ( has_custom_logo() ){
+						the_custom_logo(); 
 					} ?>
+					<div class="site-title">
+						<a href="<?php echo esc_html( get_bloginfo('url') );?>">
+						<?php echo esc_html( get_bloginfo('name') ); ?>
+						</a>
+					</div>
+					<div class="site-description">
+						<?php echo esc_html( get_bloginfo( 'description' ) ); ?>
+					</div>	
 				</div>
 				<nav id="nav2" class="clearfix">
 					<?php wp_nav_menu( array(

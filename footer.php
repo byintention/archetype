@@ -42,27 +42,6 @@
 	
 	<script>
 		
-		// Plain JS first, then jQuery stuff
-		
-		// Opening answers on faq panel
-		document.addEventListener("DOMContentLoaded", function() {
-			var anchors = document.querySelectorAll('.faq-question, .showFaq');
-			var len = anchors.length;
-			//console.log(anchors);
-			for (var i = 0; i < anchors.length; i++) {
-				anchors[i].addEventListener('click', function(event) {
-					//var parent = this.parentElement;
-					this.parentElement.classList.toggle('active');
-					//var answer = this.nextElementSibling;
-					this.nextElementSibling.classList.toggle('visible');
-				});
-			}
-			
-			// Add body class when page loaded
-			document.body.classList.toggle('loaded');
-		
-		});
-		
 		// BTT
 		var timeOut;
 		function scrollToTop() {
@@ -74,32 +53,7 @@
 		}
 		
 		 
-		// New code May 23
 		window.onload = function() {
-		  // fade in when scroll into view 
-		  // Select all the elements with the class "fade-in"
-		  const fadeIns = document.querySelectorAll('.fade-in');
-		  
-		  // Loop through each element
-		  fadeIns.forEach(fadeIn => {
-			// Check if the element is in view
-			const isInView = (entry) => {
-			  return entry.isIntersecting;
-			};
-		
-			// Create a new intersection observer
-			const observer = new IntersectionObserver(entries => {
-			  // If the element is in view, add the class "in-view"
-			  if (entries.some(isInView)) {
-				fadeIn.classList.add('in-view');
-			  } else {
-				fadeIn.classList.remove('in-view');
-			  }
-			});
-		
-			// Start observing the element
-			observer.observe(fadeIn);
-		  });
 		  
 		  // BTT 
 		  // Get the back-to-top link element
@@ -130,37 +84,12 @@
 			}
 		  });
 		  
-		  
 		};
-		
 	</script>
 	
 	<script>
 		jQuery(document).ready(function() {
 		  
-			jQuery('.tabList button').click(function(){
-				// Grab current ID from data-id on link
-				tabNo = jQuery(this).attr("data-id");  
-				// Update links
-				jQuery('.tabList li').removeClass('active'); 
-				jQuery('#tabLink'+tabNo).addClass('active'); 
-				// ARIA selected
-				// Set all to false
-				jQuery('.tabList button').attr('aria-selected',false );
-				// Set current to true
-				jQuery('#tabLink'+tabNo+' button').attr('aria-selected',true ); 
-				// Update tab panels
-				jQuery('.tabContent').removeClass('active');
-				jQuery('#panel-'+tabNo).addClass('active');
-			});
-		
-			jQuery('.accordion h3 a').click(function(){
-				// Grab current ID from data-id on link
-				accordionNo = jQuery(this).attr("data-id");  
-				// Update links
-				jQuery(this).closest('.accordionPanel').toggleClass('active'); 
-			});
-		
 		  	// Mobile nav
 			jQuery('.menu-trigger').click(function() {
 				event.preventDefault();
@@ -175,7 +104,7 @@
 			});
 			
 		  	// Dropdown triggers
-		  	jQuery('#nav2 li.menu-parent-item').prepend( '<button class="sub_nav">Open sub nav<div class="arrow_down"></div></button>' );
+		  	jQuery('#nav2 li.menu-item-has-children').prepend( '<button class="sub_nav">Open sub nav<div class="arrow_down"></div></button>' );
 		  	
 		  	jQuery('.sub_nav, .menu-item-has-children > a').click(function() { 
 				jQuery(this).toggleClass('open');

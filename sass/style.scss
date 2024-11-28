@@ -92,11 +92,11 @@ h1, h2, h3, h4, h5, h6 {
 	
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; text-decoration: none; }
 
-h1 { font-size: 52px; }
-h2 { font-size: 43px; }
-h3 { font-size: 34px; }
-h4 { font-size: 27px; }
-h5 { font-size: 22px; }
+h1 { font-size: 42px; }
+h2 { font-size: 35px; }
+h3 { font-size: 29px; }
+h4 { font-size: 24px; }
+h5 { font-size: 20px; }
 h6 { font-size: 17px; }
 
 p { margin: 0 0 14px 0; }
@@ -328,7 +328,7 @@ span.wpcf7-not-valid-tip {
 }
 
 pre {
-	background:#eee;
+	background:#DFE5E2;
 	display:block;
 	font-family: monospace;
 	margin-bottom:20px;
@@ -339,7 +339,7 @@ pre {
 }
 
 code {
-	background:#eee;
+	background:#DFE5E2;
 	font-family: monospace;
 	padding:5px;
 }
@@ -398,10 +398,6 @@ q:after {
 abbr, acronym {
 	font-style: italic;
 	text-decoration:underline;
-}
-
-.mobile {
-	display:none;
 }
 
 table {
@@ -516,7 +512,7 @@ fieldset > div {
 }
 
 fieldset {
-	background:#fafafa;
+	background:#DFE5E2;
 	border:1px solid #eee;
 	margin-bottom: 20px;
 	padding:30px;
@@ -741,7 +737,7 @@ input[type="checkbox"] {
 	
 	.gridRow .column,
 	.gridRow .columns {
-		background:#eee;
+		background:#DFE5E2;
 		box-sizing: border-box;
 		padding:10px;
 	}   
@@ -793,9 +789,10 @@ or wrap each row of columns in a <div class="row"> */
 
 #header {
 	background:#fff;
-	box-shadow: 0 0 10px rgba(0,0,0,0.1);
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
 	height:80px;
 	position: relative;
+	z-index: 9999;
 	.container {
 		height:80px;
 		position: relative;
@@ -832,10 +829,13 @@ or wrap each row of columns in a <div class="row"> */
 		max-height:60px;
 		width:auto;
 	}	
-	.siteName {
-		font-size:40px;
+	.site-title {
+		font-size:27px;
 		font-weight: bold;
 		line-height:1.2;
+		a {
+			text-decoration: none;
+		}
 	}
 }
 
@@ -850,8 +850,8 @@ or wrap each row of columns in a <div class="row"> */
 				max-height:100px;
 				width:auto;
 			}	
-			.siteName {
-				font-size:50px;
+			.site-title {
+				font-size:40px;
 			}
 		}
 	}
@@ -881,6 +881,7 @@ or wrap each row of columns in a <div class="row"> */
 		box-shadow:none;	
 	}
 	button {
+		background-color:none;
 		border-radius: 0;
 		display:block;
 		font-size:0;
@@ -986,6 +987,9 @@ or wrap each row of columns in a <div class="row"> */
 
 #content {
 	padding:40px 0;
+	&.noGap {
+		padding-top:0;
+	}
 }
 
 
@@ -1853,34 +1857,14 @@ or wrap each row of columns in a <div class="row"> */
 	}
 }
 
-/* #Media Queries */
 
-
-	@media only screen and (min-width: 600px) {
-			
-		.mobile {display:block;}
-		
-	}
-	
-	#wpadminbar {
-		display:none;
-	}
-	
-	@media only screen and (min-width: 960px) {
-		#wpadminbar {
-			display:block;
-		}
-	}
-	
-	
-	
 	@media only screen and (min-width: 1200px) {
 
 		#nav2 {
 			display:block;
 			position: absolute;
 				bottom:20px;
-				right:0;
+				right:1%;
 			ul {
 				display:flex;
 					justify-content: center;
@@ -1910,6 +1894,10 @@ or wrap each row of columns in a <div class="row"> */
 					
 					button.sub_nav {
 						display:none;
+					}
+					
+					&:last-child > a {
+						padding-right:0;
 					}
 					
 					.sub-menu {
@@ -1957,7 +1945,7 @@ or wrap each row of columns in a <div class="row"> */
 			}
 		}
 		
-		#nav2 .menu-parent-item > a:after {
+		#nav2 .menu-item-has-children > a:after {
 			background-image: url(images/icon-chev-down-grey.svg);
 			background-position: center center;
 			background-repeat: no-repeat;
@@ -1973,7 +1961,7 @@ or wrap each row of columns in a <div class="row"> */
 			vertical-align: middle;
 			width:15px;
 		}	
-		#nav2a .menu-parent-item:hover > a:after {
+		#nav2 .menu-item-has-children.openSubnav > a:after {
 			opacity:0;
 			transition: all 0.1s linear;
 		}

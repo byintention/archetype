@@ -31,9 +31,9 @@ Template Name: Style Test Page
 		
 		<p>Paragraph text - <strong>Strong</strong> - <em>Emphasis</em> - Lorem ipsum dolor sit amet,
 		consectetuer adipiscing elit. Suspendisse lectus nisl, semper sit amet, blandit at, lacinia 
-		et, sem. Sed pellentesque turpis ut risus. Nullam luctus sagittis urna. Vivamus nibh. Fusce
+		et, sem. <a href="#">Sed pellentesque turpis ut risus</a>. Nullam luctus sagittis urna. Vivamus nibh. Fusce
 		 ut nunc. Vivamus sed felis. Nam elit diam, auctor eu, eleifend vel, dictum quis, leo. 
-		 Pellentesque fringilla, tellus quis auctor nonummy, pede lorem varius massa, at vestibulum 
+		 Pellentesque fringilla, tellus quis auctor nonummy, <code>pede lorem varius massa</code>, at vestibulum 
 		 enim nibh ac massa.</p>
 		 
 		<p class="smallText">
@@ -116,7 +116,7 @@ Template Name: Style Test Page
 					<input id="email" type="text" name="email" /></div>
 				<div>
 					<label for="state">State:</label>
-					<select name="state">
+					<select id="state" name="state">
 						<option value="CA">California -- CA</option>
 						<option value="CO">Colorado -- CO</option>
 						<option value="CN">Connecticut -- CN</option>

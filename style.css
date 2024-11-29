@@ -196,13 +196,13 @@ hr {
 
 /* #Links */
 a, a:visited {
-  color: #00D581;
+  color: #008550;
   font-weight: bold;
   text-decoration: underline;
   transition: color 0.2s linear; }
 
 a:hover {
-  color: #00e48a;
+  color: #009459;
   transition: color 0.2s linear; }
 
 a:focus-visible {
@@ -245,12 +245,13 @@ dd {
 .positive, .wpcf7-mail-sent-ok {
   background-color: #006600;
   background-image: url(images/icon-pos.svg);
-  background-position: 6px 8px;
+  background-position: 10px 9px;
   background-repeat: no-repeat;
   background-size: 14px 14px;
   color: #fff;
-  font-size: 14px;
-  padding: 5px 10px 5px 28px; }
+  font-size: 16px;
+  font-weight: 700;
+  padding: 5px 10px 5px 32px; }
 
 .invalid .wpcf7-response-output,
 .negative,
@@ -258,12 +259,13 @@ div.wpcf7-validation-errors,
 div span.wpcf7-not-valid-tip {
   background-color: #c00;
   background-image: url(images/icon-neg.svg);
-  background-position: 6px 8px;
+  background-position: 10px 9px;
   background-repeat: no-repeat;
   background-size: 14px 14px;
   color: #fff;
-  font-size: 14px;
-  padding: 5px 10px 5px 28px; }
+  font-size: 16px;
+  font-weight: 700;
+  padding: 5px 10px 5px 32px; }
 
 span.wpcf7-not-valid-tip {
   display: block; }
@@ -421,7 +423,7 @@ input::-moz-focus-inner {
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-  background-color: #00D581;
+  background-color: #008550;
   border: 0;
   border-radius: 3px;
   color: #fff;
@@ -442,7 +444,7 @@ input[type="button"] {
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover {
-  background-color: #00e48a;
+  background-color: #009459;
   color: #fff;
   transition: background 0.2s linear; }
 
@@ -815,7 +817,7 @@ or wrap each row of columns in a <div class="row"> */
     height: 29px;
     width: 29px; }
     #headerMenuMobile button span {
-      background: #00D581;
+      background: #008550;
       display: block;
       font-size: 0;
       height: 5px;
@@ -826,7 +828,7 @@ or wrap each row of columns in a <div class="row"> */
       transition: all 0.2s ease-in-out;
       width: 29px; }
     #headerMenuMobile button:before {
-      background: #00D581;
+      background: #008550;
       content: "";
       height: 5px;
       position: absolute;
@@ -835,7 +837,7 @@ or wrap each row of columns in a <div class="row"> */
       transition: all 0.2s ease-in-out;
       width: 29px; }
     #headerMenuMobile button:after {
-      background: #00D581;
+      background: #008550;
       content: "";
       height: 5px;
       position: absolute;
@@ -900,7 +902,7 @@ or wrap each row of columns in a <div class="row"> */
   background: #fff; }
 
 .green {
-  background: #00D581; }
+  background: #008550; }
 
 .grey {
   background: #E6EDED; }
@@ -1523,8 +1525,6 @@ or wrap each row of columns in a <div class="row"> */
           margin-right: 2px;
           padding: 0 30px;
           text-decoration: none; }
-        #nav2 ul li a:hover {
-          color: #042825; }
         #nav2 ul li button.sub_nav {
           display: none; }
         #nav2 ul li:last-child > a {

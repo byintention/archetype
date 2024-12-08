@@ -202,6 +202,7 @@ add_action( 'customize_register', 'mytheme_customize_register' );
  */
 function mytheme_customise_css() {
 	?>
+	<!-- User editable styles from customiser -->
 	<style type="text/css">
 		body { background-color: <?php echo esc_html( get_theme_mod( 'body_background', '#000000' ) ); ?>;	}
 		body, #headerLogo a { color: <?php echo esc_html( get_theme_mod( 'body_textcolour', '#000000' ) ); ?>; }
@@ -218,7 +219,6 @@ function mytheme_customise_css() {
 add_action( 'wp_head', 'mytheme_customise_css' );
 
 
-
 /**
  * Remove CSS files - find the handle in the plugin file and add here.
  */
@@ -232,10 +232,9 @@ add_action( 'wp_enqueue_scripts', 'remove_unwanted_css', 100 );
  * Add theme's CSS file.
  */
 function archetype_css() {
-	wp_enqueue_style( 'susty-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'archetype-style', get_stylesheet_uri(), array(), '1.0' );
 }
 add_action( 'wp_enqueue_scripts', 'archetype_css', 200 );
-
 
 
 /**
@@ -253,6 +252,14 @@ function custom_read_more() {
 function excerpt( $limit ) {
 	return wp_trim_words( get_the_excerpt(), $limit, custom_read_more() );
 }
+
+/**
+ * Remove link from author name in comments section.
+ */
+function remove_author_url() {
+	return '';
+}
+add_filter( 'get_comment_author_url', 'remove_author_url', 10, 3 );
 
 
 /**
@@ -363,8 +370,8 @@ add_action( 'widgets_init', 'sidebar_widgets_init' );
 function my_scripts_method() {
 	/**
 	Add match height script.
-	// wp_register_script('match-script', get_template_directory_uri() . '/js/jquery.matchHeight.min.js', array('jquery'));
-	// wp_enqueue_script('match-script');*/
+	// wp_register_script('archetype-script', get_template_directory_uri() . '/js/jquery.archetype.min.js', array('jquery'));
+	// wp_enqueue_script('archetype-script', true);*/
 }
 add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 

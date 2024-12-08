@@ -8,8 +8,10 @@
  */
 
 get_header(); ?>
-<div class="container searchPage">
+<div class="container searchPage white rounded padded shadow">
 	<h1>Search Results</h1>
+	<p>You searched for: <em><?php echo get_search_query(); ?></em> </p>
+	<hr>
 	<?php
 	if ( have_posts() ) {
 		while ( have_posts() ) {

@@ -8,11 +8,19 @@
  */
 
 get_header(); ?>
-<div class="container blogListing">
-	<div class="eight columns">
-		<h1>Category:<?php single_cat_title( '&nbsp;' ); ?> </h1>
-		<?php get_template_part( 'includes/postloop' ); ?>
+<div id="blogHeader">
+	<div class="container">
+		<div class="twelve columns">
+			<h1>Category: <?php single_cat_title( '&nbsp;' ); ?> </h1>
+		</div>
 	</div>
-<?php get_sidebar(); ?>
+</div>
+<div id="content">
+	<div class="container blogListing">
+		<div class="eight columns">
+			<?php get_template_part( 'includes/postloop' ); ?>
+		</div>
+	<?php get_sidebar(); ?>
+	</div>
 </div>
 <?php get_footer(); ?>

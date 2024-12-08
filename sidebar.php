@@ -9,13 +9,16 @@
 
 ?>
 <div class="four columns">
-	<ul id="sidebar">
-	<?php 
-		if ( is_page() && is_active_sidebar( 'page-sidebar' ) ) {
-			dynamic_sidebar( 'page-sidebar' );
-		} elseif ( is_active_sidebar( 'blog-sidebar' ) ) {
-			dynamic_sidebar( 'blog-sidebar' );
-		}
+	<?php
+	if ( is_page() && is_active_sidebar( 'page-sidebar' ) ) {
+		echo '<div id="pageSidebar"><ul id="sidebar">';
+		dynamic_sidebar( 'page-sidebar' );
+		echo '</ul></div>';
+	} elseif ( is_active_sidebar( 'blog-sidebar' ) ) {
+		echo '<div id="blogSidebar"><ul id="sidebar">';
+		dynamic_sidebar( 'blog-sidebar' );
+		echo '</ul></div>';
+	}
 	?>
 	</ul>
 </div>

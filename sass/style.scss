@@ -85,7 +85,7 @@ h1, h2, h3, h4, h5, h6 {
 	color: $colour-text;
 	font-family: $header-font-family;
 	font-weight: $bold; 
-	line-height: 1.2;
+	line-height: 1;
 	margin-bottom: 14px;
 	text-wrap: balance; 
 }	
@@ -99,7 +99,7 @@ h4 { font-size: 24px; }
 h5 { font-size: 20px; }
 h6 { font-size: 17px; }
 
-p { margin: 0 0 14px 0; }
+p { margin: 0 0 21px 0; }
 
 p img { margin: 0; }
 
@@ -146,7 +146,7 @@ strong { font-weight: $bold; }
 		h6 { font-size: 20px; }
 		
 		h1,h2, h3, h4, h5, h6 {
-			margin-bottom:16px;
+			margin-bottom:24px;
 		}
 		
 		.smallText { font-size: 14px; }
@@ -887,7 +887,7 @@ or wrap each row of columns in a <div class="row"> */
 		box-shadow:none;	
 	}
 	button {
-		background-color:none;
+		background-color: transparent;
 		border-radius: 0;
 		display:block;
 		font-size:0;
@@ -998,6 +998,15 @@ or wrap each row of columns in a <div class="row"> */
 	}
 }
 
+#pageContent {
+	margin-bottom:40px;	
+}
+
+	@media only screen and (min-width: 830px) {
+		#pageContent {
+			margin-bottom:0;	
+		}
+	}
 
 /* Flexible content */
 
@@ -1620,8 +1629,18 @@ or wrap each row of columns in a <div class="row"> */
 
 /* Blog section */
 
+#blogHeader {
+	background: $colour-link;
+	padding:40px;
+	text-align: center;
+	h1 {
+		color:#fff;
+		margin:0;
+	}
+}
+
 .blogListing {
-	padding: 30px 0 50px 0;
+	padding: 0;
 	h1 {
 		
 	}
@@ -1634,6 +1653,7 @@ or wrap each row of columns in a <div class="row"> */
 }
 
 .blogPost {
+	padding: 30px 20px 50px 20px;
 	#bread {
 		padding:15px 0;
 	}
@@ -1646,14 +1666,14 @@ or wrap each row of columns in a <div class="row"> */
 		.blogListing {
 			.post {
 				display:flex;
-				align-items: top;
-				
+					align-items: top;
+					flex-wrap: wrap;
 				.newsThumb {
 					flex:33.333% 0 0;
 				}
 				.newsText {
 					flex:66.666% 0 0;
-					padding-left:30px;
+					padding-right:30px;
 					&.wide {
 						flex:100% 0 0;
 						padding:0;
@@ -1676,9 +1696,9 @@ or wrap each row of columns in a <div class="row"> */
 .postMetadata {
 	font-size:12px;
 	border-top:1px solid #eee;
-	margin:0;
+	margin:16px 0 0 0;
 	padding: 10px 0;
-	
+	flex:0 0 100%;
 	span {
 		display:inline-block;
 	}
@@ -1727,6 +1747,66 @@ or wrap each row of columns in a <div class="row"> */
 
 .required {
 	color: red;
+}
+
+#comments {
+	margin-top:40px;
+	
+	.comment-meta {
+		margin-bottom:16px;
+	}
+	.comment-author,
+	.comment-metadata {
+		display:block;
+	}
+	.fn {
+		font-weight: $bold;
+	}
+	.says {
+		display:none;
+	}
+	.comment-metadata { 
+		padding-left:20px;
+		a {
+			font-size:.75rem;
+			padding-left:20px;
+		}
+		> a {
+			color: #999;
+			font-size:.75rem;
+			font-weight: 400;
+			pointer-events: none;
+			text-decoration: none;
+		}
+	}
+	.vcard img {
+		border-radius: 100px;
+		margin-right: 10px;
+		vertical-align: middle;
+		width:30px;
+	}
+	.comment-content,
+	.reply {
+		padding-left:40px;
+	}
+	ol {
+		list-style:none;
+		margin:0;
+	}
+	ol.comment-list {
+		article {
+			margin-bottom:40px;
+		}
+		li {
+			.children {
+				margin-left:40px;
+			}
+		}
+	}
+	#respond {
+		border-top:1px solid #ccc;
+		padding-top:20px;	
+	}
 }
 
 /* Sidebar section */
@@ -1821,9 +1901,10 @@ or wrap each row of columns in a <div class="row"> */
 }
 
 .searchPage {
-	margin:0 auto;
+	display:block;
+	margin:40px auto ;
 	max-width: 800px;
-	padding:40px 20px;
+	padding:40px 30px;
 }
 
 	@media only screen and (min-width: 830px) {
@@ -2135,6 +2216,8 @@ html .wcpt-product-form select {
 		padding-top:2px;
 	}
 }
+
+
 
 .fadeTest {
 	background: rgb(255,255,255);

@@ -85,7 +85,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #042825;
   font-family: raleway, arial, sans-serif;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1;
   margin-bottom: 14px;
   text-wrap: balance; }
 
@@ -112,7 +112,7 @@ h6 {
   font-size: 17px; }
 
 p {
-  margin: 0 0 14px 0; }
+  margin: 0 0 21px 0; }
 
 p img {
   margin: 0; }
@@ -162,7 +162,7 @@ strong {
   h6 {
     font-size: 20px; }
   h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 16px; }
+    margin-bottom: 24px; }
   .smallText {
     font-size: 14px; }
   .largeText {
@@ -815,7 +815,7 @@ or wrap each row of columns in a <div class="row"> */
   #headerMenuMobile .btn:active {
     box-shadow: none; }
   #headerMenuMobile button {
-    background-color: none;
+    background-color: transparent;
     border-radius: 0;
     display: block;
     font-size: 0;
@@ -898,6 +898,13 @@ or wrap each row of columns in a <div class="row"> */
   padding: 40px 0; }
   #content.noGap {
     padding-top: 0; }
+
+#pageContent {
+  margin-bottom: 40px; }
+
+@media only screen and (min-width: 830px) {
+  #pageContent {
+    margin-bottom: 0; } }
 
 /* Flexible content */
 .transparent {
@@ -1348,28 +1355,38 @@ or wrap each row of columns in a <div class="row"> */
   transition: opacity 0.2s linear, height 0.2s linear, padding 0s linear; }
 
 /* Blog section */
+#blogHeader {
+  background: #008550;
+  padding: 40px;
+  text-align: center; }
+  #blogHeader h1 {
+    color: #fff;
+    margin: 0; }
+
 .blogListing {
-  padding: 30px 0 50px 0; }
+  padding: 0; }
   .blogListing .newsThumb img {
     display: block; }
   .blogListing .post {
     margin-bottom: 50px; }
 
-.blogPost #bread {
-  padding: 15px 0; }
-
-.blogPost .newsThumb img {
-  display: block; }
+.blogPost {
+  padding: 30px 20px 50px 20px; }
+  .blogPost #bread {
+    padding: 15px 0; }
+  .blogPost .newsThumb img {
+    display: block; }
 
 @media only screen and (min-width: 830px) {
   .blogListing .post {
     display: flex;
-    align-items: top; }
+    align-items: top;
+    flex-wrap: wrap; }
     .blogListing .post .newsThumb {
       flex: 33.333% 0 0; }
     .blogListing .post .newsText {
       flex: 66.666% 0 0;
-      padding-left: 30px; }
+      padding-right: 30px; }
       .blogListing .post .newsText.wide {
         flex: 100% 0 0;
         padding: 0; }
@@ -1383,8 +1400,9 @@ or wrap each row of columns in a <div class="row"> */
 .postMetadata {
   font-size: 12px;
   border-top: 1px solid #eee;
-  margin: 0;
-  padding: 10px 0; }
+  margin: 16px 0 0 0;
+  padding: 10px 0;
+  flex: 0 0 100%; }
   .postMetadata span {
     display: inline-block; }
 
@@ -1422,6 +1440,47 @@ or wrap each row of columns in a <div class="row"> */
 
 .required {
   color: red; }
+
+#comments {
+  margin-top: 40px; }
+  #comments .comment-meta {
+    margin-bottom: 16px; }
+  #comments .comment-author,
+  #comments .comment-metadata {
+    display: block; }
+  #comments .fn {
+    font-weight: 700; }
+  #comments .says {
+    display: none; }
+  #comments .comment-metadata {
+    padding-left: 20px; }
+    #comments .comment-metadata a {
+      font-size: .75rem;
+      padding-left: 20px; }
+    #comments .comment-metadata > a {
+      color: #999;
+      font-size: .75rem;
+      font-weight: 400;
+      pointer-events: none;
+      text-decoration: none; }
+  #comments .vcard img {
+    border-radius: 100px;
+    margin-right: 10px;
+    vertical-align: middle;
+    width: 30px; }
+  #comments .comment-content,
+  #comments .reply {
+    padding-left: 40px; }
+  #comments ol {
+    list-style: none;
+    margin: 0; }
+  #comments ol.comment-list article {
+    margin-bottom: 40px; }
+  #comments ol.comment-list li .children {
+    margin-left: 40px; }
+  #comments #respond {
+    border-top: 1px solid #ccc;
+    padding-top: 20px; }
 
 /* Sidebar section */
 #sidebar {
@@ -1485,9 +1544,10 @@ or wrap each row of columns in a <div class="row"> */
     margin: 0; }
 
 .searchPage {
-  margin: 0 auto;
+  display: block;
+  margin: 40px auto;
   max-width: 800px;
-  padding: 40px 20px; }
+  padding: 40px 30px; }
 
 @media only screen and (min-width: 830px) {
   #sidebar {

@@ -3,19 +3,19 @@
 		the_post(); ?>
 	<div class="post clear padded white shadow rounded" id="post-<?php the_ID(); ?>">
 		<?php if ( has_post_thumbnail()) { ?>
+		<div class="newsText">
+			<h2><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+			<?php the_excerpt(); ?>
+		</div>
 		<div class="newsThumb">
 			<a href="<?php the_permalink(); ?>">
 				<img src="<?php the_post_thumbnail_url( 'medium' ); ?>" alt="<?php the_title(); ?>">
 			</a>
 		</div>
-		<div class="newsText">
-			<h2><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-			<?php the_excerpt(); ?>
-			<p class="postMetadata clear smallText">
-				<span class="blogcat">Posted in <?php the_category( ', ' ); ?></span>
-				<span class="blogdate"><?php the_time( 'F jS, Y' ); ?></span>
-			</p>
-		</div>
+		<p class="postMetadata clear smallText">
+			<span class="blogcat">Posted in <?php the_category( ', ' ); ?></span>
+			<span class="blogdate"><?php the_time( 'F jS, Y' ); ?></span>
+		</p>
 		<?php } else { ?>
 		<div class="newsText wide">
 			<h2><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>

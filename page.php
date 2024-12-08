@@ -24,7 +24,7 @@ get_header(); ?>
 			</div>
 		<?php } ?>	
 		<div class="container">
-			<div class="eight columns rounded padded white shadow">
+			<div id="pageContent" class="eight columns rounded padded white shadow">
 			<?php
 			if ( have_posts() ) {
 				while ( have_posts() ) {

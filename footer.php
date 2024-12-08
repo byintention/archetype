@@ -39,15 +39,10 @@
 	<?php wp_footer(); ?>
 	
 	<script>
-
 		window.onload = function() {
-		
-			
-		
 			// BTT
 			// Get the back-to-top link element
 			const backToTopLink = document.querySelector('.btt');
-		
 			// Add a click event listener to the link
 			backToTopLink.addEventListener('click', (event) => {
 				// Prevent the default link behaviour
@@ -58,7 +53,6 @@
 					behavior: 'smooth'
 				});
 			});
-			
 			// Add a scroll event listener to the window
 			window.addEventListener('scroll', () => {
 				// Get the current scroll position
@@ -71,13 +65,11 @@
 					backToTopLink.classList.remove('show');
 				}
 			});
-		
 		};
 	</script>
 	
 	<script>
 		jQuery(document).ready(function() {
-		
 			// Mobile nav
 			jQuery('.menu-trigger').click(function() {
 				event.preventDefault();
@@ -85,23 +77,18 @@
 				jQuery('body').toggleClass('mobilenavopen');
 				jQuery(this).toggleClass('navOpen');
 			});
-			
 			jQuery('.navclose').click(function() {
 				jQuery('#nav2').fadeOut(300);
 				jQuery('body').toggleClass('mobilenavopen');
 			});
-			
 			// Dropdown triggers
 			jQuery('#nav2 li.menu-item-has-children').prepend('<button class="sub_nav">Open sub nav<div class="arrow_down"></div></button>');
-		
 			jQuery('.sub_nav, .menu-item-has-children > a').click(function() {
 				jQuery(this).toggleClass('open');
 				jQuery(this).siblings('.sub_nav').toggleClass('open');
 				jQuery(this).siblings('ul').toggleClass('show');
-			});
-			
+			});	
 			// End mobile nav
-		
 			// Dropdown navigation for desktop size
 			var curz = 99;
 			var screen = jQuery(window);
@@ -116,7 +103,6 @@
 					}
 				});
 			}
-
 			// Update the ARIA states on click events
 			jQuery('.menu-item-has-children > a').on('click', function(ev){
 				if (jQuery(this).siblings(".sub-menu").is('[aria-expanded~="true"]')) {
@@ -124,24 +110,17 @@
 				} else {
 					jQuery(this).siblings(".sub-menu").attr('aria-expanded',true);	
 				}
-			});
-			
+			});	
 			// Close menus if clicked away
 			jQuery('html').click(function() {
 				jQuery("#nav2 li").removeClass("openSubnav");
-			});
-			
+			});	
 			jQuery('#nav2').click(function(event){
 				event.stopPropagation();
 			});
-		
-		});
-		
-		// Add wrapper div for dropdown arrow to select element
-		jQuery(window).on('load', function(){
+			// Add wrapper div for styles on select element
 			jQuery("select").wrap("<div class=\"select-input\"></div>");	
-		});
+		});	
 	</script>
-
 </body>
 </html>

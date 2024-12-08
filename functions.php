@@ -224,12 +224,17 @@ add_action( 'wp_head', 'mytheme_customise_css' );
  */
 function remove_unwanted_css() {
 	wp_dequeue_style( 'wp-block-library' );
-	wp_dequeue_style( 'wc-blocks-style' );
-	wp_dequeue_style( 'global-styles' );
-	wp_deregister_style( 'classic-theme-styles' );
-	wp_dequeue_style( 'classic-theme-styles' );
 }
 add_action( 'wp_enqueue_scripts', 'remove_unwanted_css', 100 );
+
+
+/**
+ * Add theme's CSS file.
+ */
+function archetype_css() {
+	wp_enqueue_style( 'susty-style', get_stylesheet_uri() );
+}
+add_action( 'wp_enqueue_scripts', 'archetype_css', 200 );
 
 
 
@@ -333,8 +338,18 @@ function sidebar_widgets_init() {
 			'id'            => 'blog-sidebar',
 			'before_widget' => '<li id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</li>',
-			'before_title'  => '<h2>',
-			'after_title'   => '</h2>',
+			'before_title'  => '<h3>',
+			'after_title'   => '</h3>',
+		),
+	);
+	register_sidebar(
+		array(
+			'name'          => 'Page Sidebar',
+			'id'            => 'page-sidebar',
+			'before_widget' => '<li id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</li>',
+			'before_title'  => '<h3>',
+			'after_title'   => '</h3>',
 		)
 	);
 }

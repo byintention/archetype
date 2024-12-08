@@ -176,7 +176,8 @@ blockquote, blockquote p {
     margin: 0; }
 
 blockquote {
-  background: #fafafa;
+  background: #DFE5E2;
+  border-left: 5px solid #008550;
   margin: 0 0 16px;
   padding: 20px; }
   blockquote cite {
@@ -216,6 +217,7 @@ p a, p a:visited {
 
 /* #Lists */
 ul, ol {
+  line-height: 1.75;
   margin: 0 0 16px 32px; }
 
 ul {
@@ -394,10 +396,13 @@ table {
   margin: 0 0 20px 0; }
 
 th {
-  background: #eee; }
+  background: #eee;
+  font-weight: 700; }
 
 th, td {
   border: 1px solid #666;
+  border-left: 0;
+  border-right: 0;
   padding: 10px; }
 
 /* #Images */
@@ -528,14 +533,14 @@ textarea {
   min-height: 60px; }
 
 .select-input {
-  background-color: #fafafa;
+  background-color: #fff;
   background-image: url(images/icon-chev-down-grey.svg);
   background-position: right 12px top 50%;
   background-repeat: no-repeat;
   background-size: 14px auto;
   border: 1px solid #ccc;
   border-radius: 2px;
-  height: 34px;
+  height: 43px;
   min-width: 200px;
   overflow: hidden;
   position: relative; }
@@ -547,7 +552,7 @@ select {
   -ms-appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background: #fff;
+  background: transparent;
   cursor: pointer;
   border: 0;
   display: block;
@@ -935,7 +940,10 @@ or wrap each row of columns in a <div class="row"> */
 
 .hero .banner {
   background: #333;
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
   display: block;
+  margin-bottom: 20px;
   position: relative; }
   .hero .banner img {
     display: block;
@@ -958,6 +966,10 @@ or wrap each row of columns in a <div class="row"> */
     .hero .banner .inner h1:last-child,
     .hero .banner .inner p:last-child {
       margin-bottom: 0; }
+
+@media only screen and (min-width: 830px) {
+  .hero .banner {
+    margin-bottom: 40px; } }
 
 .filler {
   padding: 40px 0 0 0; }
@@ -1336,11 +1348,12 @@ or wrap each row of columns in a <div class="row"> */
   transition: opacity 0.2s linear, height 0.2s linear, padding 0s linear; }
 
 /* Blog section */
-.blogListing .newsThumb img {
-  display: block; }
-
-.blogListing .post {
-  margin-bottom: 50px; }
+.blogListing {
+  padding: 30px 0 50px 0; }
+  .blogListing .newsThumb img {
+    display: block; }
+  .blogListing .post {
+    margin-bottom: 50px; }
 
 .blogPost #bread {
   padding: 15px 0; }
@@ -1351,24 +1364,27 @@ or wrap each row of columns in a <div class="row"> */
 @media only screen and (min-width: 830px) {
   .blogListing .post {
     display: flex;
-    align-items: center; }
+    align-items: top; }
     .blogListing .post .newsThumb {
-      flex: 40% 0 0; }
+      flex: 33.333% 0 0; }
     .blogListing .post .newsText {
-      flex: 60% 0 0;
+      flex: 66.666% 0 0;
       padding-left: 30px; }
       .blogListing .post .newsText.wide {
         flex: 100% 0 0;
         padding: 0; }
-  .blogPost .newsThumb {
-    padding-bottom: 30px; }
-  .blogPost .entry {
-    padding-bottom: 50px; } }
+  .blogPost {
+    padding: 30px 0 50px 0; }
+    .blogPost .newsThumb {
+      padding-bottom: 30px; }
+    .blogPost .entry {
+      padding-bottom: 50px; } }
 
 .postMetadata {
-  background: #eee;
   font-size: 12px;
-  padding: 5px 10px; }
+  border-top: 1px solid #eee;
+  margin: 0;
+  padding: 10px 0; }
   .postMetadata span {
     display: inline-block; }
 
@@ -1398,6 +1414,15 @@ or wrap each row of columns in a <div class="row"> */
     float: none;
     margin: 0 10px; }
 
+/* Single post */
+.required-field-message {
+  display: block;
+  font-style: italic;
+  margin-top: 10px; }
+
+.required {
+  color: red; }
+
 /* Sidebar section */
 #sidebar {
   list-style: none;
@@ -1407,9 +1432,16 @@ or wrap each row of columns in a <div class="row"> */
     float: left;
     margin-left: 5px; }
   #sidebar > li {
-    background: #eee;
-    margin: 0 0 20px 0;
-    padding: 10px; }
+    margin: 0 0 40px 0; }
+    #sidebar > li.widget_text {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px; }
+      #sidebar > li.widget_text img {
+        display: block; }
+      #sidebar > li.widget_text p:last-child {
+        margin: 0; }
   #sidebar li li {
     margin: 0; }
   #sidebar form > div {
@@ -1438,28 +1470,28 @@ or wrap each row of columns in a <div class="row"> */
   left: 0;
   right: 75px; }
 
-#s {
-  border: none;
-  border-radius: 0; }
-
 #search input[type="text"] {
   width: 100%; }
 
-#searchsubmit {
+#searchSubmit {
   width: 60px; }
 
-#searchwrapper {
-  background: #eee;
+#searchWrapper {
+  background: #fff;
   padding: 10px; }
-  #searchwrapper label {
+  #searchWrapper label {
     display: none; }
-  #searchwrapper div {
+  #searchWrapper div {
     margin: 0; }
 
 .searchPage {
   margin: 0 auto;
   max-width: 800px;
   padding: 40px 20px; }
+
+@media only screen and (min-width: 830px) {
+  #sidebar {
+    padding-left: 12px; } }
 
 /* Contact */
 /* Footer */

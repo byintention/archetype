@@ -1,11 +1,14 @@
 <?php
 /*
-Template Name: Style Test Page
+/* Template Name: Style test page
+/* Shows examples of many included styles	
+/*
+/* @package archetype
 */
-?>
-<?php get_header(); ?>
+
+get_header(); ?>
 <div class="container grid">
-	<div id="content" class="twelve columns clearfix">
+	<div id="content" class="twelve columns clearfix" style="padding:50px 0;">
 	
 		<h1>Grid &amp; Style Test</h1>
 		

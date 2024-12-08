@@ -1,11 +1,13 @@
 <?php
 /**
- * The default page template for our theme.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package archetype
- */
+/* Template Name: Full width, no sidebar
+/*
+/* The full width page template for our theme, no sidebar.
+/*
+/* @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+/*
+/* @package archetype
+*/
 
 get_header(); ?>
 	<div id="content" class="<?php if ( has_post_thumbnail() ) { echo 'noGap'; } ?>">
@@ -24,7 +26,7 @@ get_header(); ?>
 			</div>
 		<?php } ?>	
 		<div class="container">
-			<div class="eight columns rounded padded white shadow">
+			<div class="twelve columns rounded padded white shadow">
 			<?php
 			if ( have_posts() ) {
 				while ( have_posts() ) {
@@ -34,7 +36,6 @@ get_header(); ?>
 			}
 			?>
 			</div>
-			<?php get_sidebar(); ?>
 		</div>
 	</div>
 <?php get_footer(); ?>

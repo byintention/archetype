@@ -166,7 +166,8 @@ blockquote, blockquote p {
 }
 
 blockquote { 
-	background:#fafafa;
+	background:#DFE5E2;
+	border-left: 5px solid $colour-link;
 	margin: 0 0 $base-font-size; 
 	padding: 20px;  
 	cite { 
@@ -208,7 +209,7 @@ p a, p a:visited { line-height: inherit; }
 
 /* #Lists */
 
-ul, ol { margin: 0 0 $base-font-size $base-font-size * 2; }
+ul, ol { line-height:1.75; margin: 0 0 $base-font-size $base-font-size * 2; }
 ul { list-style: disc outside; }
 ol { list-style: decimal outside; }
 ul ul, ul ol,
@@ -410,10 +411,13 @@ table {
 
 th {
 	background: #eee;
+	font-weight: $bold;
 }
 
 th, td {
 	border:1px solid #666;
+	border-left:0;
+	border-right:0;
 	padding:10px;
 }
 
@@ -565,14 +569,14 @@ textarea {
 }
 
 .select-input { 
-	background-color: #fafafa;
-	background-image:url(images/icon-chev-down-grey.svg);
+	background-color: #fff;
+	background-image: url(images/icon-chev-down-grey.svg);
 	background-position: right 12px top 50%;
 	background-repeat: no-repeat;
 	background-size: 14px auto;
 	border: 1px solid #ccc;
 	border-radius: 2px;
-	height: 34px;
+	height: 43px;
 	min-width:200px;
 	overflow: hidden;
 	position: relative;
@@ -586,7 +590,7 @@ select {
 	-ms-appearance: none;
 	-webkit-appearance: none;
 	-moz-appearance: none; 
-	background: #fff;
+	background: transparent;
 	cursor: pointer;
 	border: 0;
 	display: block;
@@ -1040,14 +1044,11 @@ or wrap each row of columns in a <div class="row"> */
 	padding:20px;
 }
 
-	@media only screen and (min-width: 600px) {
-		
+	@media only screen and (min-width: 600px) {	
 		.padded {
 			padding:30px;
-		}
-		
+		}	
 	}
-
 
 .hero {
 	.container {
@@ -1055,7 +1056,10 @@ or wrap each row of columns in a <div class="row"> */
 	}
 	.banner {
 		background:#333;
+		border-radius: 0 0 10px 10px;
+		overflow: hidden;
 		display:block;
+		margin-bottom:20px;
 		position: relative;
 		img {
 			display:block;
@@ -1067,15 +1071,13 @@ or wrap each row of columns in a <div class="row"> */
 				left:0;
 				top:50%;
 			transform: translateY(-50%);
-			width:100%;
-			
+			width:100%;	
 			h1,h2 {
 				color:#fff;
 				font-weight: bold;
 				line-height: 1.1;
 				text-shadow:0 0 2px rgba(0,0,0,0.8);
-			}
-			
+			}	
 			a {
 				color:#fff;
 				text-decoration: none;
@@ -1084,17 +1086,15 @@ or wrap each row of columns in a <div class="row"> */
 			p:last-child {
 				margin-bottom:0;
 			}
-		}
-		
+		}	
 	}
-	
 }
 
-	@media only screen and (min-width: 600px) {
+	@media only screen and (min-width: 830px) {
 	
 		.hero {
 			.banner {
-			
+				margin-bottom:40px;
 			}
 		}
 		
@@ -1621,6 +1621,7 @@ or wrap each row of columns in a <div class="row"> */
 /* Blog section */
 
 .blogListing {
+	padding: 30px 0 50px 0;
 	h1 {
 		
 	}
@@ -1643,16 +1644,15 @@ or wrap each row of columns in a <div class="row"> */
 
 	@media only screen and (min-width: 830px) {	
 		.blogListing {
-		
 			.post {
 				display:flex;
-				align-items: center;
+				align-items: top;
 				
 				.newsThumb {
-					flex:40% 0 0;
+					flex:33.333% 0 0;
 				}
 				.newsText {
-					flex:60% 0 0;
+					flex:66.666% 0 0;
 					padding-left:30px;
 					&.wide {
 						flex:100% 0 0;
@@ -1663,7 +1663,7 @@ or wrap each row of columns in a <div class="row"> */
 		}
 		
 		.blogPost {
-			
+			padding: 30px 0 50px 0;
 			.newsThumb {
 				padding-bottom:30px;
 			}
@@ -1674,9 +1674,10 @@ or wrap each row of columns in a <div class="row"> */
 	}
 
 .postMetadata {
-	background:#eee;
 	font-size:12px;
-	padding:5px 10px;
+	border-top:1px solid #eee;
+	margin:0;
+	padding: 10px 0;
 	
 	span {
 		display:inline-block;
@@ -1716,6 +1717,18 @@ or wrap each row of columns in a <div class="row"> */
 	}
 }
 
+/* Single post */
+
+.required-field-message {
+	display:block;
+	font-style: italic;
+	margin-top:10px;
+}
+
+.required {
+	color: red;
+}
+
 /* Sidebar section */
 
 #sidebar {
@@ -1729,9 +1742,19 @@ or wrap each row of columns in a <div class="row"> */
 	}
 
 	> li {
-		background:#eee;
-		margin:0 0 20px 0;
-		padding:10px;
+		margin:0 0 40px 0;
+		&.widget_text {
+			background:#fff;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.1);
+			padding:20px;
+			img {
+				display:block;
+			}
+			p:last-child {
+				margin:0;
+			}
+		}
 	}
 
 	li li {
@@ -1769,25 +1792,22 @@ or wrap each row of columns in a <div class="row"> */
 
 #search {
 	position: absolute;
-    	left: 0;
+		left: 0;
 		right: 75px;
 }
 
-#s {
-	border:none;
-	border-radius:0;
-}
+#s {}
 
 #search input[type="text"] {
     width: 100%;
 }
 
-#searchsubmit {
+#searchSubmit {
     width: 60px;
 }
 
-#searchwrapper {
-	background:#eee;
+#searchWrapper {
+	background:#fff;
 	padding:10px;
 	
 	label {
@@ -1805,6 +1825,13 @@ or wrap each row of columns in a <div class="row"> */
 	max-width: 800px;
 	padding:40px 20px;
 }
+
+	@media only screen and (min-width: 830px) {
+		#sidebar {
+			padding-left:12px;
+		}
+		
+	}
 
 /* Contact */
 

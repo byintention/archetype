@@ -204,15 +204,15 @@ function mytheme_customise_css() {
 	?>
 	<!-- User editable styles from customiser -->
 	<style type="text/css">
-		body { background-color: <?php echo esc_html( get_theme_mod( 'body_background', '#000000' ) ); ?>;	}
-		body, #headerLogo a { color: <?php echo esc_html( get_theme_mod( 'body_textcolour', '#000000' ) ); ?>; }
-		h1,h2,h3,h4,h5,h6 { color: <?php echo esc_html( get_theme_mod( 'heading_textcolour', '#000000' ) ); ?>; }
-		a, a:visited { color: <?php echo esc_html( get_theme_mod( 'link_colour', '#000000' ) ); ?>; } 
-		button, .btn, input[type="button"], input[type="submit"] { background-color: <?php echo esc_html( get_theme_mod( 'link_colour', '#000000' ) ); ?>; }
+		body { background-color: <?php echo esc_html( get_theme_mod( 'body_background', '#fcfcfc' ) ); ?>;	}
+		body, #headerLogo a { color: <?php echo esc_html( get_theme_mod( 'body_textcolour', '#042825' ) ); ?>; }
+		h1,h2,h3,h4,h5,h6 { color: <?php echo esc_html( get_theme_mod( 'heading_textcolour', '#042825' ) ); ?>; }
+		a, a:visited { color: <?php echo esc_html( get_theme_mod( 'link_colour', '#00804D' ) ); ?>; } 
+		button, .btn, input[type="button"], input[type="submit"] { background-color: <?php echo esc_html( get_theme_mod( 'link_colour', '#00804D' ) ); ?>; }
 		button.menu-trigger { background-color:transparentx; }
 		
-		a:hover { color: <?php echo esc_html( get_theme_mod( 'link_hover_colour', '#000000' ) ); ?>; }
-		.button:hover, .btn:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover { background-color: <?php echo esc_html( get_theme_mod( 'link_hover_colour', '#000000' ) ); ?>; }
+		a:hover { color: <?php echo esc_html( get_theme_mod( 'link_hover_colour', '#00D581' ) ); ?>; }
+		.button:hover, .btn:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover { background-color: <?php echo esc_html( get_theme_mod( 'link_hover_colour', '#00D581' ) ); ?>; }
 	</style>
 	<?php
 }

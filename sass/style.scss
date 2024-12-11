@@ -2036,8 +2036,6 @@ or wrap each row of columns in a <div class="row"> */
 		.navclose {
 			display:none;
 		}
-				
-		
 		
 		#nav2 a.mobile_handle {
 			display:none;
@@ -2073,91 +2071,7 @@ or wrap each row of columns in a <div class="row"> */
 		}
 	}
 	
-	
-.wpcf7-form {
-		
-	/* Hide the browser's default checkbox */
-	input[type="checkbox"] {
-		appearance:none;
-		background-color:#fff;
-		background-position: 50%;
-		background-size: contain;
-		background-repeat: no-repeat;
-		border:1px solid #666;
-		border-radius:5px;
-		display:inline-block;
-		height:24px;
-		margin-right:10px;
-		position:relative;
-			top:0;
-		vertical-align:top;
-		width:24px;
-		&:focus {
-			border-color:#918cad;
-			border-radius:5px;
-			box-shadow: 0 0 0 .25rem rgba(35,24,91,.25)
-		}
-	}
-	
-	input:checked[type=checkbox] {
-		background-color:#666;
-		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3E%3C/svg%3E");
-	}
-	
-	/* Create a custom checkbox */
-	.checkmark {
-		background-color: #fafafa;
-		border:1px solid #666;
-		border-radius:5px;
-		display: inline-block;
-	    height: 25px;
-	    position: absolute;
-		  	top: 7px;
-			left: 0;
-	  	  width: 25px;
-	  	&:focus {
-			border-color:#918cad;
-		    box-shadow: 0 0 0 .25rem rgba(35,24,91,.25)
-	  	}
-	}
-	
-	/* On mouse-over, add a grey background color */
-	.wpcf7:hover input[type="checkbox"] ~ .checkmarkx {
-	  	background-color: #ccc;
-	}
-	
-	/* When the checkbox is checked, add a blue background */
-	input[type="checkbox"]:checked ~ .checkmark {
-	  	background-color: #666;
-	}
-	
-	/* Create the checkmark/indicator (hidden when not checked) */
-	.checkmark:after {
-	  	content: "";
-	  	position: absolute;
-	  	display: none;
-	}
-	
-	/* Show the checkmark when checked */
-	input[type="checkbox"]:checked ~ .checkmark:after {
-	  	display: block;
-	}
-	
-	/* Style the checkmark/indicator */
-	.checkmark:after {
-		border: solid white;
-		border-width: 0 3px 3px 0;
-		display:inline-block;
-		height: 10px;
-		position: absolute;
-		  left: 8px;
-			top: 3px;
-		width: 5px;
-		  	-webkit-transform: rotate(45deg);
-			-ms-transform: rotate(45deg);
-		transform: rotate(45deg);		
-	}	
-}
+
 
 .wpcf7-acceptance {
 	display: inline-block;	
@@ -2247,9 +2161,6 @@ html .wcpt-product-form select {
   visibility: visible;
 }
 
-
 @import 'mobileNav';
-
 //@import 'tiny-slider';
-
-@import 'photoswipe';
+//@import 'photoswipe';

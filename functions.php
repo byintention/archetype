@@ -42,10 +42,6 @@ function archetype_theme_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 	/**
-	 * Disable theme editing.
-	 */
-	define( 'DISALLOW_FILE_EDIT', true );
-	/**
 	 * Theme translation setup.
 	 */
 	load_theme_textdomain( 'archetype', get_template_directory() . '/languages' );

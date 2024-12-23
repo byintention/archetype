@@ -11,7 +11,7 @@ get_header(); ?>
 <div id="blogHeader">
 	<div class="container">
 		<div class="twelve columns">
-			<h1>Archives: <?php single_month_title( '&nbsp;' ); ?></h1>
+			<h1><?php esc_html__( 'Archives:', 'archetype' ); ?> <?php single_month_title( '&nbsp;' ); ?></h1>
 		</div>
 	</div>
 </div>

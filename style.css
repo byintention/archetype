@@ -38,7 +38,7 @@ GitHub Theme URI: byintention/archetype-for-classicpress
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-/* #Reset & Basics (Inspired by E. Meyers) */
+/* Reset & Basics (Inspired by E. Meyers) */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -64,7 +64,7 @@ q:before, q:after {
   content: '';
   content: none; }
 
-/* #Basic Styles */
+/* Basic Styles */
 body {
   background: #F3F6F6;
   font-size: 14px;
@@ -82,7 +82,7 @@ body.loaded {
   opacity: 1;
   transition: opacity 0.5s linear; }
 
-/* #Typography */
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
   color: #042825;
   font-family: raleway, arial, sans-serif;
@@ -127,6 +127,9 @@ em {
 
 strong {
   font-weight: 700; }
+
+.screen-reader-text {
+  display: none; }
 
 .smallText {
   font-size: 12px; }
@@ -197,7 +200,7 @@ hr {
   margin: 10px 0 30px;
   height: 0; }
 
-/* #Links */
+/* Links */
 a, a:visited {
   color: #008550;
   font-weight: bold;
@@ -217,7 +220,7 @@ a:active {
 p a, p a:visited {
   line-height: inherit; }
 
-/* #Lists */
+/* Lists */
 ul, ol {
   line-height: 1.75;
   margin: 0 0 16px 32px; }
@@ -241,7 +244,7 @@ dt {
 dd {
   margin: 0 0 0 30px; }
 
-/* #Notification Styles */
+/* Notification Styles */
 .wpcf7-submit {
   margin-bottom: 10px; }
 
@@ -299,14 +302,14 @@ span.wpcf7-not-valid-tip {
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg); } }
 
-/* hide original loader */
+/* Hide original loader */
 .wpcf7-spinner {
   display: none; }
 
 .submitting .wpcf7-spinner {
   display: inline-block; }
 
-/* style for custom loader - '1s' for speeding up animation */
+/* Style for custom loader - '1s' for speeding up animation */
 .wpcf7-spinner {
   background-image: url(images/icon-refresh4.svg);
   background-position: center center;
@@ -407,12 +410,12 @@ th, td {
   border-right: 0;
   padding: 10px; }
 
-/* #Images */
+/* Images */
 img {
   height: auto;
   max-width: 100%; }
 
-/* #Buttons */
+/* Buttons */
 button {
   background: transparent;
   border: 0; }
@@ -479,7 +482,7 @@ input[type="submit"]:disabled {
   input[type="button"] {
     font-size: 16px; } }
 
-/* #Forms */
+/* Forms */
 form {
   margin-bottom: 20px; }
 
@@ -498,6 +501,7 @@ input[type="password"],
 input[type="email"],
 input[type="tel"],
 input[type="number"],
+input[type="url"],
 textarea,
 select {
   background: #fff;
@@ -524,6 +528,7 @@ input[type="password"]:focus,
 input[type="email"]:focus,
 input[type="tel"]:focus,
 input[type="number"]:focus,
+input[type="url"]:focus,
 textarea:focus {
   border: 1px solid #aaa;
   -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
@@ -590,7 +595,7 @@ input[type="checkbox"] {
   select {
     font-size: 16px; } }
 
-/* Grid < 600px */
+/* Grid < 800px */
 .container {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -628,7 +633,7 @@ input[type="checkbox"] {
 .row {
   margin: 0 0 2% 0; }
 
-/* Grid > 600px */
+/* Grid > 800px */
 @media only screen and (min-width: 800px) {
   .container {
     background: transparent;
@@ -699,7 +704,7 @@ input[type="checkbox"] {
   box-sizing: border-box;
   padding: 10px; }
 
-/* #Clearing */
+/* Clearing */
 /* Self Clearing Goodness */
 .container:after {
   content: "\0020";
@@ -739,8 +744,8 @@ or wrap each row of columns in a <div class="row"> */
   left: 50%;
   transform: translateY(-100%);
   z-index: 9999; }
-  .skipLink:focus {
-    transform: translateY(0%); }
+  .skipLink:focus-visible {
+    transform: translateY(20px); }
 
 .wrap {
   background: transparent; }
@@ -750,7 +755,7 @@ or wrap each row of columns in a <div class="row"> */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   height: 80px;
   position: relative;
-  z-index: 9999; }
+  z-index: 8999; }
   #header .container {
     height: 80px;
     position: relative; }
@@ -1399,24 +1404,21 @@ or wrap each row of columns in a <div class="row"> */
     .blogPost .entry {
       padding-bottom: 50px; } }
 
-.postMetadata {
+.post-metadata {
   font-size: 12px;
   border-top: 1px solid #eee;
   margin: 16px 0 0 0;
   padding: 10px 0;
   flex: 0 0 100%; }
-  .postMetadata span {
+  .post-metadata span {
     display: inline-block; }
-
-.blogcat {
-  padding: 0 16px 0 0; }
-
-.blogdate {
-  padding: 0 16px 0 0; }
-
-.blogcomments {
-  color: #999;
-  padding: 0 16px 0 0; }
+  .post-metadata .blogcat {
+    padding: 0 16px 0 0; }
+  .post-metadata .blogdate {
+    padding: 0 16px 0 0; }
+  .post-metadata .blogcomments {
+    color: #999;
+    padding: 0 16px 0 0; }
 
 .entry img {
   height: auto;
@@ -1443,46 +1445,64 @@ or wrap each row of columns in a <div class="row"> */
 .required {
   color: red; }
 
-#comments {
+#comment-list {
   margin-top: 40px; }
-  #comments .comment-meta {
-    margin-bottom: 16px; }
-  #comments .comment-author,
-  #comments .comment-metadata {
-    display: block; }
-  #comments .fn {
-    font-weight: 700; }
-  #comments .says {
-    display: none; }
-  #comments .comment-metadata {
+
+#comments .comment-meta {
+  margin-bottom: 16px; }
+
+#comments .comment-author,
+#comments .comment-metadata {
+  display: block; }
+
+#comments .fn {
+  font-weight: 700; }
+
+#comments .says {
+  display: none; }
+
+#comments .comment-metadata {
+  line-height: 1;
+  padding-left: 20px; }
+  #comments .comment-metadata a {
+    font-size: .75rem;
     padding-left: 20px; }
-    #comments .comment-metadata a {
-      font-size: .75rem;
-      padding-left: 20px; }
-    #comments .comment-metadata > a {
-      color: #999;
-      font-size: .75rem;
-      font-weight: 400;
-      pointer-events: none;
-      text-decoration: none; }
-  #comments .vcard img {
-    border-radius: 100px;
-    margin-right: 10px;
-    vertical-align: middle;
-    width: 30px; }
-  #comments .comment-content,
-  #comments .reply {
-    padding-left: 40px; }
-  #comments ol {
-    list-style: none;
-    margin: 0; }
+  #comments .comment-metadata > a {
+    color: #999;
+    font-size: .75rem;
+    font-weight: 400;
+    pointer-events: none;
+    text-decoration: none; }
+
+#comments .vcard img {
+  border-radius: 100px;
+  margin-right: 10px;
+  vertical-align: middle;
+  width: 30px; }
+
+#comments .comment-content,
+#comments .reply {
+  padding-left: 40px; }
+
+#comments ol {
+  list-style: none;
+  margin: 0; }
+
+#comments ol.comment-list {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 30px; }
   #comments ol.comment-list article {
     margin-bottom: 40px; }
   #comments ol.comment-list li .children {
     margin-left: 40px; }
-  #comments #respond {
-    border-top: 1px solid #ccc;
-    padding-top: 20px; }
+
+#comments #respond small {
+  display: block;
+  font-size: 80%;
+  margin-top: 20px; }
+
+#comments #respond #cancel-comment-reply-link {
+  color: #c00; }
 
 /* Sidebar section */
 #sidebar {
@@ -1623,6 +1643,14 @@ or wrap each row of columns in a <div class="row"> */
           display: none; }
         #nav2 ul li:last-child > a {
           padding-right: 0; }
+        #nav2 ul li.cta a {
+          border: 2px solid #008550;
+          border-radius: 4px;
+          line-height: 38px;
+          padding: 0 30px; }
+          #nav2 ul li.cta a:hover {
+            background: #008550;
+            color: #fff; }
         #nav2 ul li .sub-menu {
           background: #fff;
           box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
@@ -1668,24 +1696,34 @@ or wrap each row of columns in a <div class="row"> */
     opacity: 0;
     transition: all 0.1s linear; } }
 
-.wpcf7-acceptance {
-  display: inline-block;
-  line-height: 24px;
-  margin: 10px 0;
-  position: relative; }
-  .wpcf7-acceptance .wpcf7-list-item {
-    margin: 0; }
-  .wpcf7-acceptance input {
-    margin: 0 10px 0 0;
-    vertical-align: top; }
-  .wpcf7-acceptance label {
-    display: block; }
-  .wpcf7-acceptance span {
-    vertical-align: top; }
+/* Custom checkbox */
+label {
+  line-height: 30px; }
 
-html .wcpt-product-form select {
-  height: 40px;
-  width: 100%; }
+/* Hide the browser's default checkbox */
+input[type="checkbox"] {
+  appearance: none;
+  background-color: #fff;
+  background-position: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: inline-block;
+  height: 24px;
+  margin-right: 10px;
+  position: relative;
+  top: 0;
+  vertical-align: top;
+  width: 24px; }
+  input[type="checkbox"]:focus {
+    border-color: #blue;
+    border-radius: 5px;
+    box-shadow: 0 0 0 0.25rem rgba(35, 35, 35, 0.25); }
+
+input:checked[type=checkbox] {
+  background-color: #666;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3E%3C/svg%3E"); }
 
 .social {
   font-size: 0;

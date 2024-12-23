@@ -147,29 +147,6 @@
       "oF" : 0,
       "pg" : 0
     },
-    "\/images\/default-skin.png" : {
-      "ft" : 32768,
-      "iS" : 547,
-      "oA" : 0,
-      "oAP" : "\/images\/default-skin.png",
-      "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
-      "oT" : 1,
-      "ou" : "lpckwebp-none",
-      "q" : 100,
-      "rq" : 75
-    },
-    "\/images\/default-skin.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/images\/default-skin.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 3758088159,
-      "prP" : 0
-    },
     "\/images\/icon-chev-down-grey.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -350,39 +327,6 @@
       "plM" : 3758088159,
       "prP" : 0
     },
-    "\/images\/icon-star.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/images\/icon-star.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 3758088159,
-      "prP" : 0
-    },
-    "\/images\/icon-zoom.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/images\/icon-zoom.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 3758088159,
-      "prP" : 0
-    },
-    "\/images\/lazy.png" : {
-      "ft" : 32768,
-      "iS" : 119,
-      "oA" : 0,
-      "oAP" : "\/images\/lazy.png",
-      "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
-      "oT" : 1,
-      "ou" : "lpckwebp-none",
-      "q" : 100,
-      "rq" : 75
-    },
     "\/images\/logo.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -404,16 +348,6 @@
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
-      "rq" : 75
-    },
-    "\/images\/preloader.gif" : {
-      "ft" : 4194304,
-      "iS" : 866,
-      "oA" : 0,
-      "oAP" : "\/images\/preloader.gif",
-      "oF" : 0,
-      "opt" : 0,
-      "ou" : "lpckwebp-none",
       "rq" : 75
     },
     "\/includes\/flexible-content.php" : {
@@ -448,72 +382,6 @@
       "oAP" : "\/index.php",
       "oF" : 0
     },
-    "\/js\/combined.min.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/js\/combined.min-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/js\/fcs-min.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/js\/fcs-min-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/js\/fcs.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/js\/fcs-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/js\/jquery.lazyload.min.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/js\/jquery.lazyload.min-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/js\/jquery.matchHeight.min.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/js\/jquery.matchHeight.min-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/js\/jquery.responsinav.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/js\/jquery.responsinav-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
     "\/js\/jquery.slick.min.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -547,17 +415,6 @@
       "sC" : 3,
       "tS" : 0
     },
-    "\/js\/picturefill.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/js\/picturefill-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
     "\/js\/tiny-slider.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -569,27 +426,37 @@
       "sC" : 3,
       "tS" : 0
     },
-    "\/js\/vue-min.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
+    "\/languages\/archetype.mo" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/js\/vue-min-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
+      "oAP" : "\/languages\/archetype.mo",
+      "oF" : 0
     },
-    "\/js\/vue.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
+    "\/languages\/archetype.po" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/js\/vue-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
+      "oAP" : "\/languages\/archetype.po",
+      "oF" : 0
+    },
+    "\/languages\/archetype.pot" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/languages\/archetype.pot",
+      "oF" : 0
+    },
+    "\/languages\/How-to-use-a-pot-file.txt" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/languages\/How-to-use-a-pot-file.txt",
+      "oF" : 0
     },
     "\/LICENSE" : {
       "cB" : 0,
@@ -701,15 +568,15 @@
       "pg" : 0,
       "sct" : 1
     },
-    "\/screenshot.png" : {
-      "ft" : 32768,
-      "iS" : 1679364,
+    "\/screenshot.jpg" : {
+      "ft" : 16384,
+      "iS" : 152336,
+      "jF" : 0,
       "oA" : 0,
-      "oAP" : "\/screenshot.png",
+      "oAP" : "\/screenshot.jpg",
       "oF" : 0,
       "oIPL" : 0,
       "opt" : 0,
-      "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
@@ -794,20 +661,20 @@
       "oF" : 1,
       "pg" : 0
     },
-    "\/template-fullWidth.php" : {
+    "\/template-flexible.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/template-fullWidth.php",
+      "oAP" : "\/template-flexible.php",
       "oF" : 0
     },
-    "\/template-holdingpage.php" : {
+    "\/template-fullwidth.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/template-holdingpage.php",
+      "oAP" : "\/template-fullwidth.php",
       "oF" : 0
     },
     "\/template-testpage.php" : {

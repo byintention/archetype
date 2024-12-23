@@ -23,7 +23,7 @@ if ( post_password_required() ) {
 <div id="comments" class="comments-area">
 	<?php
 	// You can start editing here -- including this comment!
-	if ( have_comments() ) :
+	if ( have_comments() ) {
 		?>
 		<h3 class="comments-title">
 			<?php
@@ -31,13 +31,13 @@ if ( post_password_required() ) {
 			if ( '1' === $susty_wp_comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'the-classicpress-theme' ),
+					__( 'One thought on &ldquo;%1$s&rdquo;', 'archetype' ),
 					'<span>' . get_the_title() . '</span>' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				);
 			} else {
 				printf(
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $susty_wp_comment_count, 'comments title', 'the-classicpress-theme' ) ),
+					__( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $susty_wp_comment_count, 'comments title', 'archetype' ) ),
 					number_format_i18n( $susty_wp_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					'<span>' . get_the_title() . '</span>' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				);
@@ -58,12 +58,12 @@ if ( post_password_required() ) {
 		<?php
 		the_comments_navigation();
 		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() ) :
+		if ( ! comments_open() ) {
 			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'the-classicpress-theme' ); ?></p>
+			<p class="no-comments"><?php esc_html__( 'Comments are closed.', 'archetype' ); ?></p>
 			<?php
-		endif;
-	endif; // Check for have_comments().
+		}
+	} // Check for have_comments().
 	comment_form();
 	?>
 </div><!-- #comments -->

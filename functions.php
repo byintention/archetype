@@ -6,11 +6,6 @@
  */
 
 /**
-Remove meta generator.
- */
-remove_action( 'wp_head', 'wp_generator' );
-
-/**
  * Fix ridiculous hard coded extra 10px width on captions.
  *
  * @param string $attrs does a thing.
@@ -46,8 +41,23 @@ function archetype_theme_setup() {
 	Support Featured Images.
 	 */
 	add_theme_support( 'post-thumbnails' );
+	/**
+	 * Disable theme editing.
+	 */
+	define( 'DISALLOW_FILE_EDIT', true );
 }
 add_action( 'after_setup_theme', 'archetype_theme_setup' );
+
+
+
+/**
+ * Theme translation setup.
+ */
+function rad_theme_setup() {
+	load_theme_textdomain( 'archetype', get_template_directory() . '/languages' );
+}
+add_action( 'after_setup_theme', 'rad_theme_setup' );
+
 
 
 /**
@@ -111,36 +121,41 @@ function mytheme_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'body_background',
 		array(
-			'default'   => '#fcfcfc',
-			'transport' => 'refresh',
+			'default'           => '#fcfcfc',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'sanitize_hex_color', // validates 3 or 6 digit HTML hex color code.
 		)
 	);
 	$wp_customize->add_setting(
 		'body_textcolour',
 		array(
-			'default'   => '#042825',
-			'transport' => 'refresh',
+			'default'           => '#042825',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'sanitize_hex_color', // validates 3 or 6 digit HTML hex color code.
 		)
 	);
 	$wp_customize->add_setting(
 		'heading_textcolour',
 		array(
-			'default'   => '#042825',
-			'transport' => 'refresh',
+			'default'           => '#042825',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'sanitize_hex_color', // validates 3 or 6 digit HTML hex color code.
 		)
 	);
 	$wp_customize->add_setting(
 		'link_colour',
 		array(
-			'default'   => '#00804D',
-			'transport' => 'refresh',
+			'default'           => '#00804D',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'sanitize_hex_color', // validates 3 or 6 digit HTML hex color code.
 		)
 	);
 	$wp_customize->add_setting(
 		'link_hover_colour',
 		array(
-			'default'   => '#00D581',
-			'transport' => 'refresh',
+			'default'           => '#00D581',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'sanitize_hex_color', // validates 3 or 6 digit HTML hex color code.
 		)
 	);
 
@@ -149,7 +164,7 @@ function mytheme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'body_background',
 			array(
-				'label'   => __( 'Background', 'mytheme' ),
+				'label'   => __( 'Background', 'archetype' ),
 				'section' => 'colors',
 			)
 		)
@@ -159,7 +174,7 @@ function mytheme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'body_textcolour',
 			array(
-				'label'   => __( 'Text Colour', 'mytheme' ),
+				'label'   => __( 'Text Colour', 'archetype' ),
 				'section' => 'colors',
 			)
 		)
@@ -169,7 +184,7 @@ function mytheme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'heading_textcolour',
 			array(
-				'label'   => __( 'Heading Colour', 'mytheme' ),
+				'label'   => __( 'Heading Colour', 'archetype' ),
 				'section' => 'colors',
 			)
 		)
@@ -179,7 +194,7 @@ function mytheme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'link_colour',
 			array(
-				'label'   => __( 'Link Colour', 'mytheme' ),
+				'label'   => __( 'Link Colour', 'archetype' ),
 				'section' => 'colors',
 			)
 		)
@@ -189,7 +204,7 @@ function mytheme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'link_hover_colour',
 			array(
-				'label'   => __( 'Link Hover Colour', 'mytheme' ),
+				'label'   => __( 'Link Hover Colour', 'archetype' ),
 				'section' => 'colors',
 			)
 		)
@@ -210,7 +225,6 @@ function mytheme_customise_css() {
 		a, a:visited { color: <?php echo esc_html( get_theme_mod( 'link_colour', '#00804D' ) ); ?>; } 
 		button, .btn, input[type="button"], input[type="submit"] { background-color: <?php echo esc_html( get_theme_mod( 'link_colour', '#00804D' ) ); ?>; }
 		button.menu-trigger { background-color:transparentx; }
-		
 		a:hover { color: <?php echo esc_html( get_theme_mod( 'link_hover_colour', '#00D581' ) ); ?>; }
 		.button:hover, .btn:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover { background-color: <?php echo esc_html( get_theme_mod( 'link_hover_colour', '#00D581' ) ); ?>; }
 	</style>
@@ -220,10 +234,10 @@ add_action( 'wp_head', 'mytheme_customise_css' );
 
 
 /**
- * Remove CSS files - find the handle in the plugin file and add here.
+ * Remove unwanted CSS files from plugins etc - find the handle in the plugin file and add here.
  */
 function remove_unwanted_css() {
-	wp_dequeue_style( 'wp-block-library' );
+	wp_dequeue_style( 'unwanted-css-file' );
 }
 add_action( 'wp_enqueue_scripts', 'remove_unwanted_css', 100 );
 
@@ -241,7 +255,7 @@ add_action( 'wp_enqueue_scripts', 'archetype_css', 200 );
 Custom read more function.
  */
 function custom_read_more() {
-	return '... <a class="read-more" href="' . get_permalink( get_the_ID() ) . '">Read more</a>';
+	return '... <a class="read-more" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read more', 'archetype' ) . '</a>';
 }
 
 /**
@@ -280,6 +294,7 @@ function register_custom_admin_css() {
 add_action( 'admin_footer', 'register_custom_admin_css' );
 
 
+
 /**
  * Add button class to blog pagination links.
  */
@@ -289,11 +304,14 @@ function posts_link_attributes() {
 add_filter( 'next_posts_link_attributes', 'posts_link_attributes' );
 add_filter( 'previous_posts_link_attributes', 'posts_link_attributes' );
 
+
+
 /**
  * Remove emoji junk.
  */
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
 
 
 /**
@@ -309,10 +327,6 @@ function remove_jquery_migrate( &$scripts ) {
 }
 add_filter( 'wp_default_scripts', 'remove_jquery_migrate' );
 
-/**
- * Disable theme editing.
- */
-define( 'DISALLOW_FILE_EDIT', true );
 
 
 /**
@@ -328,8 +342,8 @@ add_filter( 'wpseo_metabox_prio', 'yoasttobottom' );
  * Register Main Menu.
  */
 function register_my_menu() {
-	register_nav_menu( 'main-menu', __( 'Main Menu', 'intention-archetype' ) );
-	register_nav_menu( 'footer-menu', __( 'Footer Menu', 'intention-archetype' ) );
+	register_nav_menu( 'main-menu', __( 'Main Menu', 'archetype' ) );
+	register_nav_menu( 'footer-menu', __( 'Footer Menu', 'archetype' ) );
 }
 add_action( 'init', 'register_my_menu' );
 
@@ -341,7 +355,7 @@ add_action( 'init', 'register_my_menu' );
 function sidebar_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => 'Blog Sidebar',
+			'name'          => __( 'Blog Sidebar', 'archetype' ),
 			'id'            => 'blog-sidebar',
 			'before_widget' => '<li id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</li>',
@@ -351,7 +365,7 @@ function sidebar_widgets_init() {
 	);
 	register_sidebar(
 		array(
-			'name'          => 'Page Sidebar',
+			'name'          => __( 'Page Sidebar', 'archetype' ),
 			'id'            => 'page-sidebar',
 			'before_widget' => '<li id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</li>',
@@ -368,10 +382,9 @@ add_action( 'widgets_init', 'sidebar_widgets_init' );
  * Load Scripts Properly.
  */
 function my_scripts_method() {
-	/**
-	Add match height script.
+	// Add a script.
 	// wp_register_script('archetype-script', get_template_directory_uri() . '/js/jquery.archetype.min.js', array('jquery'));
-	// wp_enqueue_script('archetype-script', true);*/
+	// wp_enqueue_script('archetype-script', true);
 }
 add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 
@@ -395,32 +408,32 @@ add_filter( 'mce_buttons_2', 'my_mce_buttons_2' );
 function tuts_mce_before_init( $settings ) {
 	$style_formats                           = array(
 		array(
-			'title'    => 'Positive',
+			'title'    => __( 'Positive', 'archetype' ),
 			'selector' => 'p',
 			'classes'  => 'positive',
 		),
 		array(
-			'title'    => 'Error',
+			'title'    => __( 'Error', 'archetype' ),
 			'selector' => 'p',
 			'classes'  => 'negative',
 		),
 		array(
-			'title'    => 'Warning',
+			'title'    => __( 'Warning', 'archetype' ),
 			'selector' => 'p',
 			'classes'  => 'warning',
 		),
 		array(
-			'title'    => 'Smaller text',
+			'title'    => __( 'Smaller text', 'archetype' ),
 			'selector' => 'p',
 			'classes'  => 'smallText',
 		),
 		array(
-			'title'    => 'Larger text',
+			'title'    => __( 'Larger text', 'archetype' ),
 			'selector' => 'p',
 			'classes'  => 'largeText',
 		),
 		array(
-			'title'    => 'Button',
+			'title'    => __( 'Button', 'archetype' ),
 			'selector' => 'a',
 			'classes'  => 'btn',
 		),

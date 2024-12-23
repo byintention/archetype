@@ -11,7 +11,7 @@ get_header(); ?>
 <div id="blogHeader">
 	<div class="container">
 		<div class="twelve columns">
-			<h1>Category: <?php single_cat_title( '&nbsp;' ); ?> </h1>
+			<h1><?php esc_html__( 'Category:', 'archetype' ); ?> <?php single_cat_title( '&nbsp;' ); ?> </h1>
 		</div>
 	</div>
 </div>

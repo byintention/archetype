@@ -27,25 +27,26 @@ get_header(); ?>
 				?>
 				</div>
 				<?php if ( has_post_thumbnail() ) { ?>
-				<div class="newsThumb">
+				<p class="blog-image">
 					<img src="<?php the_post_thumbnail_url( 'large' ); ?>" alt="<?php the_title(); ?>">
-				</div>
+				</p>
 				<?php } ?>
 				<h1><?php the_title(); ?></h1>
 				<div class="entry">
 					<?php the_content(); ?>
 				</div>
-				<p class="postMetadata clear">
-					<span class="blogcat">Posted in <?php the_category( ', ' ); ?></span><span class="blogdate"><?php the_time( 'F jS, Y' ); ?> </span>    
+				<p class="post-metadata clear">
+					<span class="blogcat"><?php echo esc_html__( 'Posted in:', 'archetype' ); ?> <?php the_category( ', ' ); ?></span>
+					<span class="blogdate"><?php the_time( 'F jS, Y' ); ?></span>    
 				</p>
 			</div>
-			<div class="white padded rounded shadow" id="comments">
+			<div class="white padded rounded shadow" id="comment-list">
 				<?php
 				if ( comments_open() || get_comments_number() ) {
 					comments_template();
 				} else {
 					?>
-					<em>No comments yet</em>
+					<em><?php echo esc_html__( 'No comments yet.', 'archetype' ); ?></em>
 					<?php
 				}
 				?>

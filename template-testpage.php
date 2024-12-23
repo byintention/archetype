@@ -13,12 +13,11 @@ get_header(); ?>
 		<h1>Grid &amp; Style Test</h1>
 		
 		<?php
-			//Display the page content/body
-			if ( have_posts() ) while ( have_posts() )
-			{
-				the_post();
-				the_content();
-			}
+		// Display the page content/body.
+		if ( have_posts() ) while ( have_posts() ) {
+			the_post();
+			the_content();
+		}
 		?>
 		
 		<h2>Heading 2</h2>
@@ -107,44 +106,48 @@ get_header(); ?>
 			<fieldset>
 				<legend>Fieldset</legend>
 				<div>
-					<label for="name">Name:</label>
+					<label for="name">Name:
 					<input id="name" type="text" name="name" />
+					</label>
 				</div>
 				<div>
-					<label for="company">Company:</label>
+					<label for="company">Company:
 					<input id="company" type="text" name="company" />
+					</label>
 				</div>
 				<div>
-					<label for="email">Email:</label>
-					<input id="email" type="text" name="email" /></div>
+					<label for="email">Email:
+					<input id="email" type="text" name="email" />
+					</label>
+				</div>
 				<div>
-					<label for="state">State:</label>
+					<label for="state">State:
 					<select id="state" name="state">
 						<option value="CA">California -- CA</option>
 						<option value="CO">Colorado -- CO</option>
 						<option value="CN">Connecticut -- CN</option>
 					</select>
+					</label>
 				</div>
 				<div>
-					<label for="phone">Phone:</label>
+					<label for="phone">Phone:
 					<input id="phone" type="text" name="phone" />
+					</label>
 				</div>
 				<div>
-					<label>Your Enquiry:</label>
-					<textarea id="body" cols="10" name="body" rows="4"></textarea>
+					<label>
+						Your Enquiry:
+						<textarea id="body" cols="10" name="body" rows="4"></textarea>
+					</label>
 				</div>
+				
 				<div>
-					<span class="wpcf7-form-control-wrap" data-name="acceptance-828">
-						<span class="wpcf7-form-control wpcf7-acceptance optional">
-							<span class="wpcf7-list-item">
-								<label>
-									<input type="checkbox" name="acceptance-828" value="1" aria-invalid="false">
-									<span class="wpcf7-list-item-label">I agree with the thing</span>
-								</label>
-							</span>
-						</span>
-					</span>
+					<label>
+						<input type="checkbox" name="acceptance-828" value="1" aria-invalid="false">
+						I agree with the thing
+					</label>
 				</div>
+				
 				<div>
 					<input id="send" type="submit" name="send" value="Send" />
 				</div>

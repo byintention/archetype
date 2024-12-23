@@ -9,21 +9,14 @@
 
 get_header(); ?>
 <div class="container searchPage white rounded padded shadow">
-	<h1>Search Results</h1>
-	<p>You searched for: <em><?php echo get_search_query(); ?></em> </p>
+	<h1><?php echo esc_html__( 'Search Results', 'archetype' ); ?></h1>
+	<p><?php echo esc_html__( 'You searched for:', 'archetype' ); ?> <em><?php echo get_search_query(); ?></em> </p>
 	<hr>
 	<?php
 	if ( have_posts() ) {
 		while ( have_posts() ) {
 			the_post();
-			if ( has_post_thumbnail() ) {
-				?>
-				<div class="newsThumb">
-					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-						<img src="<?php the_post_thumbnail_url( 'medium' ); ?>" alt="<?php the_title(); ?>"> 
-					</a>
-				</div>
-			<?php } ?>
+			?>
 			<h3><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h3>
 			<?php
 			the_excerpt();
@@ -34,7 +27,7 @@ get_header(); ?>
 			<div class="alignright"><?php previous_posts_link(); ?></div>
 		</div>
 	<?php } else { ?>
-		<p>No results for that keyword - please search again:</p>
+		<p><?php echo esc_html__( 'No results for that keyword - please search again:', 'archetype' ); ?></p>
 		<div id="searchWrapper">
 			<?php get_search_form(); ?>
 		</div>

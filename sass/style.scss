@@ -28,7 +28,7 @@ GitHub Theme URI: byintention/archetype-for-classicpress
 	box-sizing: border-box;
 }
 
-/* #Reset & Basics (Inspired by E. Meyers) */
+/* Reset & Basics (Inspired by E. Meyers) */
 	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
@@ -60,7 +60,7 @@ q:before, q:after {
 	content: none; 
 }
 
-/* #Basic Styles */
+/* Basic Styles */
 
 body {
 	background: #F3F6F6; 
@@ -81,7 +81,7 @@ body.loaded {
 	transition:opacity 0.5s linear;
 }
 
-/* #Typography */
+/* Typography */
 	
 h1, h2, h3, h4, h5, h6 {
 	color: $colour-text;
@@ -110,6 +110,10 @@ address { margin: 0 0 $base-font-size 0; }
 em { font-style: italic; }
 
 strong { font-weight: $bold; }
+
+.screen-reader-text {
+	display:none;
+}
 
 .smallText { font-size: 12px; }
 
@@ -185,7 +189,7 @@ blockquote {
 
 hr { border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 10px 0 30px; height: 0; }
 
-/* #Links */
+/* Links */
 
 a, a:visited { 
 	color: $colour-link;
@@ -209,7 +213,7 @@ a:active {
 
 p a, p a:visited { line-height: inherit; }
 
-/* #Lists */
+/* Lists */
 
 ul, ol { line-height:1.75; margin: 0 0 $base-font-size $base-font-size * 2; }
 ul { list-style: disc outside; }
@@ -231,7 +235,7 @@ dd {
 	margin: 0 0 0 30px;
 }
 
-/* #Notification Styles */
+/* Notification Styles */
 
 .wpcf7-submit {
 	margin-bottom: 10px;
@@ -302,7 +306,7 @@ span.wpcf7-not-valid-tip {
   }
 }
 
-/* hide original loader */
+/* Hide original loader */
 .wpcf7-spinner {
   display: none;
 }
@@ -311,7 +315,7 @@ span.wpcf7-not-valid-tip {
   display: inline-block;
 }
 
-/* style for custom loader - '1s' for speeding up animation */
+/* Style for custom loader - '1s' for speeding up animation */
 .wpcf7-spinner {
   background-image: url(images/icon-refresh4.svg);
   background-position: center center;
@@ -423,14 +427,14 @@ th, td {
 	padding:10px;
 }
 
-/* #Images */
+/* Images */
 
 img {
 	height:auto;
 	max-width:100%;
 }
 
-/* #Buttons */
+/* Buttons */
 
 button {
 	background:transparent;
@@ -508,7 +512,7 @@ input[type="submit"]:disabled {
 		
 	}
 
-/* #Forms */
+/* Forms */
 
 form {
 	margin-bottom: 20px;
@@ -531,6 +535,7 @@ input[type="password"],
 input[type="email"],
 input[type="tel"],
 input[type="number"],
+input[type="url"],
 textarea,
 select {
 	background: #fff;
@@ -558,6 +563,7 @@ input[type="password"]:focus,
 input[type="email"]:focus,
 input[type="tel"]:focus,
 input[type="number"]:focus,
+input[type="url"]:focus,
 textarea:focus {
 	border: 1px solid #aaa;
 		-moz-box-shadow: 0 0 3px rgba(0,0,0,.2);
@@ -636,7 +642,7 @@ input[type="checkbox"] {
 	}
 
 
-/* Grid < 600px */
+/* Grid < 800px */
 
 	.container { 
 	  	-moz-box-sizing: border-box;
@@ -679,7 +685,7 @@ input[type="checkbox"] {
 	  margin:0 0 2% 0;
 	} 
 
-/* Grid > 600px */
+/* Grid > 800px */
 
   @media only screen and (min-width: 800px) {
 	     
@@ -704,35 +710,35 @@ input[type="checkbox"] {
 			flex-wrap: wrap;
 		}
 	
-	  	/* Base Grid */
-	  	.container .one.column,
-	  	.container .one.columns             { flex:0 0 6.333%; }
-	  	.container .two.columns             { flex:0 0 14.666%; }
-	  	.container .three.columns           { flex:0 0 23%; }
-	  	.container .four.columns            { flex:0 0 31.333%; }
-	  	.container .five.columns            { flex:0 0 39.666%; }
-	  	.container .six.columns             { flex:0 0 48%; }
-	  	.container .seven.columns           { flex:0 0 56.333%; }
-	  	.container .eight.columns           { flex:0 0 64.666%; }
-	  	.container .nine.columns            { flex:0 0 73%; }
-	  	.container .ten.columns             { flex:0 0 81.333%; }
-	  	.container .eleven.columns          { flex:0 0 89.666%; }
-	  	.container .twelve.columns          { flex:0 0 98%; }
+		/* Base Grid */
+		.container .one.column,
+		.container .one.columns             { flex:0 0 6.333%; }
+		.container .two.columns             { flex:0 0 14.666%; }
+		.container .three.columns           { flex:0 0 23%; }
+		.container .four.columns            { flex:0 0 31.333%; }
+		.container .five.columns            { flex:0 0 39.666%; }
+		.container .six.columns             { flex:0 0 48%; }
+		.container .seven.columns           { flex:0 0 56.333%; }
+		.container .eight.columns           { flex:0 0 64.666%; }
+		.container .nine.columns            { flex:0 0 73%; }
+		.container .ten.columns             { flex:0 0 81.333%; }
+		.container .eleven.columns          { flex:0 0 89.666%; }
+		.container .twelve.columns          { flex:0 0 98%; }
 	
 		.container .one-quarter.column      { flex:0 0 23%; }
 		.container .one-half.column         { flex:0 0 48%; }
 		.container .three-quarter.column    { flex:0 0 73%; }
-	    .container .one-third.column        { flex:0 0 31.333%; }
-  	  	.container .two-thirds.column	   { flex:0 0 64.666%; }
+		.container .one-third.column        { flex:0 0 31.333%; }
+		.container .two-thirds.column	   { flex:0 0 64.666%; }
 	
-		.row { 
-		    margin: 0 -1% 2% -1%;
+		.row {
+			margin: 0 -1% 2% -1%;
 		}	
-		
-	} 
+	
+	}
 	
 	@media only screen and (min-width: 1200px) {
-	 	.container { 
+	 	.container {
 		 	padding:0;
 		}
 	}
@@ -748,9 +754,9 @@ input[type="checkbox"] {
 		background:#DFE5E2;
 		box-sizing: border-box;
 		padding:10px;
-	}   
+	}
 
-/* #Clearing */
+/* Clearing */
 
 /* Self Clearing Goodness */
 .container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
@@ -786,8 +792,8 @@ or wrap each row of columns in a <div class="row"> */
 		left:50%;
     transform: translateY(-100%);
 	z-index:9999;
-	&:focus {
-	  transform: translateY(0%);
+	&:focus-visible {
+	  transform: translateY(20px);
 	}
 }
 	
@@ -800,7 +806,7 @@ or wrap each row of columns in a <div class="row"> */
 	box-shadow: 0 0 10px rgba(0,0,0,0.3);
 	height:80px;
 	position: relative;
-	z-index: 9999;
+	z-index: 8999;
 	.container {
 		height:80px;
 		position: relative;
@@ -955,7 +961,6 @@ or wrap each row of columns in a <div class="row"> */
 	}
 }
 
-
 #headerContactMobile {
 	background-image: url(images/icon-mobile.svg);
 	background-position: center center;
@@ -981,13 +986,11 @@ or wrap each row of columns in a <div class="row"> */
 	
 }
 	
-	@media only screen and (min-width: 1200px) {
-		
+	@media only screen and (min-width: 1200px) {	
 		#headerMenuMobile,
 		#headerContactMobile {
 			display:none;	
-		}
-		
+		}	
 	}
 
 
@@ -1082,7 +1085,7 @@ or wrap each row of columns in a <div class="row"> */
 				left:0;
 				top:50%;
 			transform: translateY(-50%);
-			width:100%;	
+			width:100%;
 			h1,h2 {
 				color:#fff;
 				font-weight: bold;
@@ -1097,7 +1100,7 @@ or wrap each row of columns in a <div class="row"> */
 			p:last-child {
 				margin-bottom:0;
 			}
-		}	
+		}
 	}
 }
 
@@ -1116,11 +1119,9 @@ or wrap each row of columns in a <div class="row"> */
 }
 
 	@media only screen and (min-width: 600px) {
-		
 		.filler {
 			padding:70px 0 0 0;
 		}
-		
 	}
 
 
@@ -1337,7 +1338,7 @@ or wrap each row of columns in a <div class="row"> */
 	padding: 0;
 	.box {
 		margin-bottom:20px;
-	}	
+	}
 	&.boxed .box {
 		padding:20px;
 	}
@@ -1386,7 +1387,7 @@ or wrap each row of columns in a <div class="row"> */
 	}
 
 .boxes {
-	
+
 	.box {
 		flex-flow: row nowrap;
 		flex-basis: 33%; 
@@ -1463,7 +1464,7 @@ or wrap each row of columns in a <div class="row"> */
 				margin:0 auto;
 				width:50%;
 			}	
-		}		
+		}
 	}
 
 
@@ -1587,7 +1588,7 @@ or wrap each row of columns in a <div class="row"> */
 			transition: all 0.2s linear;
 		}
 	}
-	
+
 }
 
 .accordion {
@@ -1595,7 +1596,6 @@ or wrap each row of columns in a <div class="row"> */
 		max-width: 800px;
 	}
 	.accordionPanel {
-		
 		h3 {
 			background:#fafafa;
 			border:1px solid #eee;
@@ -1620,9 +1620,6 @@ or wrap each row of columns in a <div class="row"> */
 				opacity:1;
 				padding:20px;
 				transition: opacity 0.2s linear, height 0.2s linear, padding 0s linear;
-			}
-			h3 {
-				
 			}
 		}
 	}
@@ -1695,7 +1692,7 @@ or wrap each row of columns in a <div class="row"> */
 		}
 	}
 
-.postMetadata {
+.post-metadata {
 	font-size:12px;
 	border-top:1px solid #eee;
 	margin:16px 0 0 0;
@@ -1704,19 +1701,17 @@ or wrap each row of columns in a <div class="row"> */
 	span {
 		display:inline-block;
 	}
-}
-
-.blogcat {
-	padding:0 16px 0 0;
-}
-
-.blogdate {
-	padding:0 16px 0 0;
-}
-
-.blogcomments {
-	color:#999;
-	padding:0 16px 0 0;
+	.blogcat {
+		padding:0 16px 0 0;
+	}
+	
+	.blogdate {
+		padding:0 16px 0 0;
+	}
+	.blogcomments {
+		color:#999;
+		padding:0 16px 0 0;
+	}
 }
 
 .entry img {
@@ -1751,8 +1746,12 @@ or wrap each row of columns in a <div class="row"> */
 	color: red;
 }
 
-#comments {
+#comment-list {
 	margin-top:40px;
+}
+
+#comments {
+	
 	
 	.comment-meta {
 		margin-bottom:16px;
@@ -1768,6 +1767,7 @@ or wrap each row of columns in a <div class="row"> */
 		display:none;
 	}
 	.comment-metadata { 
+		line-height: 1;
 		padding-left:20px;
 		a {
 			font-size:.75rem;
@@ -1796,6 +1796,8 @@ or wrap each row of columns in a <div class="row"> */
 		margin:0;
 	}
 	ol.comment-list {
+		border-bottom:1px solid #ccc;
+		margin-bottom:30px;
 		article {
 			margin-bottom:40px;
 		}
@@ -1806,8 +1808,14 @@ or wrap each row of columns in a <div class="row"> */
 		}
 	}
 	#respond {
-		border-top:1px solid #ccc;
-		padding-top:20px;	
+		small {
+			display:block;
+			font-size: 80%;
+			margin-top:20px;
+		}
+		#cancel-comment-reply-link {
+			color: #c00;
+		}	
 	}
 }
 
@@ -1971,7 +1979,6 @@ or wrap each row of columns in a <div class="row"> */
 
 
 	@media only screen and (min-width: 1200px) {
-
 		#nav2 {
 			display:block;
 			position: absolute;
@@ -2008,6 +2015,17 @@ or wrap each row of columns in a <div class="row"> */
 						padding-right:0;
 					}
 					
+					&.cta a {
+						border:2px solid $colour-link;
+						border-radius: 4px;
+						line-height:38px;
+						padding:0 30px;
+						&:hover {
+							background: $colour-link;
+							color:#fff;
+						}
+					}
+					
 					.sub-menu {
 						background:#fff;
 						box-shadow:0px 2px 2px rgba(0,0,0,0.3);
@@ -2033,6 +2051,7 @@ or wrap each row of columns in a <div class="row"> */
 					
 				}
 			}
+			
 		}
 		
 		.navclose {
@@ -2074,30 +2093,38 @@ or wrap each row of columns in a <div class="row"> */
 	}
 	
 
+/* Custom checkbox */
 
-.wpcf7-acceptance {
-	display: inline-block;	
-	line-height: 24px;
-	margin:10px 0;
-	position: relative;
-	.wpcf7-list-item {
-		margin:0;
-	}
-	input {
-		margin:0 10px 0 0;
-		vertical-align: top;
-	}
-	label {
-		display:block;
-	}
-	span {
-		vertical-align: top;
+label {
+	line-height:30px;
+}
+
+/* Hide the browser's default checkbox */
+input[type="checkbox"] {
+	appearance:none;
+	background-color:#fff;
+	background-position: 50%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	border:1px solid #ccc;
+	border-radius:5px;
+	display:inline-block;
+	height:24px;
+	margin-right:10px;
+	position:relative;
+		top:0;
+	vertical-align:top;
+	width:24px;
+	&:focus {
+		border-color:#blue;
+		border-radius:5px;
+		box-shadow: 0 0 0 .25rem rgba(35,35,35,.25)
 	}
 }
 
-html .wcpt-product-form select {
-	height:40px;
-	width:100%;
+input:checked[type=checkbox] {
+	background-color:#666;
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3E%3C/svg%3E");
 }
 
 .social {

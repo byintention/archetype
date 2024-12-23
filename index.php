@@ -7,8 +7,8 @@
  * @package archetype
  */
 
-get_header(); 
-$our_title = get_the_title( get_option('page_for_posts', true) );
+get_header();
+$our_title = get_the_title( get_option( 'page_for_posts', true ) );
 ?>
 	<div id="blogHeader">
 		<div class="container">

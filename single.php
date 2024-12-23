@@ -8,10 +8,10 @@
  */
 
 get_header(); ?>
-<div id="content" class="<?php if ( has_post_thumbnail() ) { echo 'noGap'; } ?>">
+<div id="content" <?php echo ( has_post_thumbnail() ) ? 'class="noGap"' : ''; ?>>
 <?php if ( has_post_thumbnail() ) { ?>
 <div class="blog-image">
-	<div id="pageHeader" class="hero">
+	<div id="page-header" class="hero">
 		<div class="container">
 			<div class="twelve columns">
 				<div class="banner">

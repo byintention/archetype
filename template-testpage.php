@@ -1,10 +1,10 @@
 <?php
-/*
-/* Template Name: Style test page
-/* Shows examples of many included styles	
-/*
-/* @package archetype
-*/
+/**
+ * Template Name: Style test page
+ * Shows examples of many included styles
+ *
+ * @package archetype
+ */
 
 get_header(); ?>
 <div class="container grid">
@@ -14,9 +14,11 @@ get_header(); ?>
 		
 		<?php
 		// Display the page content/body.
-		if ( have_posts() ) while ( have_posts() ) {
-			the_post();
-			the_content();
+		if ( have_posts() ) {
+			while ( have_posts() ) {
+				the_post();
+				the_content();
+			}
 		}
 		?>
 		
@@ -32,19 +34,15 @@ get_header(); ?>
 		
 		<p class="has-large-font-size">
 			Larger text: class <code>has-large-font-size</code> Nullam luctus sagittis urna. Vivamus nibh. Fusce
-			 ut nunc. Vivamus sed felis. Nam elit diam, auctor eu, eleifend vel, dictum quis, leo. 
-			 Pellentesque fringilla, tellus quis auctor nonummy, lorem varius massa, at vestibulum 
-			 enim nibh ac massa.
+			ut nunc. Vivamus sed felis. Nam elit diam, auctor eu, eleifend vel, dictum quis, leo. Pellentesque fringilla, tellus quis auctor nonummy, lorem varius massa, at vestibulum enim nibh ac massa.
 		</p> 
 		
 		<p>Paragraph text - Lorem ipsum dolor sit amet,	consectetuer adipiscing elit. Suspendisse lectus nisl, semper sit amet, blandit at, lacinia et, sem. <a href="#">Sed pellentesque turpis ut risus</a>. Nullam luctus sagittis urna. Vivamus nibh. Fusce ut nunc. Vivamus sed felis. Nam elit diam, auctor eu, eleifend vel, dictum quis, leo.  Pellentesque fringilla, tellus quis auctor nonummy, lorem varius massa, at vestibulum  enim nibh ac massa.</p>
 		 
 		<p class="has-small-font-size">
-			 Smaller text:  class <code>has-small-font-size</code> Nullam luctus sagittis urna. Vivamus nibh. Fusce
-			  ut nunc. Vivamus sed felis. Nam elit diam, auctor eu, eleifend vel, dictum quis, leo. 
-			  Pellentesque fringilla, tellus quis auctor nonummy, lorem varius massa, at vestibulum 
-			  enim nibh ac massa.
-		</p> 
+			Smaller text:  class <code>has-small-font-size</code> Nullam luctus sagittis urna. Vivamus nibh. Fusce
+			ut nunc. Vivamus sed felis. Nam elit diam, auctor eu, eleifend vel, dictum quis, leo. Pellentesque fringilla, tellus quis auctor nonummy, lorem varius massa, at vestibulum enim nibh ac massa.
+		</p>
 		
 		<p>Abbreviation: <abbr lang="en" title="World Wide Web Consortium">W3C</abbr></p>
 		
@@ -57,8 +55,8 @@ get_header(); ?>
 		<h3>Buttons &amp; Fields</h3>
 		
 		<p class="clearfix">
-			<a class="btn btn-primary" href="#">Anchor</a> 
-			<button class="btn">Button</button> 
+			<a class="btn btn-primary" href="#">Anchor</a>
+			<button class="btn">Button</button>
 			<input class="btn" type="submit" value="Input" />
 			<input class="" type="text" value="Input" style="display:inline-block;width:200px" />
 		</p>
@@ -67,10 +65,7 @@ get_header(); ?>
 		
 		<h3>Utility Classes</h3>
 		
-		<p class="white rounded padded shadow">This paragraph has classes <code>white rounded padded shadow</code> Sed pellentesque turpis ut risus. Nullam luctus sagittis urna. Vivamus nibh. Fusce
-		 ut nunc. Vivamus sed felis. Nam elit diam, auctor eu, eleifend vel, dictum quis, leo. 
-		 Pellentesque fringilla, tellus quis auctor nonummy, pede lorem varius massa, at vestibulum 
-		 enim nibh ac massa.
+		<p class="white rounded padded shadow">This paragraph has classes <code>white rounded padded shadow</code> Sed pellentesque turpis ut risus. Nullam luctus sagittis urna. Vivamus nibh. Fusce ut nunc. Vivamus sed felis. Nam elit diam, auctor eu, eleifend vel, dictum quis, leo. Pellentesque fringilla, tellus quis auctor nonummy, pede lorem varius massa, at vestibulum enim nibh ac massa.
 		</p>
 		
 		<p class="centre">Centred</p>
@@ -81,10 +76,9 @@ get_header(); ?>
 		
 		<p class="right" style="background:#eee;padding:10px;">Right</p>
 		
-		<p class="clearance">Donec velit. Suspendisse rutrum nunc sed tellus. Maecenas interdum 
-			placerat nulla. Etiam sit amet orci at lectus posuere nonummy. Praesent rutrum ante eget 
-			nisl. Nulla bibendum sodales quam. Phasellus ipsum.</p>
-		
+		<p class="clearance">Donec velit. Suspendisse rutrum nunc sed tellus. Maecenas interdum placerat nulla. Etiam sit amet orci at lectus posuere nonummy. Praesent rutrum ante eget nisl. Nulla bibendum sodales quam. Phasellus ipsum.
+		</p>
+
 		<br>
 		
 		<h3>Notifications</h3>
@@ -122,8 +116,8 @@ get_header(); ?>
 		<h3>Pre Tag</h3>
 		
 		<pre><code>Preformatted Code
-  and again
-    another line</code></pre>
+	and again
+		another line</code></pre>
 		
 		<hr>
 		

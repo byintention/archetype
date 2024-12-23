@@ -97,56 +97,6 @@
       "oAP" : "\/header.php",
       "oF" : 0
     },
-    "\/holding\/bg-desktop-min.jpg" : {
-      "ft" : 16384,
-      "iS" : 35268,
-      "jF" : 0,
-      "oA" : 0,
-      "oAP" : "\/holding\/bg-desktop-min.jpg",
-      "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
-      "ou" : "lpckwebp-none",
-      "q" : 100,
-      "rq" : 75
-    },
-    "\/holding\/bg-mob-min.jpg" : {
-      "ft" : 16384,
-      "iS" : 22955,
-      "jF" : 0,
-      "oA" : 0,
-      "oAP" : "\/holding\/bg-mob-min.jpg",
-      "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
-      "ou" : "lpckwebp-none",
-      "q" : 100,
-      "rq" : 75
-    },
-    "\/holding\/style-min.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/holding\/style-min-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
-    "\/holding\/style.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/holding\/style-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
     "\/images\/icon-chev-down-grey.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -490,6 +440,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/page.php",
+      "oF" : 0
+    },
+    "\/README.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/README.html",
       "oF" : 0
     },
     "\/README.md" : {

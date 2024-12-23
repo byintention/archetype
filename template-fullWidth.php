@@ -1,16 +1,16 @@
 <?php
 /**
-/* Template Name: Full width, no sidebar
-/*
-/* The full width page template for our theme, no sidebar.
-/*
-/* @link https://developer.wordpress.org/themes/basics/template-hierarchy/
-/*
-/* @package archetype
-*/
+ * Template Name: Full width, no sidebar
+ *
+ * The full width page template for our theme, no sidebar.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package archetype
+ */
 
 get_header(); ?>
-	<div id="content" class="<?php if ( has_post_thumbnail() ) { echo 'noGap'; } ?>">
+	<div id="content" <?php echo ( has_post_thumbnail() ) ? 'class="noGap"' : ''; ?>>
 		<?php if ( has_post_thumbnail() ) { ?>
 			<div id="pageHeader" class="hero">
 				<div class="container">

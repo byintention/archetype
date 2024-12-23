@@ -8,16 +8,16 @@
  */
 
 get_header(); ?>
-<div id="blogHeader">
+<div id="blog-header">
 	<div class="container">
 		<div class="twelve columns">
-			<h1><?php esc_html__( 'Category:', 'archetype' ); ?> <?php single_cat_title( '&nbsp;' ); ?> </h1>
+			<h1><?php echo esc_html__( 'Category:', 'archetype' ); ?> <?php single_cat_title( '&nbsp;' ); ?> </h1>
 		</div>
 	</div>
 </div>
 <div id="content">
-	<div class="container blogListing">
-		<div class="eight columns">
+	<div class="container blog-listing">
+		<div class="nine columns">
 			<?php get_template_part( 'includes/postloop' ); ?>
 		</div>
 	<?php get_sidebar(); ?>

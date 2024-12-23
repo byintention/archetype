@@ -207,6 +207,16 @@
       "plM" : 3758088159,
       "prP" : 0
     },
+    "\/images\/icon-info.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/images\/icon-info.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 3758088159,
+      "prP" : 0
+    },
     "\/images\/icon-location.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -356,6 +366,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/includes\/flexible-content.php",
+      "oF" : 0
+    },
+    "\/includes\/meta.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/includes\/meta.php",
       "oF" : 0
     },
     "\/includes\/postloop.php" : {
@@ -661,12 +679,12 @@
       "oF" : 1,
       "pg" : 0
     },
-    "\/template-flexible.php" : {
+    "\/tag.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/template-flexible.php",
+      "oAP" : "\/tag.php",
       "oF" : 0
     },
     "\/template-fullwidth.php" : {

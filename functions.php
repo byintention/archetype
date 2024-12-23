@@ -45,18 +45,12 @@ function archetype_theme_setup() {
 	 * Disable theme editing.
 	 */
 	define( 'DISALLOW_FILE_EDIT', true );
-}
-add_action( 'after_setup_theme', 'archetype_theme_setup' );
-
-
-
-/**
- * Theme translation setup.
- */
-function rad_theme_setup() {
+	/**
+	 * Theme translation setup.
+	 */
 	load_theme_textdomain( 'archetype', get_template_directory() . '/languages' );
 }
-add_action( 'after_setup_theme', 'rad_theme_setup' );
+add_action( 'after_setup_theme', 'archetype_theme_setup' );
 
 
 
@@ -158,6 +152,14 @@ function mytheme_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'sanitize_hex_color', // validates 3 or 6 digit HTML hex color code.
 		)
 	);
+	$wp_customize->add_setting(
+		'accent_colour',
+		array(
+			'default'           => '#DFE5E2',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'sanitize_hex_color', // validates 3 or 6 digit HTML hex color code.
+		)
+	);
 
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
@@ -209,6 +211,16 @@ function mytheme_customize_register( $wp_customize ) {
 			)
 		)
 	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'accent_colour',
+			array(
+				'label'   => __( 'Accent Colour', 'archetype' ),
+				'section' => 'colors',
+			)
+		)
+	);
 }
 add_action( 'customize_register', 'mytheme_customize_register' );
 
@@ -223,10 +235,13 @@ function mytheme_customise_css() {
 		body, #headerLogo a { color: <?php echo esc_html( get_theme_mod( 'body_textcolour', '#042825' ) ); ?>; }
 		h1,h2,h3,h4,h5,h6 { color: <?php echo esc_html( get_theme_mod( 'heading_textcolour', '#042825' ) ); ?>; }
 		a, a:visited { color: <?php echo esc_html( get_theme_mod( 'link_colour', '#00804D' ) ); ?>; } 
-		button, .btn, input[type="button"], input[type="submit"] { background-color: <?php echo esc_html( get_theme_mod( 'link_colour', '#00804D' ) ); ?>; }
-		button.menu-trigger { background-color:transparentx; }
+		#headerMenuMobile button span, #headerMenuMobile button:before,	#headerMenuMobile button:after { background-color: <?php echo esc_html( get_theme_mod( 'link_colour', '#00804D' ) ); ?>; } 
+		button, .btn, .btn:visited, input[type="button"], input[type="submit"] { background-color: <?php echo esc_html( get_theme_mod( 'link_colour', '#00804D' ) ); ?>; }
 		a:hover { color: <?php echo esc_html( get_theme_mod( 'link_hover_colour', '#00D581' ) ); ?>; }
 		.button:hover, .btn:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover { background-color: <?php echo esc_html( get_theme_mod( 'link_hover_colour', '#00D581' ) ); ?>; }
+		#footer { background-color: <?php echo esc_html( get_theme_mod( 'body_textcolour', '#042825' ) ); ?>; }
+		blockquote { border-left-color: <?php echo esc_html( get_theme_mod( 'body_textcolour', '#042825' ) ); ?>; } 
+		pre, code, blockquote, fieldset, .gridRow .column, .gridRow .columns { background: <?php echo esc_html( get_theme_mod( 'accent_colour', '#DFE5E2' ) ); ?>; }
 	</style>
 	<?php
 }
@@ -255,7 +270,7 @@ add_action( 'wp_enqueue_scripts', 'archetype_css', 200 );
 Custom read more function.
  */
 function custom_read_more() {
-	return '... <a class="read-more" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read more', 'archetype' ) . '</a>';
+	return '...';
 }
 
 /**
@@ -425,12 +440,12 @@ function tuts_mce_before_init( $settings ) {
 		array(
 			'title'    => __( 'Smaller text', 'archetype' ),
 			'selector' => 'p',
-			'classes'  => 'smallText',
+			'classes'  => 'has-small-font-size',
 		),
 		array(
 			'title'    => __( 'Larger text', 'archetype' ),
 			'selector' => 'p',
-			'classes'  => 'largeText',
+			'classes'  => 'has-large-font-size',
 		),
 		array(
 			'title'    => __( 'Button', 'archetype' ),

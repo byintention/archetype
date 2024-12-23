@@ -131,10 +131,10 @@ strong {
 .screen-reader-text {
   display: none; }
 
-.smallText {
+p.has-small-font-size {
   font-size: 12px; }
 
-.largeText {
+p.has-large-font-size {
   font-size: 17px;
   line-height: 1.4; }
 
@@ -168,9 +168,9 @@ strong {
     font-size: 20px; }
   h1, h2, h3, h4, h5, h6 {
     margin-bottom: 24px; }
-  .smallText {
+  p.has-small-font-size {
     font-size: 14px; }
-  .largeText {
+  p.has-large-font-size {
     font-size: 19px; } }
 
 /*	Blockquotes  */
@@ -252,6 +252,17 @@ dd {
 .positive, .wpcf7-mail-sent-ok {
   background-color: #006600;
   background-image: url(images/icon-pos.svg);
+  background-position: 10px 9px;
+  background-repeat: no-repeat;
+  background-size: 14px 14px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 5px 10px 5px 32px; }
+
+.warning {
+  background-color: #0082b2;
+  background-image: url(images/icon-info.svg);
   background-position: 10px 9px;
   background-repeat: no-repeat;
   background-size: 14px 14px;
@@ -506,9 +517,9 @@ textarea,
 select {
   background: #fff;
   border: 1px solid #ccc;
-  border-radius: 2px;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -752,7 +763,6 @@ or wrap each row of columns in a <div class="row"> */
 
 #header {
   background: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   height: 80px;
   position: relative;
   z-index: 8999; }
@@ -829,7 +839,6 @@ or wrap each row of columns in a <div class="row"> */
     height: 29px;
     width: 29px; }
     #headerMenuMobile button span {
-      background: #008550;
       display: block;
       font-size: 0;
       height: 5px;
@@ -840,7 +849,6 @@ or wrap each row of columns in a <div class="row"> */
       transition: all 0.2s ease-in-out;
       width: 29px; }
     #headerMenuMobile button:before {
-      background: #008550;
       content: "";
       height: 5px;
       position: absolute;
@@ -849,7 +857,6 @@ or wrap each row of columns in a <div class="row"> */
       transition: all 0.2s ease-in-out;
       width: 29px; }
     #headerMenuMobile button:after {
-      background: #008550;
       content: "";
       height: 5px;
       position: absolute;
@@ -940,14 +947,14 @@ or wrap each row of columns in a <div class="row"> */
   overflow: hidden; }
 
 .shadow {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.075); }
 
 .padded {
   padding: 20px; }
 
 @media only screen and (min-width: 600px) {
   .padded {
-    padding: 30px; } }
+    padding: 40px; } }
 
 .hero .container {
   padding: 0; }
@@ -1048,7 +1055,7 @@ or wrap each row of columns in a <div class="row"> */
 .newsCards .card {
   background: #fff;
   margin-bottom: 40px; }
-  .newsCards .card .newsThumb img {
+  .newsCards .card .news-thumb img {
     display: block;
     width: 100%; }
   .newsCards .card .newsExcerpt {
@@ -1362,61 +1369,68 @@ or wrap each row of columns in a <div class="row"> */
   transition: opacity 0.2s linear, height 0.2s linear, padding 0s linear; }
 
 /* Blog section */
-#blogHeader {
-  background: #008550;
-  padding: 40px;
+#bread {
+  margin-bottom: 20px; }
+
+#blog-header {
+  padding: 40px 0 0 0;
   text-align: center; }
-  #blogHeader h1 {
-    color: #fff;
-    margin: 0; }
+  #blog-header .twelve {
+    border-bottom: 1px solid #ddd; }
 
-.blogListing {
-  padding: 0; }
-  .blogListing .newsThumb img {
-    display: block; }
-  .blogListing .post {
-    margin-bottom: 50px; }
+@media only screen and (min-width: 830px) {
+  #blog-header {
+    text-align: left; } }
 
-.blogPost {
-  padding: 30px 20px 50px 20px; }
-  .blogPost #bread {
-    padding: 15px 0; }
-  .blogPost .newsThumb img {
+.blog-listing .news-thumb img {
+  display: block; }
+
+.blog-listing .post {
+  margin-bottom: 50px;
+  word-break: break-word; }
+
+@media only screen and (min-width: 830px) {
+  .blog-listing {
+    padding: 0; } }
+
+.blog-post {
+  padding: 0 20px 50px 20px;
+  word-break: break-word; }
+  .blog-post .news-thumb img {
     display: block; }
 
 @media only screen and (min-width: 830px) {
-  .blogListing .post {
+  .blog-listing .post {
     display: flex;
     align-items: top;
     flex-wrap: wrap; }
-    .blogListing .post .newsThumb {
-      flex: 33.333% 0 0; }
-    .blogListing .post .newsText {
-      flex: 66.666% 0 0;
+    .blog-listing .post .news-thumb {
+      flex: 100% 0 0; }
+    .blog-listing .post .news-text {
+      flex: 100% 0 0;
       padding-right: 30px; }
-      .blogListing .post .newsText.wide {
-        flex: 100% 0 0;
-        padding: 0; }
-  .blogPost {
-    padding: 30px 0 50px 0; }
-    .blogPost .newsThumb {
+      .blog-listing .post .news-text.wide {
+        flex: 100% 0 0; }
+  .blog-post {
+    padding: 0 0 50px 0; }
+    .blog-post .news-thumb {
       padding-bottom: 30px; }
-    .blogPost .entry {
+    .blog-post .entry {
       padding-bottom: 50px; } }
 
 .post-metadata {
   font-size: 12px;
   border-top: 1px solid #eee;
-  margin: 16px 0 0 0;
+  margin: 32px 0 0 0;
   padding: 10px 0;
   flex: 0 0 100%; }
   .post-metadata span {
     display: inline-block; }
-  .post-metadata .blogcat {
+  .post-metadata .blog-cat {
     padding: 0 16px 0 0; }
-  .post-metadata .blogdate {
+  .post-metadata .blog-date {
     padding: 0 16px 0 0; }
-  .post-metadata .blogcomments {
+  .post-metadata .blog-comments {
     color: #999;
     padding: 0 16px 0 0; }
 
@@ -1565,7 +1579,7 @@ or wrap each row of columns in a <div class="row"> */
   #searchWrapper div {
     margin: 0; }
 
-.searchPage {
+.search-page {
   display: block;
   margin: 40px auto;
   max-width: 800px;
@@ -1578,7 +1592,6 @@ or wrap each row of columns in a <div class="row"> */
 /* Contact */
 /* Footer */
 #footer {
-  background: #042825;
   color: #eee;
   padding: 50px 0;
   text-align: center; }

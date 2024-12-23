@@ -115,9 +115,9 @@ strong { font-weight: $bold; }
 	display:none;
 }
 
-.smallText { font-size: 12px; }
+p.has-small-font-size { font-size: 12px; }
 
-.largeText { font-size: 17px; line-height: 1.4;}
+p.has-large-font-size { font-size: 17px; line-height: 1.4;}
 
 .wp-caption {
 	background:#eee;
@@ -155,9 +155,9 @@ strong { font-weight: $bold; }
 			margin-bottom:24px;
 		}
 		
-		.smallText { font-size: 14px; }
+		p.has-small-font-size { font-size: 14px; }
 		
-		.largeText { font-size: 19px;}
+		p.has-large-font-size { font-size: 19px;}
 		
 	}
 
@@ -245,6 +245,18 @@ dd {
 .positive, .wpcf7-mail-sent-ok {
 	background-color:#006600;
 	background-image: url(images/icon-pos.svg);
+	background-position: 10px 9px;
+	background-repeat:no-repeat;	
+	background-size:14px 14px;
+	color:#fff;
+	font-size:16px;
+	font-weight: 700;
+	padding: 5px 10px 5px 32px;
+}
+
+.warning {
+	background-color:#0082b2;
+	background-image: url(images/icon-info.svg);
 	background-position: 10px 9px;
 	background-repeat:no-repeat;	
 	background-size:14px 14px;
@@ -540,9 +552,9 @@ textarea,
 select {
 	background: #fff;
 	border: 1px solid #ccc;
-	border-radius: 2px;
-		-moz-border-radius: 2px;
-		-webkit-border-radius: 2px;
+	border-radius: 3px;
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
 	box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		-webkit-box-sizing: border-box;
@@ -803,7 +815,7 @@ or wrap each row of columns in a <div class="row"> */
 
 #header {
 	background:#fff;
-	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+	//box-shadow: 0 0 10px rgba(0,0,0,0.3);
 	height:80px;
 	position: relative;
 	z-index: 8999;
@@ -902,7 +914,6 @@ or wrap each row of columns in a <div class="row"> */
 		height:29px;
 		width:29px;
 		span {
-			background:$colour-button;
 			display:block;
 			font-size:0;
 			height:5px;
@@ -914,7 +925,6 @@ or wrap each row of columns in a <div class="row"> */
 			width:29px;
 		}
 		&:before {
-			background:$colour-button;
 			content:"";
 			height:5px;
 			position: absolute;
@@ -924,7 +934,6 @@ or wrap each row of columns in a <div class="row"> */
 			width:29px;
 		}
 		&:after {
-			background:$colour-button;
 			content:"";
 			height:5px;
 			position: absolute;
@@ -1051,7 +1060,7 @@ or wrap each row of columns in a <div class="row"> */
 }
 
 .shadow {
-	box-shadow: 0 0 10px rgba(0,0,0,0.1);
+	box-shadow: 0 0 10px rgba(0,0,0,0.075);
 }
 
 .padded {
@@ -1060,7 +1069,7 @@ or wrap each row of columns in a <div class="row"> */
 
 	@media only screen and (min-width: 600px) {	
 		.padded {
-			padding:30px;
+			padding:40px;
 		}	
 	}
 
@@ -1196,7 +1205,7 @@ or wrap each row of columns in a <div class="row"> */
 	.card {
 		background:#fff;
 		margin-bottom:40px;
-		.newsThumb {
+		.news-thumb {
 			img {
 				display:block;
 				width:100%;
@@ -1214,7 +1223,7 @@ or wrap each row of columns in a <div class="row"> */
 			.card {
 				flex: 0 0 31.333%;
 				margin:0 1%;
-				.newsThumb {
+				.news-thumb {
 					
 				}
 				.newsExcerpt {
@@ -1628,62 +1637,74 @@ or wrap each row of columns in a <div class="row"> */
 
 /* Blog section */
 
-#blogHeader {
-	background: $colour-link;
-	padding:40px;
+#bread {
+	margin-bottom:20px;
+}
+
+#blog-header {
+	padding:40px 0 0 0;
 	text-align: center;
+	.twelve {
+		border-bottom:1px solid #ddd;
+	}
 	h1 {
-		color:#fff;
-		margin:0;
+		//color:#fff;
+		//margin:0;
 	}
 }
 
-.blogListing {
-	padding: 0;
-	h1 {
-		
+	@media only screen and (min-width: 830px) {	
+		#blog-header {
+			text-align: left;
+		}
 	}
-	.newsThumb img {
+
+.blog-listing {
+	.news-thumb img {
 		display:block;
 	}
 	.post {
 		margin-bottom:50px;
+		word-break: break-word;	
 	}
 }
 
-.blogPost {
-	padding: 30px 20px 50px 20px;
-	#bread {
-		padding:15px 0;
+	@media only screen and (min-width: 830px) {	
+		.blog-listing {
+			padding:0;
+		}
 	}
-	.newsThumb img {
+
+.blog-post {
+	padding: 0 20px 50px 20px;
+	word-break: break-word;	
+	.news-thumb img {
 		display:block;
 	}
 }
 
 	@media only screen and (min-width: 830px) {	
-		.blogListing {
+		.blog-listing {
 			.post {
 				display:flex;
 					align-items: top;
 					flex-wrap: wrap;
-				.newsThumb {
-					flex:33.333% 0 0;
+				.news-thumb {
+					flex:100% 0 0;
 				}
-				.newsText {
-					flex:66.666% 0 0;
+				.news-text {
+					flex:100% 0 0;
 					padding-right:30px;
 					&.wide {
 						flex:100% 0 0;
-						padding:0;
 					}
 				}
 			}
 		}
 		
-		.blogPost {
-			padding: 30px 0 50px 0;
-			.newsThumb {
+		.blog-post {
+			padding: 0 0 50px 0;
+			.news-thumb {
 				padding-bottom:30px;
 			}
 			.entry {
@@ -1695,20 +1716,24 @@ or wrap each row of columns in a <div class="row"> */
 .post-metadata {
 	font-size:12px;
 	border-top:1px solid #eee;
-	margin:16px 0 0 0;
+	margin:32px 0 0 0;
 	padding: 10px 0;
 	flex:0 0 100%;
 	span {
 		display:inline-block;
 	}
-	.blogcat {
+	.blog-cat {
 		padding:0 16px 0 0;
 	}
-	
-	.blogdate {
+	.blog-date {
 		padding:0 16px 0 0;
 	}
-	.blogcomments {
+	.blog-tag {
+		a {
+		}
+		
+	}
+	.blog-comments {
 		color:#999;
 		padding:0 16px 0 0;
 	}
@@ -1751,8 +1776,6 @@ or wrap each row of columns in a <div class="row"> */
 }
 
 #comments {
-	
-	
 	.comment-meta {
 		margin-bottom:16px;
 	}
@@ -1899,18 +1922,15 @@ or wrap each row of columns in a <div class="row"> */
 #searchWrapper {
 	background:#fff;
 	padding:10px;
-	
 	label {
 		display:none;
 	}
-	
 	div {
 		margin:0;
 	}
-	
 }
 
-.searchPage {
+.search-page {
 	display:block;
 	margin:40px auto ;
 	max-width: 800px;
@@ -1930,7 +1950,6 @@ or wrap each row of columns in a <div class="row"> */
 /* Footer */
 
 #footer {
-	background:	$colour-text;
 	color:	#eee;
 	padding:50px 0;
 	text-align:center;

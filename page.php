@@ -10,7 +10,7 @@
 get_header(); ?>
 	<div id="content" class="<?php if ( has_post_thumbnail() ) { echo 'noGap'; } ?>">
 		<?php if ( has_post_thumbnail() ) { ?>
-			<div id="pageHeader" class="hero">
+			<div id="page-header" class="hero">
 				<div class="container">
 					<div class="twelve columns">
 						<div class="banner">
@@ -24,7 +24,7 @@ get_header(); ?>
 			</div>
 		<?php } ?>	
 		<div class="container">
-			<div id="pageContent" class="eight columns rounded padded white shadow">
+			<div id="page-content" class="nine columns rounded padded white shadow">
 			<?php
 			if ( have_posts() ) {
 				while ( have_posts() ) {

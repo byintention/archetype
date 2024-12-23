@@ -8,8 +8,22 @@
  */
 
 get_header(); ?>
-<div id="content" class="container blogPost">
-	<div class="eight columns">
+<div id="content" class="<?php if ( has_post_thumbnail() ) { echo 'noGap'; } ?>">
+<?php if ( has_post_thumbnail() ) { ?>
+<div class="blog-image">
+	<div id="pageHeader" class="hero">
+		<div class="container">
+			<div class="twelve columns">
+				<div class="banner">
+					<img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<?php } ?>
+<div class="container blog-post">
+	<div class="nine columns">
 		<?php
 		if ( have_posts() ) {
 			while ( have_posts() ) {
@@ -19,26 +33,18 @@ get_header(); ?>
 				<div id="bread">
 				<?php
 				if ( function_exists( 'yoast_breadcrumb' ) ) {
-					yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' );
+					yoast_breadcrumb();
 				}
 				if ( function_exists( 'seopress_display_breadcrumbs' ) ) {
 					seopress_display_breadcrumbs();
 				}
 				?>
 				</div>
-				<?php if ( has_post_thumbnail() ) { ?>
-				<p class="blog-image">
-					<img src="<?php the_post_thumbnail_url( 'large' ); ?>" alt="<?php the_title(); ?>">
-				</p>
-				<?php } ?>
 				<h1><?php the_title(); ?></h1>
 				<div class="entry">
 					<?php the_content(); ?>
 				</div>
-				<p class="post-metadata clear">
-					<span class="blogcat"><?php echo esc_html__( 'Posted in:', 'archetype' ); ?> <?php the_category( ', ' ); ?></span>
-					<span class="blogdate"><?php the_time( 'F jS, Y' ); ?></span>    
-				</p>
+				<?php get_template_part( 'includes/meta' ); ?>
 			</div>
 			<div class="white padded rounded shadow" id="comment-list">
 				<?php

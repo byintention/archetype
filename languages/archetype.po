@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: archetype\n"
 "Report-Msgid-Bugs-To: Translator Name <translations@example."
 "com>\n"
-"POT-Creation-Date: 2024-12-20 02:51+0000\n"
-"PO-Revision-Date: 2024-12-20 18:15+0000\n"
+"POT-Creation-Date: 2024-12-23 21:02+0000\n"
+"PO-Revision-Date: 2024-12-23 21:32+0000\n"
 "Last-Translator: \n"
 "Language-Team: Intention https://byintention.co\n"
 "Language: en_GB\n"
@@ -14,11 +14,12 @@ msgstr ""
 "X-Generator: Poedit 3.5\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_x;_ex;_n;_nx;_n_noop;_nx_noop;"
-"translate_nooped_plural;number_format_i18n;date_i18n;esc_html__;"
-"esc_html__;esc_html_x;esc_attr__;esc_attr_e;esc_attr_x\n"
+"translate_nooped_plural;number_format_i18n;date_i18n;"
+"esc_html__;esc_html__;esc_html_x;esc_attr__;esc_attr_e;"
+"esc_attr_x\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:13 includes/postloop.php:61
+#: 404.php:13 includes/postloop.php:84
 msgid "Not Found"
 msgstr ""
 
@@ -48,67 +49,67 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: functions.php:167
+#: functions.php:169
 msgid "Background"
 msgstr ""
 
-#: functions.php:177
+#: functions.php:179
 msgid "Text Colour"
 msgstr ""
 
-#: functions.php:187
+#: functions.php:189
 msgid "Heading Colour"
 msgstr ""
 
-#: functions.php:197
+#: functions.php:199
 msgid "Link Colour"
 msgstr ""
 
-#: functions.php:207
+#: functions.php:209
 msgid "Link Hover Colour"
 msgstr ""
 
-#: functions.php:258
-msgid "Read more"
+#: functions.php:219
+msgid "Accent Colour"
 msgstr ""
 
-#: functions.php:345
+#: functions.php:360
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:346
+#: functions.php:361
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:358
+#: functions.php:373
 msgid "Blog Sidebar"
 msgstr ""
 
-#: functions.php:368
+#: functions.php:383
 msgid "Page Sidebar"
 msgstr ""
 
-#: functions.php:411
+#: functions.php:426
 msgid "Positive"
 msgstr ""
 
-#: functions.php:416
+#: functions.php:431
 msgid "Error"
 msgstr ""
 
-#: functions.php:421
+#: functions.php:436
 msgid "Warning"
 msgstr ""
 
-#: functions.php:426
+#: functions.php:441
 msgid "Smaller text"
 msgstr ""
 
-#: functions.php:431
+#: functions.php:446
 msgid "Larger text"
 msgstr ""
 
-#: functions.php:436
+#: functions.php:451
 msgid "Button"
 msgstr ""
 
@@ -120,24 +121,28 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: includes/postloop.php:33 includes/postloop.php:43 single.php:39
+#: includes/meta.php:10
 msgid "Posted in:"
 msgstr ""
 
-#: includes/postloop.php:62
+#: includes/meta.php:16
+msgid "Tags: "
+msgstr ""
+
+#: includes/postloop.php:54
+msgid "untitled post"
+msgstr ""
+
+#: includes/postloop.php:85
 msgid "Sorry, but you are looking for something that isn't here."
 msgstr ""
 
-#: search.php:12
+#: search.php:14
 msgid "Search Results"
 msgstr ""
 
-#: search.php:13
+#: search.php:15
 msgid "You searched for:"
-msgstr ""
-
-#: search.php:30
-msgid "No results for that keyword - please search again:"
 msgstr ""
 
 #: searchform.php:13
@@ -152,6 +157,10 @@ msgstr ""
 msgid "GO"
 msgstr ""
 
-#: single.php:49
+#: single.php:55
 msgid "No comments yet."
+msgstr ""
+
+#: tag.php:14
+msgid "Tag:"
 msgstr ""

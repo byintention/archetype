@@ -10,7 +10,6 @@ if ( have_posts() ) {
 		the_post();
 		$classes = array(
 			'clear',
-			'padded',
 			'white',
 			'shadow',
 			'rounded',
@@ -20,29 +19,53 @@ if ( have_posts() ) {
 		<?php
 		if ( has_post_thumbnail() ) {
 			?>
-		<div class="newsText">
-			<h2><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-			<?php the_excerpt(); ?>
-		</div>
-		<div class="newsThumb">
+		<div class="news-thumb">
 			<a href="<?php the_permalink(); ?>">
-				<img src="<?php the_post_thumbnail_url( 'medium' ); ?>" alt="<?php the_title(); ?>">
+				<img src="<?php the_post_thumbnail_url( 'large' ); ?>" alt="<?php the_title(); ?>">
 			</a>
 		</div>
-		<p class="post-metadata clear smallText">
-			<span class="blogcat"><?php echo esc_html__( 'Posted in:', 'archetype' ); ?> <?php the_category( ', ' ); ?></span>
-			<span class="blogdate"><?php the_time( 'F jS, Y' ); ?></span>
-		</p>
+		<div class="news-text padded">
+			<?php if ( ! empty( $post->post_title ) ) { ?>
+				<h2><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+			<?php } else { ?>
+				<h2><a href="<?php the_permalink(); ?>" rel="bookmark"><em>Untitled</em></a></h2>
+				<?php
+			}
+			$allowed = array(
+				'a'      => array(
+					'href'  => array(),
+					'title' => array(),
+				),
+				'br'     => array(),
+				'em'     => array(),
+				'strong' => array(),
+			);
+			echo wp_kses( excerpt( 45 ), $allowed );
+			?>
+			<?php get_template_part( 'includes/meta' ); ?>
+		</div>
 			<?php
 		} else {
 			?>
-		<div class="newsText wide">
-			<h2><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-			<?php the_excerpt(); ?>
-			<p class="post-metadata clear smallText">
-				<span class="blogcat"><?php echo esc_html__( 'Posted in:', 'archetype' ); ?> <?php the_category( ', ' ); ?></span>
-				<span class="blogdate"><?php the_time( 'F jS, Y' ); ?></span>
-			</p>
+		<div class="news-text wide padded">
+			<?php if ( ! empty( $post->post_title ) ) { ?>
+				<h2><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+			<?php } else { ?>
+				<h2><a href="<?php the_permalink(); ?>" rel="bookmark"><em><?php echo esc_html__( 'untitled post', 'archetype' ); ?></em></a></h2>
+				<?php
+			}
+			$allowed = array(
+				'a'      => array(
+					'href'  => array(),
+					'title' => array(),
+				),
+				'br'     => array(),
+				'em'     => array(),
+				'strong' => array(),
+			);
+			echo wp_kses( excerpt( 45 ), $allowed );
+			?>
+			<?php get_template_part( 'includes/meta' ); ?>
 		</div>
 			<?php
 		}

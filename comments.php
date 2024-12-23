@@ -60,7 +60,7 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) {
 			?>
-			<p class="no-comments"><?php esc_html__( 'Comments are closed.', 'archetype' ); ?></p>
+			<p class="no-comments"><?php echo esc_html__( 'Comments are closed.', 'archetype' ); ?></p>
 			<?php
 		}
 	} // Check for have_comments().

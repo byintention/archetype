@@ -8,7 +8,7 @@
  */
 
 ?>
-<div class="four columns">
+<div class="three columns">
 	<?php
 	if ( is_page() && is_active_sidebar( 'page-sidebar' ) ) {
 		echo '<div id="pageSidebar"><ul id="sidebar">';

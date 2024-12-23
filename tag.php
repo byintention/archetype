@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages
+ * The template for displaying category pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -11,7 +11,7 @@ get_header(); ?>
 <div id="blog-header">
 	<div class="container">
 		<div class="twelve columns">
-			<h1><?php echo esc_html__( 'Archives:', 'archetype' ); ?> <?php single_month_title( '&nbsp;' ); ?></h1>
+			<h1><?php echo esc_html__( 'Tag:', 'archetype' ); ?> <?php single_tag_title( '&nbsp;' ); ?> </h1>
 		</div>
 	</div>
 </div>
@@ -20,7 +20,7 @@ get_header(); ?>
 		<div class="nine columns">
 			<?php get_template_part( 'includes/postloop' ); ?>
 		</div>
-		<?php get_sidebar(); ?>
+	<?php get_sidebar(); ?>
 	</div>
 </div>
 <?php get_footer(); ?>

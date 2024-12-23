@@ -10,8 +10,8 @@
 get_header(); ?>
 <div class="container searchPage">
 	<div class="twelve columns">
-		<h1><?php esc_html__( 'Not Found', 'archetype' ); ?></h1>
-		<p><?php esc_html__( "Sorry, that page doesn't exist. Please try searching:", 'archetype' ); ?></p>
+		<h1><?php echo esc_html__( 'Not Found', 'archetype' ); ?></h1>
+		<p><?php echo esc_html__( "Sorry, that page doesn't exist. Please try searching:", 'archetype' ); ?></p>
 		<div id="searchwrapper">
 			<?php get_search_form(); ?>
 		</div>

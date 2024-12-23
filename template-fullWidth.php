@@ -26,7 +26,7 @@ get_header(); ?>
 			</div>
 		<?php } ?>	
 		<div class="container">
-			<div class="twelve columns rounded padded white shadow">
+			<div class="twelve columns">
 			<?php
 			if ( have_posts() ) {
 				while ( have_posts() ) {

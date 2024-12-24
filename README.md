@@ -1,7 +1,7 @@
 # Archetype theme for ClassicPress
 Blog style theme for ClassicPress with sidebar and full width page templates.
 
-Header logo and site colours can be set in the customiser.
+The header logo and site colours can be set in the customiser. Adding a featured image to a page will show the banner, and adding a caption will add text over the banner.
 
 Please set a page to use 'template-testpage' to see various included styles, utility classes and the grid system.
 
@@ -10,7 +10,7 @@ Notifications and smaller and larger text can be set from the editor toolbar und
 Archetype follows WordPress Coding Standards, meets WCAG AA contrast ratios with it's default colours and is translation ready.
 
 ## Credits
-Grid and other styles based on http://getskeleton.com
+Grid and other styles based on http://getskeleton.com  
 Raleway font directly from https://www.theleagueofmoveabletype.com/raleway including all Opentype features  
 Typography balance by https://typescale.com/  
 Icons from https://thenounproject.com/  

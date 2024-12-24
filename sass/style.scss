@@ -1045,6 +1045,14 @@ or wrap each row of columns in a <div class="row"> */
 		}
 	}
 
+.single .hero .banner img {
+	max-height: 999px;
+	max-width: 100%;
+	left: auto;
+	transform: none;
+}
+
+
 .filler {
 	padding:40px 0 0 0;
 }

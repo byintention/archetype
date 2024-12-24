@@ -1414,9 +1414,7 @@ or wrap each row of columns in a <div class="row"> */
   .blog-post {
     padding: 0 0 50px 0; }
     .blog-post .news-thumb {
-      padding-bottom: 30px; }
-    .blog-post .entry {
-      padding-bottom: 50px; } }
+      padding-bottom: 30px; } }
 
 .post-metadata {
   font-size: 12px;

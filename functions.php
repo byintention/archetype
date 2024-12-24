@@ -6,7 +6,7 @@
  */
 
 /**
- * Fix ridiculous hard coded extra 10px width on captions.
+ * Fix the ridiculous hard coded extra 10px width on captions.
  *
  * @param string $attrs does a thing.
  */
@@ -17,6 +17,12 @@ function fix_extra_caption_padding( $attrs ) {
 	return $attrs;
 }
 add_filter( 'shortcode_atts_caption', 'fix_extra_caption_padding' );
+
+/**
+ * Fix the ridiculous hard coded width on figure tag.
+ */
+add_filter( 'img_caption_shortcode_width', '__return_zero' );
+
 
 /**
  * Theme support elements.

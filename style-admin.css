@@ -28,7 +28,6 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 /* Remove Yoast clutter */
-
 #yoast-warnings #wpseo-upsell-notice {
 	display:none;
 }
@@ -47,6 +46,7 @@ input[type=range]::-webkit-slider-thumb {
 	display:none;
 }
 
+/* Remove BackupWordPress nag */
 #hmbkp-cta-message {
 	display:none;
 }

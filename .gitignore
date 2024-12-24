@@ -3,6 +3,7 @@
 
 .nova
 config.codekit3
+.DS_Store
 
 # Log files
 *.log

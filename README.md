@@ -11,6 +11,9 @@ Breadcrumbs on single blog posts are built in and will display if enabled in SEO
 
 Archetype follows WordPress Coding Standards, meets WCAG AA contrast ratios with it's default colours and is translation ready.
 
+## Demo
+Check out the demo at https://cpress.byintention.dev/  
+
 ## Credits
 Theme design and code by Nick Hayward at [Intention web design](https://byintention.co/)  
 Grid and other styles based on http://getskeleton.com  

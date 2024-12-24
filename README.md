@@ -1,9 +1,9 @@
 # Archetype theme for ClassicPress
 Blog style theme for ClassicPress with sidebar and full width page templates.
 
-The header logo and site colours can be set in the customiser. Adding a featured image to a page will show the banner, and adding a caption will add text over the banner.
+The customiser screen allows you to choose site colours and whether to show a header logo, or site title and tagline. Adding a featured image to a page will show the banner, and adding a caption will add text over the banner.
 
-Please set a page to use 'template-testpage' to see various included styles, utility classes and the grid system.
+Please set a page to use the 'Style test page' template to see various included styles, utility classes and the grid system.
 
 Notifications and smaller and larger text can be set from the editor toolbar under the 'styles' dropdown. 
 

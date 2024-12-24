@@ -193,7 +193,7 @@ hr { border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 10px 0 30px
 
 a, a:visited { 
 	color: $colour-link;
-	font-weight: bold;
+	font-weight: $bold;
 	text-decoration: underline;
 	transition:color 0.2s linear;
 }
@@ -228,124 +228,11 @@ dl {
 }
 
 dt { 
-	font-weight: bold;
+	font-weight: $bold;
 } 
 
 dd { 
 	margin: 0 0 0 30px;
-}
-
-/* Notification Styles */
-
-.wpcf7-submit {
-	margin-bottom: 10px;
-}
-
-.sent .wpcf7-response-output,
-.positive, .wpcf7-mail-sent-ok {
-	background-color:#006600;
-	background-image: url(images/icon-pos.svg);
-	background-position: 10px 9px;
-	background-repeat:no-repeat;	
-	background-size:14px 14px;
-	color:#fff;
-	font-size:16px;
-	font-weight: 700;
-	padding: 5px 10px 5px 32px;
-}
-
-.warning {
-	background-color:#0082b2;
-	background-image: url(images/icon-info.svg);
-	background-position: 10px 9px;
-	background-repeat:no-repeat;	
-	background-size:14px 14px;
-	color:#fff;
-	font-size:16px;
-	font-weight: 700;
-	padding: 5px 10px 5px 32px;
-}
-
-.invalid .wpcf7-response-output,
-.negative, 
-div.wpcf7-validation-errors, 
-div span.wpcf7-not-valid-tip {
-	background-color: #c00;
-	background-image: url(images/icon-neg.svg);
-	background-position: 10px 9px;
-	background-repeat:no-repeat;	
-	background-size:14px 14px;
-	color:#fff;
-	font-size:16px;
-	font-weight: 700;
-	padding: 5px 10px 5px 32px;
-}
-
-span.wpcf7-not-valid-tip {
-	display:block;
-}
-
-.wpcf7 br,
-.screen-reader-response {
-	display:none;
-}
-
-/* CSS animation for CF7 ajax loader */
-.fa-spin {
-  -webkit-animation: fa-spin 2s infinite linear;
-  animation: fa-spin 2s infinite linear;
-}
-
-@-webkit-keyframes fa-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
-}
-
-@keyframes fa-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
-}
-
-/* Hide original loader */
-.wpcf7-spinner {
-  display: none;
-}
-
-.submitting  .wpcf7-spinner {
-  display: inline-block;
-}
-
-/* Style for custom loader - '1s' for speeding up animation */
-.wpcf7-spinner {
-  background-image: url(images/icon-refresh4.svg);
-  background-position: center center;
-  background-size:cover;
-  	-webkit-animation: fa-spin 1s infinite linear;
-  animation: fa-spin 1s infinite linear;
-  height:36px;
-  margin-left:10px;
-  transform-origin: center center;
-  vertical-align: middle;
-  width:36px;
-}
-
-.wpcf7-spinner:before {
-	display:inline-block;
-	height:36px;
-	transform-origin: center center;
-	width:36px;
 }
 
 pre {
@@ -439,6 +326,44 @@ th, td {
 	padding:10px;
 }
 
+/* Notification Styles */
+
+.positive {
+	background-color:#006600;
+	background-image: url(images/icon-pos.svg);
+	background-position: 10px 9px;
+	background-repeat:no-repeat;	
+	background-size:14px 14px;
+	color:#fff;
+	font-size:16px;
+	font-weight: 700;
+	padding: 5px 10px 5px 32px;
+}
+
+.warning {
+	background-color:#0082b2;
+	background-image: url(images/icon-info.svg);
+	background-position: 10px 9px;
+	background-repeat:no-repeat;	
+	background-size:14px 14px;
+	color:#fff;
+	font-size:16px;
+	font-weight: 700;
+	padding: 5px 10px 5px 32px;
+}
+
+.negative {
+	background-color: #c00;
+	background-image: url(images/icon-neg.svg);
+	background-position: 10px 9px;
+	background-repeat:no-repeat;	
+	background-size:14px 14px;
+	color:#fff;
+	font-size:16px;
+	font-weight: 700;
+	padding: 5px 10px 5px 32px;
+}
+
 /* Images */
 
 img {
@@ -475,7 +400,7 @@ input[type="button"] {
 	display: inline-block;
 	font-family: $base-font-family;
 	font-size: $base-font-size*.75;
-	font-weight: bold;
+	font-weight: $bold;
 	line-height: 1.2;
 	overflow:visible;
 	padding: 12px 15px;
@@ -510,7 +435,6 @@ input[type="submit"]:disabled {
 }
 
 	@media only screen and (min-width: 600px) {
-	
 		.button,
 		.button:visited,
 		.btn,
@@ -520,8 +444,7 @@ input[type="submit"]:disabled {
 		input[type="reset"],
 		input[type="button"] {
 			font-size: $base-font-size;
-		}		
-		
+		}			
 	}
 
 /* Forms */
@@ -639,8 +562,7 @@ input[type="checkbox"] {
 	display: inline; 
 }
 
-	@media only screen and (min-width: 600px) {
-		
+	@media only screen and (min-width: 600px) {	
 		input[type="text"],
 		input[type="password"],
 		input[type="email"],
@@ -649,8 +571,7 @@ input[type="checkbox"] {
 		textarea,
 		select {
 			font-size: $base-font-size;
-		}	
-		
+		}		
 	}
 
 
@@ -826,23 +747,19 @@ or wrap each row of columns in a <div class="row"> */
 }
 
 	@media only screen and (min-width: 600px) {
-	
 		#header {
 			position: relative;
-		}	
-		
+		}		
 	}
 	
-	@media only screen and (min-width: 1200px) {
-		
+	@media only screen and (min-width: 1200px) {	
 		#header {
 			height:140px;
 			.container {
 				height:140px;
 				position: relative;
 			}
-		}
-		
+		}	
 	}
 
 #headerLogo {
@@ -857,7 +774,7 @@ or wrap each row of columns in a <div class="row"> */
 	}	
 	.site-title {
 		font-size:27px;
-		font-weight: bold;
+		font-weight: $bold;
 		line-height:1.2;
 		a {
 			text-decoration: none;
@@ -941,11 +858,9 @@ or wrap each row of columns in a <div class="row"> */
 				left:0;
 			transition: all 0.2s ease-in-out;
 			width:29px;
-		}
-		
+		}	
 	}
-	button.navOpen {
-		
+	button.navOpen {	
 		&:before {
 			background:#fff;
 			transform: rotate(45deg);
@@ -953,20 +868,17 @@ or wrap each row of columns in a <div class="row"> */
 			left:-3px;
 			width:38px;
 		}
-		
 		span {
 			opacity:0;
 			font-size:0;
-		}
-		
+		}	
 		&:after {
 			background:#fff;
 			transform: rotate(-45deg);
 			bottom:12px;
 			left:-3px;
 			width:38px;
-		}
-		
+		}	
 	}
 }
 
@@ -991,8 +903,7 @@ or wrap each row of columns in a <div class="row"> */
 		font-size:0;
 		height:34px;
 		width:30px;
-	}
-	
+	}	
 }
 	
 	@media only screen and (min-width: 1200px) {	
@@ -1078,28 +989,35 @@ or wrap each row of columns in a <div class="row"> */
 		padding:0;
 	}
 	.banner {
-		background:#333;
+		background: #333;
 		border-radius: 0 0 10px 10px;
 		overflow: hidden;
-		display:block;
-		margin-bottom:20px;
+		display: block;
+		margin-bottom: 20px;
 		position: relative;
 		img {
-			display:block;
-			width:100%;
+			display: block;
+			max-height: 300px;
+			min-width: 100%;
+			max-width: 9999px;
+			position: relative;
+				left: 50%;
+			transform: translateX(-50%);
+			z-index: 100;
 		}
 		.inner {
 			color:#fff;
+			position: relative;
+			z-index: 200;
 			position: absolute;
-				left:0;
-				top:50%;
+				left: 0;
+				top: 50%;
 			transform: translateY(-50%);
-			width:100%;
+			width: 100%;
 			h1,h2 {
 				color:#fff;
-				font-weight: bold;
 				line-height: 1.1;
-				text-shadow:0 0 2px rgba(0,0,0,0.8);
+				padding: 0 20px;
 			}	
 			a {
 				color:#fff;
@@ -1107,20 +1025,24 @@ or wrap each row of columns in a <div class="row"> */
 			}
 			h1:last-child,
 			p:last-child {
-				margin-bottom:0;
+				margin-bottom: 0;
 			}
 		}
 	}
 }
 
 	@media only screen and (min-width: 830px) {
-	
 		.hero {
 			.banner {
 				margin-bottom:40px;
+				img {
+					left: auto;
+					transform: none;
+					max-height: 9999px;
+					max-width: 100%;
+				}
 			}
 		}
-		
 	}
 
 .filler {
@@ -1132,7 +1054,6 @@ or wrap each row of columns in a <div class="row"> */
 			padding:70px 0 0 0;
 		}
 	}
-
 
 .testimonials {	
 	background:#fff;
@@ -1172,7 +1093,6 @@ or wrap each row of columns in a <div class="row"> */
 }
 
 .tns-controls {
-
 	button {
 		background:none;
 		background-position: center center;
@@ -1217,8 +1137,7 @@ or wrap each row of columns in a <div class="row"> */
 	}		
 }
 
-	@media only screen and (min-width: 900px) {
-		
+	@media only screen and (min-width: 900px) {	
 		.newsCards {
 			.card {
 				flex: 0 0 31.333%;
@@ -1230,9 +1149,7 @@ or wrap each row of columns in a <div class="row"> */
 					padding:30px;
 				}	
 			}		
-		}
-		
-		
+		}	
 	}
 
 .gallery {
@@ -1240,7 +1157,6 @@ or wrap each row of columns in a <div class="row"> */
 	clear:both;
 	padding: 0;
 	text-align: center;
-	
 	.one-quarter.column {
 		float:left;
 		margin:0 1% 2% 1%;
@@ -1476,7 +1392,6 @@ or wrap each row of columns in a <div class="row"> */
 		}
 	}
 
-
 .faqs {
 	margin: 0 auto;
 	padding:0 20px;
@@ -1574,13 +1489,11 @@ or wrap each row of columns in a <div class="row"> */
 			}
 		}
 	}
-	
 	.tabsPanel {
 		border:1px solid #ddd;
 		margin-top:-1px;
 		position: relative;
 	}
-	
 	.tabContent {
 		background:#fff;
 		box-sizing: border-box;
@@ -1597,7 +1510,6 @@ or wrap each row of columns in a <div class="row"> */
 			transition: all 0.2s linear;
 		}
 	}
-
 }
 
 .accordion {
@@ -1632,7 +1544,6 @@ or wrap each row of columns in a <div class="row"> */
 			}
 		}
 	}
-	
 }
 
 /* Blog section */
@@ -1646,10 +1557,6 @@ or wrap each row of columns in a <div class="row"> */
 	text-align: center;
 	.twelve {
 		border-bottom:1px solid #ddd;
-	}
-	h1 {
-		//color:#fff;
-		//margin:0;
 	}
 }
 
@@ -1703,7 +1610,6 @@ or wrap each row of columns in a <div class="row"> */
 				}
 			}
 		}
-		
 		.blog-post {
 			padding: 0 0 50px 0;
 			.news-thumb {
@@ -1726,15 +1632,6 @@ or wrap each row of columns in a <div class="row"> */
 		padding:0 16px 0 0;
 	}
 	.blog-date {
-		padding:0 16px 0 0;
-	}
-	.blog-tag {
-		a {
-		}
-		
-	}
-	.blog-comments {
-		color:#999;
 		padding:0 16px 0 0;
 	}
 }
@@ -1847,13 +1744,11 @@ or wrap each row of columns in a <div class="row"> */
 #sidebar {
 	list-style:none;
 	margin:0;
-	padding:0;
-	
+	padding:0;	
 	#submit {
 		float:left;
 		margin-left:5px;
 	}
-
 	> li {
 		margin:0 0 40px 0;
 		&.widget_text {
@@ -1869,15 +1764,12 @@ or wrap each row of columns in a <div class="row"> */
 			}
 		}
 	}
-
 	li li {
 		margin:0 ;
 	}
-	
 	form > div {
 		margin:0;
 	}
-	
 	label {
 		display:none;
 	}	
@@ -1890,14 +1782,13 @@ or wrap each row of columns in a <div class="row"> */
 }
 
 #searchform {
-    display: block;
-    margin:0;
-    max-width: 100%;
-    position: relative;
-    text-align: right;
-    width: 100%;
-    
-    input {
+	display: block;
+	margin:0;
+	max-width: 100%;
+	position: relative;
+	text-align: right;
+	width: 100%;
+	input {
 		height:46px;
 		padding:0 12px;
 	}
@@ -1908,8 +1799,6 @@ or wrap each row of columns in a <div class="row"> */
 		left: 0;
 		right: 75px;
 }
-
-#s {}
 
 #search input[type="text"] {
     width: 100%;
@@ -1940,12 +1829,8 @@ or wrap each row of columns in a <div class="row"> */
 	@media only screen and (min-width: 830px) {
 		#sidebar {
 			padding-left:12px;
-		}
-		
+		}	
 	}
-
-/* Contact */
-
 
 /* Footer */
 
@@ -1996,7 +1881,6 @@ or wrap each row of columns in a <div class="row"> */
 	}
 }
 
-
 	@media only screen and (min-width: 1200px) {
 		#nav2 {
 			display:block;
@@ -2045,6 +1929,35 @@ or wrap each row of columns in a <div class="row"> */
 						}
 					}
 					
+					&.menu-item-has-children {
+						position:relative;
+						z-index:400;
+						a {
+							padding-right:30px;
+						}
+						> a:after {
+							background-image: url(images/icon-chev-down-grey.svg);
+							background-position: center center;
+							background-repeat: no-repeat;
+							background-size:auto 8px;
+							content: "";
+							display:inline-block;
+							height:15px;
+							opacity:1;
+							position: absolute;
+								right:12px;
+								top:11px;
+							transition: all 0.1s linear;
+							vertical-align: middle;
+							width:15px;
+							
+						}
+						&.openSubnav > a:after {
+							opacity:0;
+							transition: all 0.1s linear;
+						}
+						
+					}
 					.sub-menu {
 						background:#fff;
 						box-shadow:0px 2px 2px rgba(0,0,0,0.3);
@@ -2063,51 +1976,11 @@ or wrap each row of columns in a <div class="row"> */
 							}
 						}
 					}
-					
 					&.openSubnav .sub-menu {
 						display:block;
-					}
-					
+					}	
 				}
 			}
-			
-		}
-		
-		.navclose {
-			display:none;
-		}
-		
-		#nav2 a.mobile_handle {
-			display:none;
-		}
-		
-		#nav2 .menu-parent-item {
-			position:relative;
-			z-index:400;
-			a {
-				padding-right:30px;
-			}
-		}
-		
-		#nav2 .menu-item-has-children > a:after {
-			background-image: url(images/icon-chev-down-grey.svg);
-			background-position: center center;
-			background-repeat: no-repeat;
-			background-size:auto 8px;
-			content: "";
-			display:inline-block;
-			height:15px;
-			opacity:1;
-			position: absolute;
-				right:12px;
-				top:11px;
-			transition: all 0.1s linear;
-			vertical-align: middle;
-			width:15px;
-		}	
-		#nav2 .menu-item-has-children.openSubnav > a:after {
-			opacity:0;
-			transition: all 0.1s linear;
 		}
 	}
 	

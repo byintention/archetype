@@ -203,7 +203,7 @@ hr {
 /* Links */
 a, a:visited {
   color: #008550;
-  font-weight: bold;
+  font-weight: 700;
   text-decoration: underline;
   transition: color 0.2s linear; }
 
@@ -239,105 +239,10 @@ dl {
   margin: 0 0 30px 0; }
 
 dt {
-  font-weight: bold; }
+  font-weight: 700; }
 
 dd {
   margin: 0 0 0 30px; }
-
-/* Notification Styles */
-.wpcf7-submit {
-  margin-bottom: 10px; }
-
-.sent .wpcf7-response-output,
-.positive, .wpcf7-mail-sent-ok {
-  background-color: #006600;
-  background-image: url(images/icon-pos.svg);
-  background-position: 10px 9px;
-  background-repeat: no-repeat;
-  background-size: 14px 14px;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 700;
-  padding: 5px 10px 5px 32px; }
-
-.warning {
-  background-color: #0082b2;
-  background-image: url(images/icon-info.svg);
-  background-position: 10px 9px;
-  background-repeat: no-repeat;
-  background-size: 14px 14px;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 700;
-  padding: 5px 10px 5px 32px; }
-
-.invalid .wpcf7-response-output,
-.negative,
-div.wpcf7-validation-errors,
-div span.wpcf7-not-valid-tip {
-  background-color: #c00;
-  background-image: url(images/icon-neg.svg);
-  background-position: 10px 9px;
-  background-repeat: no-repeat;
-  background-size: 14px 14px;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 700;
-  padding: 5px 10px 5px 32px; }
-
-span.wpcf7-not-valid-tip {
-  display: block; }
-
-.wpcf7 br,
-.screen-reader-response {
-  display: none; }
-
-/* CSS animation for CF7 ajax loader */
-.fa-spin {
-  -webkit-animation: fa-spin 2s infinite linear;
-  animation: fa-spin 2s infinite linear; }
-
-@-webkit-keyframes fa-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg); } }
-
-@keyframes fa-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg); } }
-
-/* Hide original loader */
-.wpcf7-spinner {
-  display: none; }
-
-.submitting .wpcf7-spinner {
-  display: inline-block; }
-
-/* Style for custom loader - '1s' for speeding up animation */
-.wpcf7-spinner {
-  background-image: url(images/icon-refresh4.svg);
-  background-position: center center;
-  background-size: cover;
-  -webkit-animation: fa-spin 1s infinite linear;
-  animation: fa-spin 1s infinite linear;
-  height: 36px;
-  margin-left: 10px;
-  transform-origin: center center;
-  vertical-align: middle;
-  width: 36px; }
-
-.wpcf7-spinner:before {
-  display: inline-block;
-  height: 36px;
-  transform-origin: center center;
-  width: 36px; }
 
 pre {
   background: #DFE5E2;
@@ -421,6 +326,40 @@ th, td {
   border-right: 0;
   padding: 10px; }
 
+/* Notification Styles */
+.positive {
+  background-color: #006600;
+  background-image: url(images/icon-pos.svg);
+  background-position: 10px 9px;
+  background-repeat: no-repeat;
+  background-size: 14px 14px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 5px 10px 5px 32px; }
+
+.warning {
+  background-color: #0082b2;
+  background-image: url(images/icon-info.svg);
+  background-position: 10px 9px;
+  background-repeat: no-repeat;
+  background-size: 14px 14px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 5px 10px 5px 32px; }
+
+.negative {
+  background-color: #c00;
+  background-image: url(images/icon-neg.svg);
+  background-position: 10px 9px;
+  background-repeat: no-repeat;
+  background-size: 14px 14px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 5px 10px 5px 32px; }
+
 /* Images */
 img {
   height: auto;
@@ -452,7 +391,7 @@ input[type="button"] {
   display: inline-block;
   font-family: raleway, arial, sans-serif;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 1.2;
   overflow: visible;
   padding: 12px 15px;
@@ -792,7 +731,7 @@ or wrap each row of columns in a <div class="row"> */
     width: auto; }
   #headerLogo .site-title {
     font-size: 27px;
-    font-weight: bold;
+    font-weight: 700;
     line-height: 1.2; }
     #headerLogo .site-title a {
       text-decoration: none; }
@@ -968,9 +907,17 @@ or wrap each row of columns in a <div class="row"> */
   position: relative; }
   .hero .banner img {
     display: block;
-    width: 100%; }
+    max-height: 300px;
+    min-width: 100%;
+    max-width: 9999px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100; }
   .hero .banner .inner {
     color: #fff;
+    position: relative;
+    z-index: 200;
     position: absolute;
     left: 0;
     top: 50%;
@@ -978,9 +925,8 @@ or wrap each row of columns in a <div class="row"> */
     width: 100%; }
     .hero .banner .inner h1, .hero .banner .inner h2 {
       color: #fff;
-      font-weight: bold;
       line-height: 1.1;
-      text-shadow: 0 0 2px rgba(0, 0, 0, 0.8); }
+      padding: 0 20px; }
     .hero .banner .inner a {
       color: #fff;
       text-decoration: none; }
@@ -990,7 +936,12 @@ or wrap each row of columns in a <div class="row"> */
 
 @media only screen and (min-width: 830px) {
   .hero .banner {
-    margin-bottom: 40px; } }
+    margin-bottom: 40px; }
+    .hero .banner img {
+      left: auto;
+      transform: none;
+      max-height: 9999px;
+      max-width: 100%; } }
 
 .filler {
   padding: 40px 0 0 0; }
@@ -1433,9 +1384,6 @@ or wrap each row of columns in a <div class="row"> */
     padding: 0 16px 0 0; }
   .post-metadata .blog-date {
     padding: 0 16px 0 0; }
-  .post-metadata .blog-comments {
-    color: #999;
-    padding: 0 16px 0 0; }
 
 .entry img {
   height: auto;
@@ -1592,7 +1540,6 @@ or wrap each row of columns in a <div class="row"> */
   #sidebar {
     padding-left: 12px; } }
 
-/* Contact */
 /* Footer */
 #footer {
   color: #eee;
@@ -1667,6 +1614,29 @@ or wrap each row of columns in a <div class="row"> */
           #nav2 ul li.cta a:hover {
             background: #008550;
             color: #fff; }
+        #nav2 ul li.menu-item-has-children {
+          position: relative;
+          z-index: 400; }
+          #nav2 ul li.menu-item-has-children a {
+            padding-right: 30px; }
+          #nav2 ul li.menu-item-has-children > a:after {
+            background-image: url(images/icon-chev-down-grey.svg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: auto 8px;
+            content: "";
+            display: inline-block;
+            height: 15px;
+            opacity: 1;
+            position: absolute;
+            right: 12px;
+            top: 11px;
+            transition: all 0.1s linear;
+            vertical-align: middle;
+            width: 15px; }
+          #nav2 ul li.menu-item-has-children.openSubnav > a:after {
+            opacity: 0;
+            transition: all 0.1s linear; }
         #nav2 ul li .sub-menu {
           background: #fff;
           box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
@@ -1683,34 +1653,7 @@ or wrap each row of columns in a <div class="row"> */
               overflow: hidden;
               width: 180px; }
         #nav2 ul li.openSubnav .sub-menu {
-          display: block; }
-  .navclose {
-    display: none; }
-  #nav2 a.mobile_handle {
-    display: none; }
-  #nav2 .menu-parent-item {
-    position: relative;
-    z-index: 400; }
-    #nav2 .menu-parent-item a {
-      padding-right: 30px; }
-  #nav2 .menu-item-has-children > a:after {
-    background-image: url(images/icon-chev-down-grey.svg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: auto 8px;
-    content: "";
-    display: inline-block;
-    height: 15px;
-    opacity: 1;
-    position: absolute;
-    right: 12px;
-    top: 11px;
-    transition: all 0.1s linear;
-    vertical-align: middle;
-    width: 15px; }
-  #nav2 .menu-item-has-children.openSubnav > a:after {
-    opacity: 0;
-    transition: all 0.1s linear; } }
+          display: block; } }
 
 /* Custom checkbox */
 label {

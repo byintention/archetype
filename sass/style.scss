@@ -4,7 +4,7 @@ Theme URI: https://byintention.co
 Description: ClassicPress theme by Intention
 Author: Nick Hayward
 Author URI: https://byintention.co
-Version: 1.0.5
+Version: 1.0.6
 Requires PHP: 8.0
 Requires CP: 2.0
 Tested up to: 2.3.1
@@ -249,7 +249,7 @@ pre {
 code {
 	background:#DFE5E2;
 	font-family: monospace;
-	padding:5px;
+	padding:3px 5px;
 }
 
 sub, 
@@ -1741,6 +1741,11 @@ or wrap each row of columns in a <div class="row"> */
 
 /* Sidebar section */
 
+#blog-sidebar,
+#page-sidebar {
+	padding-top: 40px;
+}
+
 #sidebar {
 	list-style:none;
 	margin:0;
@@ -1827,6 +1832,12 @@ or wrap each row of columns in a <div class="row"> */
 }
 
 	@media only screen and (min-width: 830px) {
+		
+		#blog-sidebar,
+		#page-sidebar {
+			padding-top: 0;
+		}
+		
 		#sidebar {
 			padding-left:12px;
 		}	

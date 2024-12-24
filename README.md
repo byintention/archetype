@@ -10,7 +10,7 @@ Notifications and smaller and larger text can be set from the editor toolbar und
 Archetype follows WordPress Coding Standards, meets WCAG AA contrast ratios with it's default colours and is translation ready.
 
 ## Credits
-Theme design and code by Nick JHayward at [Intention web design](https://byintention.co/)  
+Theme design and code by Nick Hayward at [Intention web design](https://byintention.co/)  
 Grid and other styles based on http://getskeleton.com  
 Raleway font directly from https://www.theleagueofmoveabletype.com/raleway including all Opentype features  
 Typography balance by https://typescale.com/  

@@ -17,6 +17,7 @@ Featuring Raleway directly from https://www.theleagueofmoveabletype.com/raleway 
 Typography balance by https://typescale.com/
 
 GitHub Theme URI: byintention/archetype-for-classicpress
+Primary Branch: main
 
 */
 
@@ -1663,6 +1664,7 @@ or wrap each row of columns in a <div class="row"> */
 	.news-thumb img {
 		display:block;
 	}
+	.page,
 	.post {
 		margin-bottom:50px;
 		word-break: break-word;	
@@ -1685,9 +1687,10 @@ or wrap each row of columns in a <div class="row"> */
 
 	@media only screen and (min-width: 830px) {	
 		.blog-listing {
+			.page,
 			.post {
 				display:flex;
-					align-items: top;
+					align-items: start;
 					flex-wrap: wrap;
 				.news-thumb {
 					flex:100% 0 0;
@@ -1707,9 +1710,7 @@ or wrap each row of columns in a <div class="row"> */
 			.news-thumb {
 				padding-bottom:30px;
 			}
-			.entry {
-				
-			}	
+			.entry {}	
 		}
 	}
 

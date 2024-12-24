@@ -17,6 +17,7 @@
 	<?php wp_head(); ?> 
 </head>
 <body <?php body_class(); ?>>
+	<?php wp_body_open(); ?>
 	<div class="wrap">	
 		<a class="skipLink" href='#content'><?php echo esc_html__( 'Skip to content', 'archetype' ); ?></a>
 		<header id="header" class="shadow">

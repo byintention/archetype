@@ -51,6 +51,10 @@ function archetype_theme_setup() {
 	 * Theme translation setup.
 	 */
 	load_theme_textdomain( 'archetype', get_template_directory() . '/languages' );
+	/**
+	 * Add links to RSS feeds.
+	 */
+	add_theme_support( 'automatic-feed-links' );
 }
 add_action( 'after_setup_theme', 'archetype_theme_setup' );
 

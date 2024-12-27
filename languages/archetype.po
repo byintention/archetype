@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: archetype\n"
 "Report-Msgid-Bugs-To: Translator Name <translations@example."
 "com>\n"
-"POT-Creation-Date: 2024-12-23 23:36+0000\n"
-"PO-Revision-Date: 2024-12-27 18:09+0000\n"
+"POT-Creation-Date: 2024-12-27 18:09+0000\n"
+"PO-Revision-Date: 2024-12-27 19:26+0000\n"
 "Last-Translator: \n"
 "Language-Team: Intention https://byintention.co\n"
 "Language: en_GB\n"
@@ -49,75 +49,75 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: functions.php:165
+#: functions.php:175
 msgid "Background"
 msgstr ""
 
-#: functions.php:175
+#: functions.php:185
 msgid "Text Colour"
 msgstr ""
 
-#: functions.php:185
+#: functions.php:195
 msgid "Heading Colour"
 msgstr ""
 
-#: functions.php:195
+#: functions.php:205
 msgid "Link Colour"
 msgstr ""
 
-#: functions.php:205
+#: functions.php:215
 msgid "Link Hover Colour"
 msgstr ""
 
-#: functions.php:215
+#: functions.php:225
 msgid "Accent Colour"
 msgstr ""
 
-#: functions.php:356
+#: functions.php:366
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:357
+#: functions.php:367
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:369
+#: functions.php:379
 msgid "Blog Sidebar"
 msgstr ""
 
-#: functions.php:379
+#: functions.php:389
 msgid "Page Sidebar"
 msgstr ""
 
-#: functions.php:422
+#: functions.php:432
 msgid "Positive"
 msgstr ""
 
-#: functions.php:427
+#: functions.php:437
 msgid "Error"
 msgstr ""
 
-#: functions.php:432
+#: functions.php:442
 msgid "Warning"
 msgstr ""
 
-#: functions.php:437
+#: functions.php:447
 msgid "Smaller text"
 msgstr ""
 
-#: functions.php:442
+#: functions.php:452
 msgid "Larger text"
 msgstr ""
 
-#: functions.php:447
+#: functions.php:457
 msgid "Button"
 msgstr ""
 
-#: header.php:21
+#: header.php:22
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:24
+#: header.php:25
 msgid "Menu"
 msgstr ""
 

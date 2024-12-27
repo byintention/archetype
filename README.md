@@ -23,8 +23,5 @@ Icons from https://thenounproject.com/
 
 ## Changelog
 
-### 1.04 
-WPCS fixes, licensing and readme
-
 ### 1.0 
 Initial release 

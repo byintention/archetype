@@ -9,6 +9,14 @@
   ],
   "creatorBuild" : "34592",
   "files" : {
+    "\/.github\/workflows\/cpcs.yml" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/.github\/workflows\/cpcs.yml",
+      "oF" : 0
+    },
     "\/.gitignore" : {
       "cB" : 0,
       "ft" : 8192,

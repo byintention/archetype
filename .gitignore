@@ -4,7 +4,6 @@
 .nova
 config.codekit3
 .DS_Store
-.github
 
 # Log files
 *.log

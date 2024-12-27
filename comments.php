@@ -22,28 +22,26 @@ if ( post_password_required() ) {
 
 <div id="comments" class="comments-area">
 	<?php
-	// You can start editing here -- including this comment!
 	if ( have_comments() ) {
 		?>
 		<h3 class="comments-title">
 			<?php
-			$susty_wp_comment_count = get_comments_number();
-			if ( '1' === $susty_wp_comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'archetype' ),
-					'<span>' . get_the_title() . '</span>' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				);
-			} else {
-				printf(
-					/* translators: 1: comment count number, 2: title. */
-					esc_html__( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $susty_wp_comment_count, 'comments title', 'archetype' ) ),
-					number_format_i18n( $susty_wp_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					'<span>' . get_the_title() . '</span>' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				);
-			}
+			$arch_comment_count = get_comments_number();
+			echo esc_html(
+				sprintf(
+					_nx(
+						'%1$s comment on &ldquo;%2$s&rdquo;',
+						'%1$s comments on &ldquo;%2$s&rdquo;',
+						$arch_comment_count,
+						'Comments Title',
+						'theme-text-domain'
+					),
+					number_format_i18n( $arch_comment_count ),
+					get_the_title()
+				)
+			);
 			?>
-		</h3><!-- .comments-title -->
+		</h3>
 		<?php the_comments_navigation(); ?>
 		<ol class="comment-list">
 			<?php
@@ -51,6 +49,7 @@ if ( post_password_required() ) {
 				array(
 					'style'      => 'ol',
 					'short_ping' => true,
+					'avatar_size'=> 64,
 				)
 			);
 			?>

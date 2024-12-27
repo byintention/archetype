@@ -37,7 +37,7 @@ if ( post_password_required() ) {
 			} else {
 				printf(
 					/* translators: 1: comment count number, 2: title. */
-					esc_html__( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $susty_wp_comment_count, 'comments title', 'archetype' ),
+					esc_html__( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $susty_wp_comment_count, 'comments title', 'archetype' ) ),
 					number_format_i18n( $susty_wp_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					'<span>' . get_the_title() . '</span>' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				);

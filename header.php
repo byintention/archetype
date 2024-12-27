@@ -19,10 +19,10 @@
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 	<div class="wrap">	
-		<a class="skipLink" href='#content'><?php echo esc_html__( 'Skip to content', 'archetype' ); ?></a>
+		<a class="skipLink" href='#content'><?php echo esc_html__( 'Skip to content', 'ARCHETYPE' ); ?></a>
 		<header id="header" class="shadow">
 			<div class="container">
-				<div id="headerMenuMobile"><button class="menu-trigger navclosed"><span><?php echo esc_html__( 'Menu', 'archetype' ); ?></span></button></div>
+				<div id="headerMenuMobile"><button class="menu-trigger navclosed"><span><?php echo esc_html__( 'Menu', 'ARCHETYPE' ); ?></span></button></div>
 				<div id="headerLogo">
 					<?php
 					if ( has_custom_logo() ) {

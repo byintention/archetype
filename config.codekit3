@@ -9,6 +9,22 @@
   ],
   "creatorBuild" : "34592",
   "files" : {
+    "\/.gitattribute" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/.gitattribute",
+      "oF" : 0
+    },
+    "\/.github\/workflows\/add-zip-to-release.yml" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/.github\/workflows\/add-zip-to-release.yml",
+      "oF" : 0
+    },
     "\/.github\/workflows\/cpcs.yml" : {
       "cB" : 0,
       "ft" : 8192,

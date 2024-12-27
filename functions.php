@@ -172,7 +172,7 @@ function mytheme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'body_background',
 			array(
-				'label'   => __( 'Background', 'archetype' ),
+				'label'   => __( 'Background', 'ARCHETYPE' ),
 				'section' => 'colors',
 			)
 		)
@@ -182,7 +182,7 @@ function mytheme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'body_textcolour',
 			array(
-				'label'   => __( 'Text Colour', 'archetype' ),
+				'label'   => __( 'Text Colour', 'ARCHETYPE' ),
 				'section' => 'colors',
 			)
 		)
@@ -192,7 +192,7 @@ function mytheme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'heading_textcolour',
 			array(
-				'label'   => __( 'Heading Colour', 'archetype' ),
+				'label'   => __( 'Heading Colour', 'ARCHETYPE' ),
 				'section' => 'colors',
 			)
 		)
@@ -202,7 +202,7 @@ function mytheme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'link_colour',
 			array(
-				'label'   => __( 'Link Colour', 'archetype' ),
+				'label'   => __( 'Link Colour', 'ARCHETYPE' ),
 				'section' => 'colors',
 			)
 		)
@@ -212,7 +212,7 @@ function mytheme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'link_hover_colour',
 			array(
-				'label'   => __( 'Link Hover Colour', 'archetype' ),
+				'label'   => __( 'Link Hover Colour', 'ARCHETYPE' ),
 				'section' => 'colors',
 			)
 		)
@@ -222,7 +222,7 @@ function mytheme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'accent_colour',
 			array(
-				'label'   => __( 'Accent Colour', 'archetype' ),
+				'label'   => __( 'Accent Colour', 'ARCHETYPE' ),
 				'section' => 'colors',
 			)
 		)
@@ -363,8 +363,8 @@ add_filter( 'wpseo_metabox_prio', 'yoasttobottom' );
  * Register Main Menu.
  */
 function register_my_menu() {
-	register_nav_menu( 'main-menu', __( 'Main Menu', 'archetype' ) );
-	register_nav_menu( 'footer-menu', __( 'Footer Menu', 'archetype' ) );
+	register_nav_menu( 'main-menu', __( 'Main Menu', 'ARCHETYPE' ) );
+	register_nav_menu( 'footer-menu', __( 'Footer Menu', 'ARCHETYPE' ) );
 }
 add_action( 'init', 'register_my_menu' );
 
@@ -376,7 +376,7 @@ add_action( 'init', 'register_my_menu' );
 function sidebar_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => __( 'Blog Sidebar', 'archetype' ),
+			'name'          => __( 'Blog Sidebar', 'ARCHETYPE' ),
 			'id'            => 'blog-sidebar',
 			'before_widget' => '<li id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</li>',
@@ -386,7 +386,7 @@ function sidebar_widgets_init() {
 	);
 	register_sidebar(
 		array(
-			'name'          => __( 'Page Sidebar', 'archetype' ),
+			'name'          => __( 'Page Sidebar', 'ARCHETYPE' ),
 			'id'            => 'page-sidebar',
 			'before_widget' => '<li id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</li>',
@@ -429,32 +429,32 @@ add_filter( 'mce_buttons_2', 'my_mce_buttons_2' );
 function tuts_mce_before_init( $settings ) {
 	$style_formats                           = array(
 		array(
-			'title'    => __( 'Positive', 'archetype' ),
+			'title'    => __( 'Positive', 'ARCHETYPE' ),
 			'selector' => 'p',
 			'classes'  => 'positive',
 		),
 		array(
-			'title'    => __( 'Error', 'archetype' ),
+			'title'    => __( 'Error', 'ARCHETYPE' ),
 			'selector' => 'p',
 			'classes'  => 'negative',
 		),
 		array(
-			'title'    => __( 'Warning', 'archetype' ),
+			'title'    => __( 'Warning', 'ARCHETYPE' ),
 			'selector' => 'p',
 			'classes'  => 'warning',
 		),
 		array(
-			'title'    => __( 'Smaller text', 'archetype' ),
+			'title'    => __( 'Smaller text', 'ARCHETYPE' ),
 			'selector' => 'p',
 			'classes'  => 'has-small-font-size',
 		),
 		array(
-			'title'    => __( 'Larger text', 'archetype' ),
+			'title'    => __( 'Larger text', 'ARCHETYPE' ),
 			'selector' => 'p',
 			'classes'  => 'has-large-font-size',
 		),
 		array(
-			'title'    => __( 'Button', 'archetype' ),
+			'title'    => __( 'Button', 'ARCHETYPE' ),
 			'selector' => 'a',
 			'classes'  => 'btn',
 		),

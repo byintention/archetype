@@ -51,7 +51,7 @@ if ( have_posts() ) {
 			<?php if ( ! empty( $post->post_title ) ) { ?>
 				<h2><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 			<?php } else { ?>
-				<h2><a href="<?php the_permalink(); ?>" rel="bookmark"><em><?php echo esc_html__( 'untitled post', 'archetype' ); ?></em></a></h2>
+				<h2><a href="<?php the_permalink(); ?>" rel="bookmark"><em><?php echo esc_html__( 'untitled post', 'ARCHETYPE' ); ?></em></a></h2>
 				<?php
 			}
 			$allowed = array(
@@ -81,8 +81,8 @@ if ( have_posts() ) {
 	<?php
 } else {
 	?>
-	<h2 class="center"><?php echo esc_html__( 'Not Found', 'archetype' ); ?></h2>
-	<p class="center"><?php echo esc_html__( "Sorry, but you are looking for something that isn't here.", 'archetype' ); ?></p>
+	<h2 class="center"><?php echo esc_html__( 'Not Found', 'ARCHETYPE' ); ?></h2>
+	<p class="center"><?php echo esc_html__( "Sorry, but you are looking for something that isn't here.", 'ARCHETYPE' ); ?></p>
 	<?php get_search_form(); ?>	
 	<?php
 }

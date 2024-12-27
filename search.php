@@ -11,8 +11,8 @@ get_header(); ?>
 <div id="blog-header">
 	<div class="container">
 		<div class="twelve columns">
-			<h1><?php echo esc_html__( 'Search Results', 'archetype' ); ?></h1>
-			<p><?php echo esc_html__( 'You searched for:', 'archetype' ); ?> <em><?php echo get_search_query(); ?></em></p>
+			<h1><?php echo esc_html__( 'Search Results', 'ARCHETYPE' ); ?></h1>
+			<p><?php echo esc_html__( 'You searched for:', 'ARCHETYPE' ); ?> <em><?php echo get_search_query(); ?></em></p>
 		</div>
 	</div>
 </div>

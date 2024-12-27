@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: archetype\n"
 "Report-Msgid-Bugs-To: Translator Name <translations@example."
 "com>\n"
-"POT-Creation-Date: 2024-12-27 18:09+0000\n"
-"PO-Revision-Date: 2024-12-27 19:26+0000\n"
+"POT-Creation-Date: 2024-12-27 19:26+0000\n"
+"PO-Revision-Date: 2024-12-27 19:55+0000\n"
 "Last-Translator: \n"
 "Language-Team: Intention https://byintention.co\n"
 "Language: en_GB\n"
@@ -35,17 +35,12 @@ msgstr ""
 msgid "Category:"
 msgstr ""
 
-#: comments.php:34
+#: comments.php:33
 #, php-format
-msgid "One thought on &ldquo;%1$s&rdquo;"
+msgid "%1$s comment on &ldquo;%2$s&rdquo;"
 msgstr ""
 
-#: comments.php:40
-#, php-format
-msgid "%1$s thought on &ldquo;%2$s&rdquo;"
-msgstr ""
-
-#: comments.php:63
+#: comments.php:62
 msgid "Comments are closed."
 msgstr ""
 

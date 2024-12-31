@@ -14,6 +14,9 @@ Archetype follows WordPress Coding Standards, meets WCAG AA contrast ratios with
 ## Demo
 Check out the demo at https://cpress.byintention.dev/  
 
+## Support
+This theme is provided free of charge with no guarantee of support, or suitability for any purpose. 
+
 ## Credits
 Theme design and code by Nick Hayward at [Intention web design](https://byintention.co/)  
 Grid and other styles based on http://getskeleton.com  

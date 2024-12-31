@@ -29,6 +29,7 @@ if ( post_password_required() ) {
 			$arch_comment_count = get_comments_number();
 			echo esc_html(
 				sprintf(
+					// Translators: 1. number of comments, 2. post title.
 					_nx(
 						'%1$s comment on &ldquo;%2$s&rdquo;',
 						'%1$s comments on &ldquo;%2$s&rdquo;',
@@ -47,9 +48,9 @@ if ( post_password_required() ) {
 			<?php
 			wp_list_comments(
 				array(
-					'style'      => 'ol',
-					'short_ping' => true,
-					'avatar_size'=> 64,
+					'style'       => 'ol',
+					'short_ping'  => true,
+					'avatar_size' => 64,
 				)
 			);
 			?>

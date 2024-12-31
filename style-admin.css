@@ -50,3 +50,8 @@ input[type=range]::-webkit-slider-thumb {
 #hmbkp-cta-message {
 	display:none;
 }
+
+/* Remove Fluent Forms upsell */
+#fluentform_stat_widget .ff_recommended_plugin {
+	display: none;
+}

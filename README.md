@@ -9,7 +9,12 @@ Notifications and smaller and larger text can be set from the editor toolbar und
 
 Breadcrumbs on single blog posts are built in and will display if enabled in SEOPress or YoastSEO.
 
-Archetype follows WordPress Coding Standards, meets WCAG AA contrast ratios with it's default colours and is translation ready.
+Archetype:
+- Follows WordPress Coding Standards
+- Meets WCAG AA contrast ratios with it's default colours
+- Is keyboard navigable
+- Uses ARIA landmark roles and ARIA menu attributes
+- Is translation ready
 
 ## Demo
 Check out the demo at https://cpress.byintention.dev/  

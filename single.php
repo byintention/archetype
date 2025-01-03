@@ -52,7 +52,7 @@ get_header(); ?>
 					comments_template();
 				} else {
 					?>
-					<em><?php echo esc_html__( 'No comments yet.', 'ARCHETYPE' ); ?></em>
+					<em><?php echo esc_html__( 'No comments yet.', 'archetype' ); ?></em>
 					<?php
 				}
 				?>

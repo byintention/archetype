@@ -35,7 +35,7 @@ if ( post_password_required() ) {
 						'%1$s comments on &ldquo;%2$s&rdquo;',
 						$arch_comment_count,
 						'Comments Title',
-						'ARCHETYPE'
+						'archetype'
 					),
 					number_format_i18n( $arch_comment_count ),
 					get_the_title()
@@ -60,7 +60,7 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) {
 			?>
-			<p class="no-comments"><?php echo esc_html__( 'Comments are closed.', 'ARCHETYPE' ); ?></p>
+			<p class="no-comments"><?php echo esc_html__( 'Comments are closed.', 'archetype' ); ?></p>
 			<?php
 		}
 	} // Check for have_comments().

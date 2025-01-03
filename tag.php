@@ -11,7 +11,7 @@ get_header(); ?>
 <div id="blog-header">
 	<div class="container">
 		<div class="twelve columns">
-			<h1><?php echo esc_html__( 'Tag:', 'ARCHETYPE' ); ?> <?php single_tag_title( '&nbsp;' ); ?> </h1>
+			<h1><?php echo esc_html__( 'Tag:', 'archetype' ); ?> <?php single_tag_title( '&nbsp;' ); ?> </h1>
 		</div>
 	</div>
 </div>

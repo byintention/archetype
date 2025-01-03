@@ -66,7 +66,7 @@ add_action( 'after_setup_theme', 'archetype_theme_setup' );
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function susty_wp_customize_register( $wp_customize ) {
+function archetype_wp_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -76,26 +76,26 @@ function susty_wp_customize_register( $wp_customize ) {
 			'blogname',
 			array(
 				'selector'        => '.site-title a',
-				'render_callback' => 'susty_wp_customize_partial_blogname',
+				'render_callback' => 'archetype_wp_customize_partial_blogname',
 			)
 		);
 		$wp_customize->selective_refresh->add_partial(
 			'blogdescription',
 			array(
 				'selector'        => '.site-description',
-				'render_callback' => 'susty_wp_customize_partial_blogdescription',
+				'render_callback' => 'archetype_wp_customize_partial_blogdescription',
 			)
 		);
 	}
 }
-add_action( 'customize_register', 'susty_wp_customize_register' );
+add_action( 'customize_register', 'archetype_wp_customize_register' );
 
 /**
  * Render the site title for the selective refresh partial.
  *
  * @return void
  */
-function susty_wp_customize_partial_blogname() {
+function archetype_wp_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
@@ -104,7 +104,7 @@ function susty_wp_customize_partial_blogname() {
  *
  * @return void
  */
-function susty_wp_customize_partial_blogdescription() {
+function archetype_wp_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
@@ -114,7 +114,7 @@ function susty_wp_customize_partial_blogdescription() {
  *
  * @param WP_Customize_Manager $wp_customize Object that holds the customizer data.
  */
-function mytheme_customize_register( $wp_customize ) {
+function archetype_customize_register( $wp_customize ) {
 	/**
 	 * All our sections, settings, and controls will be added here.
 	 */
@@ -172,7 +172,7 @@ function mytheme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'body_background',
 			array(
-				'label'   => __( 'Background', 'ARCHETYPE' ),
+				'label'   => __( 'Background', 'archetype' ),
 				'section' => 'colors',
 			)
 		)
@@ -182,7 +182,7 @@ function mytheme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'body_textcolour',
 			array(
-				'label'   => __( 'Text Colour', 'ARCHETYPE' ),
+				'label'   => __( 'Text Colour', 'archetype' ),
 				'section' => 'colors',
 			)
 		)
@@ -192,7 +192,7 @@ function mytheme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'heading_textcolour',
 			array(
-				'label'   => __( 'Heading Colour', 'ARCHETYPE' ),
+				'label'   => __( 'Heading Colour', 'archetype' ),
 				'section' => 'colors',
 			)
 		)
@@ -202,7 +202,7 @@ function mytheme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'link_colour',
 			array(
-				'label'   => __( 'Link Colour', 'ARCHETYPE' ),
+				'label'   => __( 'Link Colour', 'archetype' ),
 				'section' => 'colors',
 			)
 		)
@@ -212,7 +212,7 @@ function mytheme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'link_hover_colour',
 			array(
-				'label'   => __( 'Link Hover Colour', 'ARCHETYPE' ),
+				'label'   => __( 'Link Hover Colour', 'archetype' ),
 				'section' => 'colors',
 			)
 		)
@@ -222,18 +222,18 @@ function mytheme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'accent_colour',
 			array(
-				'label'   => __( 'Accent Colour', 'ARCHETYPE' ),
+				'label'   => __( 'Accent Colour', 'archetype' ),
 				'section' => 'colors',
 			)
 		)
 	);
 }
-add_action( 'customize_register', 'mytheme_customize_register' );
+add_action( 'customize_register', 'archetype_customize_register' );
 
 /**
  * Add customizer styles to header of front end.
  */
-function mytheme_customise_css() {
+function archetype_customise_css() {
 	?>
 	<!-- User editable styles from customiser -->
 	<style type="text/css">
@@ -251,16 +251,16 @@ function mytheme_customise_css() {
 	</style>
 	<?php
 }
-add_action( 'wp_head', 'mytheme_customise_css' );
+add_action( 'wp_head', 'archetype_customise_css' );
 
 
 /**
  * Remove unwanted CSS files from plugins etc - find the handle in the plugin file and add here.
  */
-function remove_unwanted_css() {
+function archetype_remove_unwanted_css() {
 	wp_dequeue_style( 'unwanted-css-file' );
 }
-add_action( 'wp_enqueue_scripts', 'remove_unwanted_css', 100 );
+add_action( 'wp_enqueue_scripts', 'archetype_remove_unwanted_css', 100 );
 
 
 /**
@@ -291,39 +291,39 @@ function excerpt( $limit ) {
 /**
  * Remove link from author name in comments section.
  */
-function remove_author_url() {
+function archetype_remove_author_url() {
 	return '';
 }
-add_filter( 'get_comment_author_url', 'remove_author_url', 10, 3 );
+add_filter( 'get_comment_author_url', 'archetype_remove_author_url', 10, 3 );
 
 
 /**
  * Admin login page CSS
  */
-function my_login_stylesheet() {
+function archetype_login_stylesheet() {
 	wp_enqueue_style( 'custom-login', get_template_directory_uri() . '/style-login.css', 1.0, true );
 }
-add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
+add_action( 'login_enqueue_scripts', 'archetype_login_stylesheet' );
 
 
 /**
  * Custom admin CSS to remove plugin ads etc.
  */
-function register_custom_admin_css() {
+function archetype_custom_admin_css() {
 	wp_enqueue_style( 'custom_admin_css', get_template_directory_uri() . '/style-admin.css', array(), 1.0, false );
 }
-add_action( 'admin_footer', 'register_custom_admin_css' );
+add_action( 'admin_footer', 'archetype_custom_admin_css' );
 
 
 
 /**
  * Add button class to blog pagination links.
  */
-function posts_link_attributes() {
+function archetype_posts_link_attributes() {
 	return 'class="btn"';
 }
-add_filter( 'next_posts_link_attributes', 'posts_link_attributes' );
-add_filter( 'previous_posts_link_attributes', 'posts_link_attributes' );
+add_filter( 'next_posts_link_attributes', 'archetype_posts_link_attributes' );
+add_filter( 'previous_posts_link_attributes', 'archetype_posts_link_attributes' );
 
 
 
@@ -340,43 +340,43 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
  *
  * @param array $scripts List of scripts loaded by WP.
  */
-function remove_jquery_migrate( &$scripts ) {
+function archetype_remove_jquery_migrate( &$scripts ) {
 	if ( ! is_admin() ) {
 		$scripts->remove( 'jquery' );
 		$scripts->add( 'jquery', false, array( 'jquery-core' ), '1.10.2' );
 	}
 }
-add_filter( 'wp_default_scripts', 'remove_jquery_migrate' );
+add_filter( 'wp_default_scripts', 'archetype_remove_jquery_migrate' );
 
 
 
 /**
  * Move Yoast to bottom.
  */
-function yoasttobottom() {
+function archetype_yoasttobottom() {
 	return 'low';
 }
-add_filter( 'wpseo_metabox_prio', 'yoasttobottom' );
+add_filter( 'wpseo_metabox_prio', 'archetype_yoasttobottom' );
 
 
 /**
  * Register Main Menu.
  */
-function register_my_menu() {
-	register_nav_menu( 'main-menu', __( 'Main Menu', 'ARCHETYPE' ) );
-	register_nav_menu( 'footer-menu', __( 'Footer Menu', 'ARCHETYPE' ) );
+function archetype_register_my_menu() {
+	register_nav_menu( 'main-menu', __( 'Main Menu', 'archetype' ) );
+	register_nav_menu( 'footer-menu', __( 'Footer Menu', 'archetype' ) );
 }
-add_action( 'init', 'register_my_menu' );
+add_action( 'init', 'archetype_register_my_menu' );
 
 
 
 /**
  * Register sidebars.
  */
-function sidebar_widgets_init() {
+function archetype_sidebar_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => __( 'Blog Sidebar', 'ARCHETYPE' ),
+			'name'          => __( 'Blog Sidebar', 'archetype' ),
 			'id'            => 'blog-sidebar',
 			'before_widget' => '<li id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</li>',
@@ -386,7 +386,7 @@ function sidebar_widgets_init() {
 	);
 	register_sidebar(
 		array(
-			'name'          => __( 'Page Sidebar', 'ARCHETYPE' ),
+			'name'          => __( 'Page Sidebar', 'archetype' ),
 			'id'            => 'page-sidebar',
 			'before_widget' => '<li id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</li>',
@@ -395,19 +395,19 @@ function sidebar_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'sidebar_widgets_init' );
+add_action( 'widgets_init', 'archetype_sidebar_widgets_init' );
 
 
 
 /**
  * Load Scripts Properly.
  */
-function my_scripts_method() {
+function archetype_scripts_method() {
 	// Add a script.
 	// wp_register_script('archetype-script', get_template_directory_uri() . '/js/jquery.archetype.min.js', array('jquery'));
 	// wp_enqueue_script('archetype-script', true);
 }
-add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
+add_action( 'wp_enqueue_scripts', 'archetype_scripts_method' );
 
 
 /**
@@ -415,46 +415,46 @@ add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
  *
  * @param array $buttons List of buttons loaded by WP editor.
  */
-function my_mce_buttons_2( $buttons ) {
+function archetype_mce_buttons_2( $buttons ) {
 	array_unshift( $buttons, 'styleselect' );
 	return $buttons;
 }
-add_filter( 'mce_buttons_2', 'my_mce_buttons_2' );
+add_filter( 'mce_buttons_2', 'archetype_mce_buttons_2' );
 
 /**
  * Set up additional styles for editor button
  *
  * @param array $settings List of settings loaded by WP editor.
  */
-function tuts_mce_before_init( $settings ) {
+function archetype_mce_before_init( $settings ) {
 	$style_formats                           = array(
 		array(
-			'title'    => __( 'Positive', 'ARCHETYPE' ),
+			'title'    => __( 'Positive', 'archetype' ),
 			'selector' => 'p',
 			'classes'  => 'positive',
 		),
 		array(
-			'title'    => __( 'Error', 'ARCHETYPE' ),
+			'title'    => __( 'Error', 'archetype' ),
 			'selector' => 'p',
 			'classes'  => 'negative',
 		),
 		array(
-			'title'    => __( 'Warning', 'ARCHETYPE' ),
+			'title'    => __( 'Warning', 'archetype' ),
 			'selector' => 'p',
 			'classes'  => 'warning',
 		),
 		array(
-			'title'    => __( 'Smaller text', 'ARCHETYPE' ),
+			'title'    => __( 'Smaller text', 'archetype' ),
 			'selector' => 'p',
 			'classes'  => 'has-small-font-size',
 		),
 		array(
-			'title'    => __( 'Larger text', 'ARCHETYPE' ),
+			'title'    => __( 'Larger text', 'archetype' ),
 			'selector' => 'p',
 			'classes'  => 'has-large-font-size',
 		),
 		array(
-			'title'    => __( 'Button', 'ARCHETYPE' ),
+			'title'    => __( 'Button', 'archetype' ),
 			'selector' => 'a',
 			'classes'  => 'btn',
 		),
@@ -465,12 +465,12 @@ function tuts_mce_before_init( $settings ) {
 
 	return $settings;
 }
-add_filter( 'tiny_mce_before_init', 'tuts_mce_before_init' );
+add_filter( 'tiny_mce_before_init', 'archetype_mce_before_init' );
 
 /**
  * Add editor fonts/styles.
  */
-function my_theme_add_editor_styles() {
+function archetype_add_editor_styles() {
 	add_editor_style( 'style-editor.css' );
 }
-add_action( 'init', 'my_theme_add_editor_styles' );
+add_action( 'init', 'archetype_add_editor_styles' );

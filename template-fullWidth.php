@@ -26,7 +26,7 @@ get_header(); ?>
 			</div>
 		<?php } ?>	
 		<div class="container">
-			<div class="twelve columns">
+			<main class="twelve columns" role="main">
 			<?php
 			if ( have_posts() ) {
 				while ( have_posts() ) {
@@ -35,7 +35,7 @@ get_header(); ?>
 				}
 			}
 			?>
-			</div>
+			</main>
 		</div>
 	</div>
 <?php get_footer(); ?>

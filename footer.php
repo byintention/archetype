@@ -8,7 +8,7 @@
  */
 
 ?>
-		<footer id="footer" class="clear">
+		<footer id="footer" class="clear" role="contentinfo">
 			<div class="container">
 				<div class="twelve columns">
 					<div id="footerNav" class="largeText">

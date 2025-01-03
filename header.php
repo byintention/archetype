@@ -20,14 +20,14 @@
 	<?php wp_body_open(); ?>
 	<div class="wrap">	
 		<a class="skipLink" href='#content'><?php echo esc_html__( 'Skip to content', 'ARCHETYPE' ); ?></a>
-		<header id="header" class="shadow">
+		<header id="header" class="shadow" role="banner">
 			<div class="container">
 				<div id="headerMenuMobile"><button class="menu-trigger navclosed"><span><?php echo esc_html__( 'Menu', 'ARCHETYPE' ); ?></span></button></div>
 				<div id="headerLogo">
 					<?php
 					if ( has_custom_logo() ) {
 						the_custom_logo();
-					}
+					} else {
 					?>
 					<div class="site-title">
 						<a href="<?php echo esc_url( home_url() ); ?>">
@@ -37,8 +37,9 @@
 					<div class="site-description">
 						<?php echo esc_html( get_bloginfo( 'description' ) ); ?>
 					</div>	
+					<?php } ?>
 				</div>
-				<nav id="nav2" class="clearfix">
+				<nav id="nav2" class="clearfix" role="navigation">
 					<?php
 					wp_nav_menu(
 						array(

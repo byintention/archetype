@@ -7,7 +7,7 @@
       "uuidString" : "CF9475A0-3AFC-4184-A807-C3296996B61B"
     }
   ],
-  "creatorBuild" : "34592",
+  "creatorBuild" : "34627",
   "files" : {
     "\/.gitattribute" : {
       "cB" : 0,
@@ -509,76 +509,66 @@
       "aP" : 0,
       "bl" : 0,
       "co" : 0,
-      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/css\/_mobileNav.css",
       "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 1
+      "oS" : 1,
+      "pg" : 0
     },
     "\/sass\/_photoswipe.scss" : {
       "aP" : 0,
       "bl" : 0,
       "co" : 0,
-      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/sass\/photoswipe.css",
       "oF" : 2,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 1
+      "oS" : 1,
+      "pg" : 0
     },
     "\/sass\/_tiny-slider.scss" : {
       "aP" : 0,
       "bl" : 0,
       "co" : 0,
-      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 0,
       "oA" : 0,
       "oAP" : "\/sass\/tiny-slider.css",
       "oF" : 2,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 1
+      "oS" : 1,
+      "pg" : 0
     },
     "\/sass\/_vars.scss" : {
       "aP" : 0,
       "bl" : 0,
       "co" : 0,
-      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/css\/_vars.css",
       "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 1
+      "oS" : 1,
+      "pg" : 0
     },
     "\/sass\/style.scss" : {
       "aP" : 0,
       "bl" : 0,
       "co" : 0,
-      "dP" : 10,
       "ec" : 1,
       "ft" : 4,
       "ma" : 0,
       "oA" : 0,
       "oAP" : "\/style.css",
       "oF" : 2,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 1
+      "oS" : 1,
+      "pg" : 0
     },
     "\/screenshot.jpg" : {
       "ft" : 16384,
@@ -2149,11 +2139,9 @@
       "autoOutputPathReplace1" : "sass",
       "autoOutputPathReplace2" : "css",
       "autoOutputPathStyle" : 2,
-      "compilerType" : 1,
       "cssoStyle" : 0,
-      "decimalPrecision" : 10,
       "emitCharset" : 1,
-      "outputStyle" : 0,
+      "outputStyle" : 1,
       "purgeCSSStyle" : 0,
       "shouldRunAutoprefixer" : 0,
       "shouldRunBless" : 0,
@@ -2268,6 +2256,7 @@
     ],
     "rollupTreeshakingEnabled" : 1,
     "rollupTreeshakingModuleSideEffects" : 1,
+    "sassWarningStyle" : 1,
     "skippedFoldersString" : "log, _logs, logs, _cache, cache, .idea, \/storage\/framework\/sessions, node_modules",
     "sourceFolderName" : "source",
     "susyVersion" : 3,

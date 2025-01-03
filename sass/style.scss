@@ -385,6 +385,7 @@ input::-moz-focus-inner {
 	padding: 0;
 }
 
+button,
 .button,
 .button:visited,
 .btn,
@@ -409,6 +410,7 @@ input[type="button"] {
 	-webkit-appearance: none;
 }
 
+button:hover,
 .button:hover,
 .btn:hover,
 input[type="submit"]:hover,
@@ -419,6 +421,7 @@ input[type="button"]:hover {
 	transition:background 0.2s linear;
 }
 
+button:active,
 .button:active,
 .button:focus,
 .btn:active,

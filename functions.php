@@ -2,7 +2,7 @@
 /**
  * Custom functions for Archetype theme
  *
- * @package Archetype
+ * @package archetype
  */
 
 /**

@@ -1,9 +1,0 @@
-{
-  "index.ignored_file_patterns" : [
-    "config.codekit3",
-    ".nova",
-    ".DS_Store"
-  ],
-  "workspace.color" : 4,
-  "workspace.name" : "Archetype"
-}

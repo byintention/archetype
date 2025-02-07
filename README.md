@@ -11,7 +11,7 @@ Breadcrumbs on single blog posts are built in and will display if enabled in SEO
 
 Archetype:
 - Follows WordPress Coding Standards
-- Meets WCAG AA contrast ratios with it's default colours
+- Meets WCAG AA contrast ratios with its default colours
 - Is keyboard navigable
 - Uses ARIA landmark roles and ARIA menu attributes
 - Is translation ready

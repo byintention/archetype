@@ -56,7 +56,7 @@ get_header(); ?>
 		
 		<p class="clearfix">
 			<a class="btn btn-primary" href="#">Anchor</a>
-			<button class="btn">Button</button>
+			<button>Button</button>
 			<input class="btn" type="submit" value="Input" />
 			<input class="" type="text" value="Input" style="display:inline-block;width:200px" />
 		</p>

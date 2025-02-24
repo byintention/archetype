@@ -244,7 +244,7 @@ function archetype_customise_css() {
 		#headerMenuMobile button span, #headerMenuMobile button:before,	#headerMenuMobile button:after { background-color: <?php echo esc_html( get_theme_mod( 'link_colour', '#00804D' ) ); ?>; } 
 		button, .btn, .btn:visited, input[type="button"], input[type="submit"] { background-color: <?php echo esc_html( get_theme_mod( 'link_colour', '#00804D' ) ); ?>; }
 		a:hover { color: <?php echo esc_html( get_theme_mod( 'link_hover_colour', '#00D581' ) ); ?>; }
-		.button:hover, .btn:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover { background-color: <?php echo esc_html( get_theme_mod( 'link_hover_colour', '#00D581' ) ); ?>; }
+		button:hover, .button:hover, .btn:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover { background-color: <?php echo esc_html( get_theme_mod( 'link_hover_colour', '#00D581' ) ); ?>; }
 		#footer { background-color: <?php echo esc_html( get_theme_mod( 'body_textcolour', '#042825' ) ); ?>; }
 		blockquote { border-left-color: <?php echo esc_html( get_theme_mod( 'body_textcolour', '#042825' ) ); ?>; } 
 		pre, code, blockquote, fieldset, .gridRow .column, .gridRow .columns { background: <?php echo esc_html( get_theme_mod( 'accent_colour', '#DFE5E2' ) ); ?>; }
